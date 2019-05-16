@@ -1,0 +1,72 @@
+.kaartje {
+    grid-column: col 1/ span 8;
+    min-height: 156px;
+    border: 2px solid;
+    border-top-left-radius: 30px;
+    margin-top: 40px;
+}
+
+.kaartje h2 {
+    margin-left: 5.2vw;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 132px solid transparent;
+    float: right;
+}
+
+.triangleOranje {
+    border-top: 132px solid #F2832E;
+}
+
+.triangleGroen {
+    border-top: 132px solid #809332;
+}
+
+.trianglePaars {
+    border-top: 132px solid #6363A3;
+}
+
+.triangleGeel {
+    border-top: 132px solid #FFCC00;
+}
+
+.triangleAqua {
+    border-top: 132px solid #48A5A5;
+}
+
+.triangleRoze {
+    border-top: 132px solid #F77E8A;
+}
+
+.oranje {
+    color: #F2832E;
+    border-color: #F2832E;
+}  
+
+.groen {
+    color: #809332;
+    border-color: #809332;
+}
+
+.paars {
+    color: #6363A3;
+    border-color: #6363A3;
+}
+
+.geel {
+    color: #FFCC00;
+    border-color: #FFCC00;
+}
+
+.aqua {
+    color: #48A5A5;
+    border-color: #48A5A5;
+}
+
+.roze {
+    color: #F77E8A;
+    border-color: #F77E8A;
+}
