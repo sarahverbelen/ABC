@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.abc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>ABC Lesplanner</name>
+    <description>
+        ABC Leermethodiek
+    </description>
+    <author email="sarah.verbelen@student.ehb.be" href="http://phonegap.com">
+        Axelle Vanden Eynde, Toon Raskin, Kevin, Cyril Passeleur, Sarah Verbelen
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
