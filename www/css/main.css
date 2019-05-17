@@ -1,12 +1,16 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-
 /* grid */
 
 body{   
         margin-left: 5.2%;
         margin-right: 5.2%;
+        /* display: grid;
+        grid-template-columns: repeat(8, [col] 1fr);
+        grid-column-gap: 2.6%; */
     }
 
 
@@ -36,14 +40,5 @@ body{
 .fontRegular{
     font-weight: 300; /* light */
     font-size: 32px; /* = 16px in design */
-}
-.fontHeaderLarge{
-    font-weight: 400; /* medium */ 
-    font-size: 60px;
-}
-h6{
-    font-weight: 700; /*bold*/
-    font-size: 32px;
-    color: #333;
 }
 
