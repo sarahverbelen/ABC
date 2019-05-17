@@ -13,8 +13,9 @@
     position: absolute;
     left: 33.625vw;
     margin-top: -65px;
-    width: 40vw;
+    width: 45vw;
     color: #333;
+    line-height: 1.2;
 }
 
 .lesfase h2 {
@@ -29,7 +30,8 @@
 #doelstellingDropdown {
     background-image: url(../img/icons/arrowDropDown.svg);
     background-repeat: no-repeat;
-    width: 10px;
+    background-size: cover;
+    width: 20px;
     height: 10px;
     display: inline-block;
     margin-left: 5px;
@@ -37,6 +39,10 @@
 
 .kaartjes {
     margin-bottom: 50px;
+}
+
+.kaartjeMethoden label, .kaartjeMethoden input {
+    display: inline-block;
 }
 
 #plus {
@@ -54,7 +60,7 @@
 
 #plus a {
     display: block;
-    padding: 5vw 9vw;
+    padding: 4vw 9vw;
     text-decoration: none;
     color: white;
     font-size: 44px;
