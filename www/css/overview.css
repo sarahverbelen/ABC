@@ -1,0 +1,143 @@
+/* TITELS */
+h6 {
+    margin-top: 4vh;
+    display: inline-block;
+    padding-bottom: 4vh;
+}
+
+.lessenKolom2 {
+    margin-left: 25.75%;
+}
+
+.lessenKolom3 {
+    margin-left: 25.755%;
+}
+
+
+
+/*KAARTEN*/
+.kaartje {
+    width: 8%;
+    border: 2px solid;
+    border-top-left-radius: 15px;
+    box-sizing: border-box;
+}
+
+.kaartenLessen {
+    margin-bottom: 2vh;
+}
+
+.naamKaartje{
+    padding-top: 1.5vw;
+    padding-left: 1vw;
+    padding-bottom: 1vw;
+}
+
+
+/*DRIEHOEK KAARTEN*/
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 33px solid transparent;
+    float: right;
+    margin-bottom: -5.2vw;
+}
+
+.triangleOranje {
+    border-top: 33px solid #F2832E;
+}
+
+.triangleGroen {
+    border-top: 33px solid #809332;
+}
+
+.trianglePaars {
+    border-top: 33px solid #6363A3;
+}
+
+.triangleGeel {
+    border-top: 33px solid #FFCC00;
+}
+
+.triangleAqua {
+    border-top: 33px solid #48A5A5;
+}
+
+.triangleRoze {
+    border-top: 33px solid #F77E8A;
+}
+
+.oranje {
+    color: #F2832E;
+    border-color: #F2832E;
+}
+
+.groen {
+    color: #809332;
+    border-color: #809332;
+}
+
+.paars {
+    color: #6363A3;
+    border-color: #6363A3;
+}
+
+.geel {
+    color: #FFCC00;
+    border-color: #FFCC00;
+}
+
+.aqua {
+    color: #48A5A5;
+    border-color: #48A5A5;
+}
+
+.roze {
+    color: #F77E8A;
+    border-color: #F77E8A;
+}
+
+
+
+/*LEGENDE*/
+.legendePRight,
+.legendePLeft {
+    display: inline-block;
+    width: 35.625%;
+    border-left: 5vw solid;
+    padding-left: 3vw;
+    margin-bottom: 1vh;
+}
+
+.legendePRight {
+    float: right;
+}
+
+.legendePLeft {
+    margin-left: 12.875%;
+}
+
+#roze {
+    border-left-color: #F77E8A;
+}
+
+#oranje {
+    border-left-color: #F2832E;
+}
+
+#paars {
+    border-left-color: #6363A3;
+}
+
+#groen {
+    border-left-color: #809332;
+}
+
+#blauw {
+    border-left-color: #48A5A5;
+}
+
+#geel {
+
+    border-left-color: #FFCC00;
+}
