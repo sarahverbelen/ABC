@@ -1,5 +1,3 @@
-
-
 #triangle-bottomleft {
     width: 0;
     height: 0;
@@ -7,10 +5,11 @@
     border-right: 200px solid transparent;
     position: fixed;
     bottom: 0;
-    box-shadow: 5px ;
+    -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, .2));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, .2));
 }
 
-div.bolletjes{
+div.bolletjes {
 
     width: 4vh;
     height: 4vh;
@@ -30,48 +29,42 @@ div.bolletjes{
     background-color: #F7F6F6;
     width: 100%;
     height: 7%;
-    
+
 }
 
-#opties div{
+#opties div {
     display: inline-block;
-    padding: 2% 6% 0 5%;
-    margin-top: 2%;
+    padding: 2% 0 0 15%;
+    margin-top: 3%;
+
+    width: 3vw;
+    height: 3vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
 }
 
 .save {
-    width: 3vh;
-    height: 3vh;
+
     background-image: url("../img/icons/save.svg");
     margin-left: 25vw;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 3px;
+
 }
 
 .edit {
-    width: 3vh;
-    height: 3vh;
+
     background-image: url("../img/icons/edit.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 3px;
+
 }
 
 .stats {
-    width: 3vh;
-    height: 3vh;
+
     background-image: url("../img/icons/stats.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 3px;
+
 }
 
 .arrow {
-    width: 3vh;
-    height: 3vh;
+
     background-image: url("../img/icons/Pijl.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 3px;
+
 }
