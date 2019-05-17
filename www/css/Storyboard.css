@@ -41,8 +41,42 @@
     margin-bottom: 50px;
 }
 
+.kaartjeMethoden {
+    width: 50vw;
+}
+
 .kaartjeMethoden label, .kaartjeMethoden input {
     display: inline-block;
+}
+
+.sluitKaartje {
+    background-image: url(../img/icons/pijlRechts.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    width: 36px;
+    height: 36px;
+    color: rgba(0,0,0,0);
+    float: right;
+    display: block;
+    margin-right: -115px;
+    margin-top: -28px;
+}
+
+.bevestigKaartje {
+    height: 96px;
+    display: block;
+    border: none;
+    margin-bottom: -55px;
+    margin-top: 50px;
+}
+
+.confirm {
+    background-image: url(../img/icons/confirm.svg);
+    width: 48px;
+    height: 39px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #plus {
