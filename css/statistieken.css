@@ -1,9 +1,9 @@
-body{
+body {
     height: 100vh;
     grid-template-rows: repeat(4, 1fr);
 }
 
-.dropdown{
+.dropdown {
     text-align: center;
     height: 6vh;
     width: 100%;
@@ -25,6 +25,58 @@ body{
     border-bottom-style: none;
 }
 
-.dropdown option{
-  
+h6 {
+    text-align: center;
+    display: block;
+    margin-top: 4vh;
+}
+
+#grafiek {
+    border: 3px solid pink;
+    margin-top: 2vh;
+    height: 50vh;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.legendePRight,
+.legendePLeft {
+    display: inline-block;
+    width: 35.625%;
+    border-left: 5vw solid;
+    padding-left: 3vw;
+    margin-bottom: 1vh;
+}
+
+.legendePRight {
+    float: right;
+}
+
+.legendePLeft {
+    margin-left: 12.875%;
+}
+
+#roze {
+    border-left-color: #F77E8A;
+}
+
+#oranje {
+    border-left-color: #F2832E;
+}
+
+#paars {
+    border-left-color: #6363A3;
+}
+
+#groen {
+    border-left-color: #809332;
+}
+
+#blauw {
+    border-left-color: #48A5A5;
+}
+
+#geel {
+
+    border-left-color: #FFCC00;
 }
