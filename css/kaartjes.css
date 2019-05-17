@@ -7,7 +7,24 @@
 }
 
 .kaartje h2 {
-    margin-left: 5.2vw;
+    font-size: 44px;
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+.kaartje h2, .kaartje h3 {
+    margin-left: 10.4vw;
+}
+
+.editKaartje {
+    background-image: url(../img/icons/gear.svg);
+    width: 36px;
+    height: 36px;
+    color: rgba(0,0,0,0);
+    float: right;
+    display: block;
+    margin-right: -110px;
+    margin-top: 18px;
 }
 
 .triangle {
