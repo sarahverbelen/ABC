@@ -21,6 +21,20 @@ div.bolletjes {
     border-radius: 3px;
 }
 
+/*
+div.terug {
+
+    width: 4vh;
+    height: 4vh;
+    background-image: url("../img/icons/pijl_terug.svg");
+    margin-left: 5vw;
+    margin-top: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
+}
+*/
+
 
 #opties {
 
