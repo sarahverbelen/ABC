@@ -1,12 +1,13 @@
 header{
+    
     background-color: #F7F6F6;
-    padding: 3% 0;
+    padding: 6% 5.2% 4% 5.2%;
+    height: 10vh;
     position: relative;
     text-align: center;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 }
-header h1{
-    font-size: 45px;
-}
+
 #menuToggle{
     position: absolute;
     transform: translate(-50%, -50%);
@@ -20,7 +21,6 @@ header h1{
     margin: 0 auto;
     text-align: center;
     color: black;
-    
     list-style: none;
     font-size: 35px;
     padding: 7% 0 7% 0;
@@ -29,14 +29,18 @@ header h1{
 #menu a{
     text-decoration: none;
 }
-#menuToggle div{
-  width: 50px;
-  height: 7px;
-  margin: 5px 0;
-  background: gray;
+#menuToggle{
+  width: 4vh;
+  height: 4vh;
+    margin-top: 1vh;
+  background-image: url("../img/icons/HamburgerMenu.svg");
+background-repeat: no-repeat;
+    background-size: contain;
   border-radius: 3px;
 
 
 
 }
+
+
 
