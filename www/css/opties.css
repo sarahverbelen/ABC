@@ -1,11 +1,77 @@
-footer {
-    height: 20%;
-    background-color: #F7F6F6;
-}
 
-footer #triangle-bottomleft {
+
+#triangle-bottomleft {
     width: 0;
     height: 0;
-    border-bottom: 100px solid red;
-    border-right: 100px solid transparent;
+    border-bottom: 200px solid #F7F6F6;
+    border-right: 200px solid transparent;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 5px ;
+}
+
+div.bolletjes{
+
+    width: 4vh;
+    height: 4vh;
+    background-image: url("../img/icons/Buttons.svg");
+    margin-left: 5vw;
+    margin-top: 10vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
+}
+
+
+#opties {
+
+    bottom: 0;
+    position: fixed;
+    background-color: #F7F6F6;
+    width: 100%;
+    height: 7%;
+    
+}
+
+#opties div{
+    display: inline-block;
+    padding: 2% 6% 0 5%;
+    margin-top: 2%;
+}
+
+.save {
+    width: 3vh;
+    height: 3vh;
+    background-image: url("../img/icons/save.svg");
+    margin-left: 25vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
+}
+
+.edit {
+    width: 3vh;
+    height: 3vh;
+    background-image: url("../img/icons/edit.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
+}
+
+.stats {
+    width: 3vh;
+    height: 3vh;
+    background-image: url("../img/icons/stats.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
+}
+
+.arrow {
+    width: 3vh;
+    height: 3vh;
+    background-image: url("../img/icons/Pijl.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 3px;
 }
