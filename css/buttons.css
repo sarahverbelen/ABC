@@ -1,11 +1,32 @@
 .rodeKnop {
     display: block;
-    position: absolute;
-    grid-column: col 1/ span 8;
-    height: 60px;
+    width: 100%;
+    grid-column: 1/ span 8;
+    grid-row: 3 / span 1;
     background: #CC0000;
     border-color: #CC0000;
-    border-top-left-radius: 30px;
     color: #fff;
     bottom: 10%;
+    height: 40%;
+    
+}
+.rodeKnop, .homeKnop{
+    border-top-left-radius: 30px;
+    text-align: center;
+    padding: 45px;
+}
+.homeKnop {
+    display: block;
+    border: 2px solid #f7f6f6;
+    grid-row: 2 / span 1;
+    height: 80%;
+    color: #f7f6f6;
+    
+}
+#knopStatistieken{
+    grid-column: col 1/ span 4;
+}
+
+#knopStoryboards{
+    grid-column: col 5/ span 4;
 }
