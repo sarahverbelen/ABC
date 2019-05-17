@@ -2,9 +2,9 @@ h1 {
     padding: 3% 0;
 }
 
-input {
-    margin: 0 0 5% 0;
-    padding: 2% 0 2% 12.875%;
+h1 img {
+    width: 15px;
+    margin: 0 1%;
 }
 
 input[type="text"] {
@@ -15,19 +15,39 @@ input[type="text"] {
     opacity: 0.7;
     border: none;
     box-shadow: inset 0 0 1px 0px black;
-
+    margin: 0 0 5% 0;
+    padding: 2% 0 2% 12.875%;
 }
 
-h1 img {
-    width: 15px;
-    margin: 0 1%;
-}
 
-input:focus {
+input[type="text"]:focus {
     border-radius: 5px 0 0 0;
     box-shadow: inset 0 0 1px 0.5px #CC0000;
 }
 
+button{
+    border: none;
+    background-color: #333333;
+    color: white;
+    padding: 8px;
+    margin: 8px 0;
+}
+button img{
+    width: 5%;
+}
+.ADD{
+    display: flex;
+}
+.ADD h1{
+    text-align: center;
+    width: 22.75%;
+}
+.ADD input[type="submit"]{
+    border: none;
+    color: #CC0000;
+    background-color: white;
+    box-shadow: inset 0 0 1px 0.5px #CC0000;
+}
 
 
 /*SLIDER*/
@@ -39,7 +59,7 @@ input:focus {
     width: 55px;
     height: 20px;
     border-radius: 5px 0 0 0;
-    background-color: #CC0000;
+    background-color: grey;
 }
 
 .switch input {
@@ -58,7 +78,7 @@ input:focus {
     transition: .4s;
 }
 
-.test {
+.doelstelling {
     position: relative;
 }
 
@@ -76,11 +96,7 @@ input:focus {
 }
 
 input:checked + .slider {
-    background-color: grey;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    background-color: #CC0000;
 }
 
 input:checked + .slider:before {

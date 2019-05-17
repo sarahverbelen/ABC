@@ -45,8 +45,12 @@
     width: 50vw;
 }
 
-.kaartjeMethoden label, .kaartjeMethoden input {
-    display: inline-block;
+.methodieken label, .methodieken input {
+    width: auto;
+}
+
+.methodieken {
+    margin-left: 11vw;
 }
 
 .sluitKaartje {
@@ -77,6 +81,7 @@
     height: 39px;
     background-repeat: no-repeat;
     background-size: contain;
+    margin: auto;
 }
 
 #plus {
