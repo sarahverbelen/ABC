@@ -1,4 +1,11 @@
 .rodeKnop {
     display: block;
-     width: 90%;
+    position: absolute;
+    grid-column: col 1/ span 8;
+    height: 60px;
+    background: #CC0000;
+    border-color: #CC0000;
+    border-top-left-radius: 30px;
+    color: #fff;
+    bottom: 10%;
 }

@@ -1,0 +1,6 @@
+ 
+body{
+    grid-template-rows: 70% 15% 15%;
+}
+grid-template-columns: repeat(8, [col] 1fr);
+        grid-column-gap: 2.6%;
