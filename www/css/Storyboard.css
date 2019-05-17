@@ -8,6 +8,82 @@
     margin-top: 50px;
 }
 
+.lesfase {
+    text-align: center;
+    position: absolute;
+    left: 33.625vw;
+    margin-top: -65px;
+    width: 40vw;
+    color: #333;
+}
+
+.lesfase h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#doelstellingen {
+    display: inline-block;
+}
+
+#doelstellingDropdown {
+    background-image: url(../img/icons/arrowDropDown.svg);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
 .kaartjes {
     margin-bottom: 50px;
+}
+
+#plus {
+    color: #333;
+    border-color: #333;
+    border-width: 1px;
+}
+
+#plusSymbool {
+    font-size: 90px;
+    width: 52px;
+    display: block;
+    margin: auto;
+}
+
+#plus a {
+    display: block;
+    padding: 5vw 9vw;
+    text-decoration: none;
+    color: white;
+    font-size: 44px;
+    box-sizing: border-box;
+    width: 84.125vw;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#plusOranje {
+    background-color: #F2832E;
+}
+
+#plusGeel {
+    background-color: #FFCC00;
+}
+
+#plusPaars {
+    background-color: #6363A3;
+}
+
+#plusGroen {
+    background-color: #809332;
+}
+
+#plusAqua {
+    background-color: #48A5A5;
+}
+
+#plusRoze {
+    background-color: #F77E8A;
 }
