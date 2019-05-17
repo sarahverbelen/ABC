@@ -3,13 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="../js/Navigatie.js"></script>
+     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/buttons.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="../css/Navigatie.css">
 </head>
 
 <body>
-   
+       <header>
+        <h1 class = "fontHeaderLarge">ABC Lesplanner</h1>
+        <!--        <nav role="navigation">-->
+        <div id="menuToggle">
+        </div>
+    </header>
+    
+    <nav>
+        <ul id="menu">
+            <a href="#">
+                <li>Home</li>
+            </a>
+            <a href="#">
+                <li>Nieuw storyboard</li>
+            </a>
+            <a href="#">
+                <li>Storyboards</li>
+            </a>
+            <a href="#">
+                <li>Statistieken</li>
+            </a>
+            <a href="#">
+                <li>Overzicht kaartjes</li>
+            </a>
+        </ul>
+    </nav>
     <a class="homeKnop fontKnop" id="knopStatistieken"> Statistieken</a>
     <a class="homeKnop fontKnop" id="knopStoryboards">Storyboards</a>
     <a class="rodeKnop fontKnop"> Nieuw storyboard </a>

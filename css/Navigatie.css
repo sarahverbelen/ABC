@@ -1,46 +1,49 @@
-header{
-    
+header {
     background-color: #F7F6F6;
     padding: 6% 5.2% 4% 5.2%;
     height: 10vh;
+    width: 100vw;
+    margin-left: -5.2vw;
     position: relative;
     text-align: center;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
+}
+header h1{
+    color: #333333;
 }
 
-#menuToggle{
+#menuToggle {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     right: 5%;
 }
 
-#menu a li{
+#menu a li {
     width: 100%;
     display: block;
     margin: 0 auto;
     text-align: center;
-    color: black;
+    color: #333333;
     list-style: none;
     font-size: 35px;
     padding: 7% 0 7% 0;
-    
+
 }
-#menu a{
+
+#menu a {
     text-decoration: none;
 }
-#menuToggle{
-  width: 4vh;
-  height: 4vh;
+
+#menuToggle {
+    width: 4vh;
+    height: 4vh;
     margin-top: 1vh;
-  background-image: url("../img/icons/HamburgerMenu.svg");
-background-repeat: no-repeat;
+    background-image: url("../img/icons/HamburgerMenu.svg");
+    background-repeat: no-repeat;
     background-size: contain;
-  border-radius: 3px;
+    border-radius: 3px;
 
 
 
 }
-
-
-
