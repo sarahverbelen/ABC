@@ -1,0 +1,23 @@
+.StoryboardInfo{
+    width: 100%;
+    min-height: 15vh;
+    border-bottom: 2px solid #333;
+    padding-left: 12.875%;
+}
+
+h6{
+    display: block;
+    margin-top: 4vh;
+}
+
+.extraInfo{
+    display: block;
+    margin-top: 1vh;
+}
+
+.rodeKnop{
+    position: fixed;
+    bottom: 9vh;
+    
+    
+}
