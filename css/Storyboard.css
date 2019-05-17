@@ -1,0 +1,13 @@
+.uitzoomen {
+    color: rgba(0,0,0,0);
+    background-image: url(../img/icons/verrekijker.svg);
+    width: 9.875vw;
+    height: 7vw;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+}
+
+.kaartjes {
+    margin-bottom: 50px;
+}
