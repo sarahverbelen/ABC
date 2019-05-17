@@ -4,11 +4,9 @@ body{
 }
 
 .dropdown{
-    grid-column: 1 / span 8;
-    grid-row: 1/ span 1;
     text-align: center;
-    padding: 10px;
-    height: 30%;
+    height: 6vh;
+    width: 100%;
     border: 2px solid #333;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -17,7 +15,8 @@ body{
     background-repeat: no-repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: 1em auto, 100%;
-    
+    margin-top: 4vh;
+    /* style in javascript */
 }
 
 .dropdown:focus {

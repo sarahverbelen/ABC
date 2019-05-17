@@ -1,6 +1,13 @@
-
 body{
-    max-height: 90vh;
+    height: 100vh;
     background-color: dimgrey;
+    overflow: auto;
 }
+/*.rodeKnop, .homeKnop*/
 
+.homeKnop{
+    margin-top: 65vh
+}
+.rodeKnop{
+    margin-top: 2vh;
+}

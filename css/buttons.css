@@ -3,7 +3,6 @@
     background: #CC0000;
     border-color: #CC0000;
     color: #fff;
-    height: 40%;
     
 }
 .rodeKnop, .homeKnop{
@@ -11,20 +10,16 @@
     border-top-left-radius: 30px;
     text-align: center;
     padding: 45px;
+    height: 8vh;
 }
 .homeKnop {
     display: inline-block;
     width: 48.5%;
     border: 2px solid #f7f6f6;
     grid-row: 2 / span 1;
-    height: 80%;
-    color: #f7f6f6;
-    
-}
-#knopStatistieken{
-
+    color: #f7f6f6;  
 }
 
 #knopStoryboards{
-   
+    float: right;
 }
