@@ -1,40 +1,17 @@
 header{
     background-color: #F7F6F6;
     padding: 3% 0;
-    display: flex;
-/*    height: 10%;*/
+    position: relative;
+    text-align: center;
 }
-
-
-
 header h1{
     font-size: 45px;
-    width: 100%;
-    margin: auto;
-
-/*
-    display: inline-block;
-    width: 90%;
-    float: left;
-*/
-    text-align: center;
-  
 }
-
-
-
-/*
-#menuToggle .hamburger{
-    
-    display: inline-block;
-    float: right;
-    width: 10%;
-    
-}
-*/
-
 #menuToggle{
-    margin-right: 2%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    right: 5%;
 }
 
 #menu a li{
@@ -49,12 +26,9 @@ header h1{
     padding: 7% 0 7% 0;
     
 }
-
 #menu a{
     text-decoration: none;
 }
-
-
 #menuToggle div{
   width: 50px;
   height: 7px;

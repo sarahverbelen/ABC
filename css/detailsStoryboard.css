@@ -2,3 +2,19 @@ form{
     grid-column: col 1/ span 8;
     background-color: aqua;
 }
+
+
+
+
+/*NAV*/
+nav{
+    
+}
+.icon{
+    width: 20px;
+    height: 10px;
+    background-color: black;
+}
+body > div{
+    display: flex;
+}
