@@ -1,6 +1,7 @@
  
 body{
-    grid-template-rows: 70% 15% 15%;
+    max-height: 95vh;
+    grid-template-rows: 80% 10% 20%;
+    background-color: dimgrey;
 }
-grid-template-columns: repeat(8, [col] 1fr);
-        grid-column-gap: 2.6%;
+
