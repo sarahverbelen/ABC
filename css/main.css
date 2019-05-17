@@ -1,6 +1,8 @@
 /* grid */
 
 body{
+        margin-left: 5.2%;
+        margin-right: 5.2%;
         display: grid;
         grid-template-columns: repeat(8, [col] 1fr);
         grid-column-gap: 2.6%;
