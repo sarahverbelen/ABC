@@ -41,4 +41,8 @@ body{
     font-weight: 300; /* light */
     font-size: 32px; /* = 16px in design */
 }
+.fontHeaderLarge{
+    font-weight: 700; /* medium */ 
+    font-size: 30px;
+}
 

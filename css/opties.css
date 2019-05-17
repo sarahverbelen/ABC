@@ -1,0 +1,11 @@
+footer {
+    height: 20%;
+    background-color: #F7F6F6;
+}
+
+footer #triangle-bottomleft {
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid red;
+    border-right: 100px solid transparent;
+}
