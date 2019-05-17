@@ -4,16 +4,24 @@
     border: 2px solid;
     border-top-left-radius: 30px;
     margin-top: 40px;
+    padding: 5.2vw;
+    box-sizing: border-box;
 }
 
 .kaartje h2 {
     font-size: 44px;
-    margin-top: 40px;
     font-weight: 500;
 }
 
-.kaartje h2, .kaartje h3 {
-    margin-left: 10.4vw;
+.kaartje h2, .kaartje h3, .kaartje p {
+    margin-left: 5.2vw;
+}
+
+.kaartje p {
+    color: #333333;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.1;
 }
 
 .editKaartje {
@@ -23,8 +31,8 @@
     color: rgba(0,0,0,0);
     float: right;
     display: block;
-    margin-right: -110px;
-    margin-top: 18px;
+    margin-right: -115px;
+    margin-top: -28px;
 }
 
 .triangle {
@@ -32,6 +40,8 @@
     height: 0;
     border-left: 132px solid transparent;
     float: right;
+    margin-right: -5.2vw;
+    margin-top: -5.2vw;
 }
 
 .triangleOranje {
