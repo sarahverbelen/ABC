@@ -32,6 +32,12 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+.fontHeaderLarge{
+    font-weight: 400;
+    font-size: 50px;
+    color: #333;
+}
+
 .fontKnop{
     font-weight: 400; /* regular */
     font-size: 36px; /* = 18px in design */
@@ -42,3 +48,8 @@ body{
     font-size: 32px; /* = 16px in design */
 }
 
+h6{
+    font-weight: 700;
+    font-size: 32px;
+    color: #333;
+}
