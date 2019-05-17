@@ -1,52 +1,42 @@
 header{
     background-color: #F7F6F6;
-}
-
-header h1{
-
-/*    margin: 0 auto;*/
+    padding: 3% 0;
+    position: relative;
     text-align: center;
 }
+header h1{
+    font-size: 45px;
+}
+#menuToggle{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    right: 5%;
+}
 
-header div a{
+#menu a li{
     width: 100%;
     display: block;
     margin: 0 auto;
     text-align: center;
-/*    height: 200px;*/
     color: black;
-    text-decoration: none;
+    
     list-style: none;
-    font-size: 28px;
+    font-size: 35px;
     padding: 7% 0 7% 0;
     
 }
-header div{
-
-    margin: 0 auto;
-    
+#menu a{
+    text-decoration: none;
 }
-
-#menuToggle .hamburger{
-    float: right;
-}
-
-#menuToggle span
-{
-/*  display: inline-block;*/
+#menuToggle div{
   width: 50px;
   height: 7px;
-  margin-bottom: 5px;
-  position: relative;
-  
+  margin: 5px 0;
   background: gray;
   border-radius: 3px;
-  
-  z-index: 1;
+
 
 
 }
 
-#menuToggle span{
-    display: block
-}

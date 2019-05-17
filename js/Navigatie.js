@@ -3,8 +3,12 @@ $(document).ready(function(){
     console.log("ready");
     $("#menu a").hide();
     
-    $("div.hamburger").click(function () {
+    $("div#menuToggle").click(function () {
         
-        $("#menu a").blindLeftToggle();
+      
+//        $("#menu a").toggle( "blind", {direction: "top"}, 1000 );
+        $("#menu a").fadeToggle();
+        
+        
     });
 }); 
