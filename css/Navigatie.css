@@ -36,6 +36,7 @@ header h1{
 }
 
 #menuToggle {
+    float:right;
     width: 4vh;
     height: 4vh;
     margin-top: 1vh;
