@@ -8,35 +8,42 @@ header {
     text-align: center;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
 }
-header h1{
-    color: #333333;
+
+header h1 {
+    color: #333;
 }
+
+#menu {
+    position: absolute;
+    Top: 0;
+    right: 0;
+    width: 89.6%;
+    height: 100vh;
+    padding-right: 18.075vw;
+    padding-top: 5vh;
+    background-color: #F7F6F6;
+}
+
+#menu a {
+    display: block;
+    width: 100%;
+    text-align: right;
+    color: #333;
+    list-style: none;
+    font-size: 35px;
+    text-decoration: none;
+    margin-top: 8vh;
+    font-weight: 400;
+    font-size: 44px;
+}
+
 
 #menuToggle {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     right: 5%;
-}
-
-#menu a li {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    color: #333333;
-    list-style: none;
-    font-size: 35px;
-    padding: 7% 0 7% 0;
-
-}
-
-#menu a {
-    text-decoration: none;
-}
-
-#menuToggle {
-    float:right;
+    float: right;
     width: 4vh;
     height: 4vh;
     margin-top: 1vh;
@@ -44,7 +51,5 @@ header h1{
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 3px;
-
-
 
 }
