@@ -1,0 +1,41 @@
+i {
+    border: solid;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 15px;
+}
+/*
+code pijl
+borderwidth geeft de dikte van pijl
+padding, afstand tussen hoeken
+*/
+
+.fa-angle-down {
+    margin-top: 5.2vh;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    float: right;
+    margin-right: 7.938%;
+}
+/*
+transform en webkit verplaatsen de richting van pijl
+pijl naar beneden: transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);*/
+
+
+.titelkaart {
+    margin-left: 12.875%;
+}
+
+.colorblack {
+    margin-left: 22.75%;
+}
+
+.methodes {
+    margin-left: 35.625%;
+    margin-right: 7.938%;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.1;
+}
