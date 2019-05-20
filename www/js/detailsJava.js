@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
     console.log("ready");
-    $("#menu").hide();
+    $(".vraag").hide();
     
     $("div#menuToggle").click(function () {
         
