@@ -69,7 +69,8 @@
 
 .bevestigKaartje {
     height: 96px;
-    display: block;
+    width: 77.25%;
+    display: inline-block;
     border: none;
     margin-bottom: -55px;
     margin-top: 50px;

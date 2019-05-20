@@ -10,7 +10,10 @@ header {
 }
 
 header h1 {
+    display: inline-block;
+    top: 5vh;
     color: #333;
+    text-align: center;
 }
 
 #menu {
@@ -37,19 +40,28 @@ header h1 {
     font-size: 44px;
 }
 
-
-#menuToggle {
+#menuToggle,
+#pijlTerugRood {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
-    right: 5%;
     float: right;
     width: 4vh;
-    height: 4vh;
-    margin-top: 1vh;
-    background-image: url("../img/icons/HamburgerMenu.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    border-radius: 3px;
+}
+
+#menuToggle {
+    top: 5vh;
+    height: 3vh;
+    right: 5.2%;
+    margin: auto 0;
+    background-image: url("../img/icons/HamburgerMenu.svg");
+}
+
+#pijlTerugRood {
+    height: 4vh;
+    right: 2.6%;
+    margin-top: 0.5vh;
+    background-image: url("../img/icons/terugPijlRood.svg");
 
 }
