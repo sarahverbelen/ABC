@@ -1,5 +1,5 @@
 .uitzoomen {
-    color: rgba(0, 0, 0, 0);
+    color: rgba(0,0,0,0);
     background-image: url(../img/icons/verrekijker.svg);
     width: 9.875vw;
     height: 7vw;
@@ -16,7 +16,6 @@
     width: 45vw;
     color: #333;
     line-height: 1.2;
-    z-index: -1;
 }
 
 .lesfase h2 {
@@ -46,62 +45,12 @@
     width: 50vw;
 }
 
-.methodieken input {
+.methodieken label, .methodieken input {
     width: auto;
 }
 
 .methodieken {
     margin-left: 11vw;
-    margin-top: 20px;
-}
-
-.methodieken input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.methodieken .label {
-    font-size: 32px;
-    font-weight: 300;
-    color: #333;
-    padding: 10px;
-    display: block;
-    position: relative;
-    margin-bottom: 12px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.methodieken .radio {
-    border: 1px solid #333;
-    border-radius: 25px;
-    width: 44px;
-    height: 44px;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.radio:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.methodieken input:checked ~ .radio:after {
-    display: block;
-}
-
-.methodieken .radio:after {
-    background-color: #809332;
-    width: 40px;
-    height: 40px;
-    
 }
 
 .sluitKaartje {
@@ -111,7 +60,7 @@
     background-position: right;
     width: 36px;
     height: 36px;
-    color: rgba(0, 0, 0, 0);
+    color: rgba(0,0,0,0);
     float: right;
     display: block;
     margin-right: -115px;
@@ -120,7 +69,9 @@
 
 .bevestigKaartje {
     height: 96px;
-    display: block;
+     transform: translate(-0%, -50%);
+   position: absolute;
+    bottom: 
     border: none;
     margin-bottom: -55px;
     margin-top: 50px;

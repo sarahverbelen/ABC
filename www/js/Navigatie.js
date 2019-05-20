@@ -3,10 +3,14 @@ $(document).ready(function(){
     console.log("ready");
     $("#menu").hide();
     
-    $("div#menuToggle").click(function () {
+    $("#menuToggle").click(function () {
         
-        $("#menu").fadeToggle();
+        $("#menu").show();   
         
+    });
+    
+    $("#pijlTerugRood").click(function () {
         
+        $("#menu").hide();
     });
 }); 
