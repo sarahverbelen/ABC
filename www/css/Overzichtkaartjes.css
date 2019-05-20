@@ -11,9 +11,9 @@ padding, afstand tussen hoeken
 */
 
 .fa-angle-down {
-    margin-top: 5.2vh;
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
+    margin-top: 1vh;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
     float: right;
     margin-right: 7.938%;
 }
@@ -25,17 +25,17 @@ pijl naar beneden: transform: rotate(45deg);
 
 .titelkaart {
     margin-left: 12.875%;
+       line-height: 1.9;
 }
 
 .colorblack {
     margin-left: 22.75%;
+       line-height: 1.9;
 }
 
 .methodes {
     margin-left: 35.625%;
     margin-right: 7.938%;
     color: #333333;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1.1;
+    line-height: 1.9;
 }

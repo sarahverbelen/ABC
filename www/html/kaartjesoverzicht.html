@@ -4,17 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Kaartjesoverzicht</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/Navigatie.js"></script>
+    <script src="../js/overzichtkaartjes.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/Navigatie.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/Overzichtkaartjes.css">
     <link rel="stylesheet" href="../css/kaartjes.css">
 </head>
 
 <body>
+    <header>
+        <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
+        <!--        <nav role="navigation">-->
+        <div id="menuToggle">
+        </div>
+    </header>
+    <nav>
+        <ul id="menu">
+            <a href="#">
+                <li>Home</li>
+            </a>
+            <a href="#">
+                <li>Nieuw storyboard</li>
+            </a>
+            <a href="#">
+                <li>Storyboards</li>
+            </a>
+            <a href="#">
+                <li>Statistieken</li>
+            </a>
+            <a href="#">
+                <li>Overzicht kaartjes</li>
+            </a>
+        </ul>
+    </nav>
     <div class="kaartje oranje">
         <i class='fa-angle-down'></i>
         <h2 class="titelkaart">Kennisverwerving</h2>
+        <div class="alleMethodes">
         <h6 class="colorblack">Contact methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Hoorcollege/lezing</p>
             <p>Handboek, syllabus</p>
             <p>Video</p>
@@ -22,7 +54,7 @@
             <p>Externe activiteit (studiereis, bezoek werkveld, ...)</p>
         </section>
         <h6 class="colorblack">Digitale methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Kennisclip</p>
             <p>Webinar</p>
             <p>Mooc</p>
@@ -32,13 +64,14 @@
             <p>Webpagina</p>
             <p>Online toets</p>
         </section>
+        </div>
     </div>
     <div class="kaartje geel">
         <i class='fa-angle-down'></i>
         <h2 class="titelkaart">Productie</h2>
-
+        <div class="alleMethodes">
         <h6 class="colorblack">Contact methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Presentatie/pitch</p>
             <p>(digitaal) Model, product, ontwerp</p>
             <p>Paper, verslag, rapport</p>
@@ -48,19 +81,21 @@
             <p>Website</p>
         </section>
         <h6 class="colorblack">Digitale methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Opdracht</p>
             <p>(Wiki)Pagina</p>
             <p>ePortfolio</p>
             <p>Blog</p>
             <p>Video</p>
         </section>
+        </div>
     </div>
     <div class="kaartje paars">
         <i class='fa-angle-down'></i>
         <h2 class="titelkaart">Kennisverwerving</h2>
+        <div class="alleMethodes">
         <h6 class="colorblack">Contact methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Oefening, opdracht</p>
             <p>Practicum/Atelier</p>
             <p>Observatie- feedback</p>
@@ -70,7 +105,7 @@
             <p>Werkplekleren</p>
         </section>
         <h6 class="colorblack">Digitale methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Vaardigheidsclip</p>
             <p>Video</p>
             <p>Opdracht</p>
@@ -78,12 +113,14 @@
             <p>Game</p>
             <p>Virtuele simulatie</p>
         </section>
+        </div>
     </div>
     <div class="kaartje groen">
         <i class='fa-angle-down'></i>
         <h2 class="titelkaart">Onderzoek</h2>
+        <div class="alleMethodes">
         <h6 class="colorblack">Contact methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Probleemstelling formuleren</p>
             <p>Bronnen selecteren, analyseren, verwerken</p>
             <p>Onderzoeksmethodieken uitvoeren</p>
@@ -91,7 +128,7 @@
             <p>Conclusies, advies formuleren</p>
         </section>
         <h6 class="colorblack">Digitale methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
 
             <p>Opdracht </p>
             <p>ePortfolio</p>
@@ -99,19 +136,21 @@
             <p>Bestanden</p>
             <p>(Wiki)pagina’s</p>
         </section>
+        </div>
     </div>
     <div class="kaartje aqua">
         <i class='fa-angle-down'></i>
         <h2 class="titelkaart">Kennisverwerving</h2>
+        <div class="alleMethodes">
         <h6 class="colorblack">Contact methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Project</p>
             <p>Opdracht</p>
             <p>Casus</p>
             <p>Brainstorm</p>
         </section>
         <h6 class="colorblack">Digitale methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Cursusgroepen</p>
             <p>Discussieforum</p>
             <p>Groepsopdracht</p>
@@ -120,12 +159,14 @@
             <p>Online vergadering</p>
             <p>COIL-project</p>
         </section>
+        </div>
     </div>
     <div class="kaartje roze">
         <i class='fa-angle-down'></i>
         <h2 class="titelkaart">Discussie</h2>
+        <div class="alleMethodes">
         <h6 class="colorblack">Contact methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Discussie</p>
             <p>Debat</p>
             <p>Casus</p>
@@ -137,7 +178,7 @@
             <p>Verdediging (bv. jury)</p>
         </section>
         <h6 class="colorblack">Digitale methoden</h6>
-        <section class="methodes">
+        <section class="methodes fontRegular">
             <p>Discussieforum</p>
             <p>Digitale opdracht</p>
             <p>Chat</p>
@@ -145,6 +186,7 @@
             <p>Peer assessment</p>
             <p>Cursusgroepen</p>
         </section>
+        </div>
     </div>
 </body>
 

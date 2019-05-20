@@ -1,3 +1,7 @@
+footer{
+    margin-left: -5.2vw;
+}
+
 #triangle-bottomleft {
     width: 0;
     height: 0;
@@ -48,7 +52,7 @@ div.terug {
 
 #opties div {
     display: inline-block;
-    padding: 2% 0 0 15%;
+    padding: 2% 0 0 18%;
     margin-top: 3%;
 
     width: 3vw;

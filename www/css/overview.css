@@ -1,23 +1,32 @@
 /* TITELS */
-h6 {
+
+
+.boven {
     margin-top: 4vh;
-    display: inline-block;
-    padding-bottom: 4vh;
+    width: 100%;
 }
 
-.lessenKolom2 {
-    margin-left: 25.75%;
+.boven, .beneden {
+    display: block;
+    overflow: auto;
 }
 
-.lessenKolom3 {
-    margin-left: 25.755%;
+.column {
+    width: 33.33%;
+    float: left;
+    display: block;
+    padding-bottom: 2vh;
+    margin-bottom: 4vh;
 }
+
+
 
 
 
 /*KAARTEN*/
 .kaartje {
-    width: 8%;
+    margin-top: 2vh;
+    width: 24%;
     border: 2px solid;
     border-top-left-radius: 15px;
     box-sizing: border-box;
@@ -27,7 +36,7 @@ h6 {
     margin-bottom: 2vh;
 }
 
-.naamKaartje{
+.naamKaartje {
     padding-top: 1.5vw;
     padding-left: 1vw;
     padding-bottom: 1vw;

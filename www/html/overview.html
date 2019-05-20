@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Overview</title>
-     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/Navigatie.js"></script>
-      <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/Navigatie.css">
     <link rel="stylesheet" href="../css/overview.css">
@@ -38,20 +39,57 @@
             </a>
         </ul>
     </nav>
-    <h6 class="lessenKolom1"> Lesfase 1 </h6>
-    <h6 class="lessenKolom2"> Lesfase  2</h6>
-    <h6 class="lessenKolom3"> Lesfase 3 </h6>
-    
-    <section class="kaartenLessen">
-    <div class="kaartje oranje">
-       <div class="triangleOranje triangle"></div>
-        <p class="naamKaartje">Ken</p> 
+    <div class="boven">
+        <section class="column">
+            <h6> Lesfase 1 </h6>
+            <div class="kaartje oranje">
+                <div class="triangleOranje triangle"></div>
+                <p class="naamKaartje">Ken</p>
+            </div>
+            <div class="kaartje oranje">
+                <div class="triangleOranje triangle"></div>
+                <p class="naamKaartje">Ken</p>
+            </div>
+        </section>
+        <section class="column">
+            <h6> Lesfase 2</h6>
+            <div class="kaartje roze">
+                <div class="triangleRoze triangle"></div>
+                <p class="naamKaartje">Dis</p>
+            </div>
+        </section>
+        <section class="column">
+            <h6> Lesfase 3 </h6>
+            <div class="kaartje groen">
+                <div class="triangleGroen triangle"></div>
+                <p class="naamKaartje">Ond</p>
+            </div>
+        </section>
     </div>
-   
-    </section>
-    
-    
-    
+    <div class="beneden">
+        <section class="column">
+            <h6> Lesfase 4 </h6>
+            <div class="kaartje geel">
+                <div class="triangleGeel triangle"></div>
+                <p class="naamKaartje">Pro</p>
+            </div>
+        </section>
+        <section class="column">
+            <h6> Lesfase 5 </h6>
+            <div class="kaartje aqua">
+                <div class="triangleAqua triangle"></div>
+                <p class="naamKaartje">Sam</p>
+            </div>
+        </section>
+        <section class="column">
+            <h6> Lesfase 6 </h6>
+            <div class="kaartje paars">
+                <div class="trianglePaars  triangle"></div>
+                <p class="naamKaartje">Pra</p>
+            </div>
+        </section>
+    </div>
+
     <div id="legende">
         <p class="legendePLeft fontRegular" id="oranje">kennisverwerving</p>
         <p class="legendePRight fontRegular" id="groen">Onderzoek</p>
@@ -61,4 +99,5 @@
         <p class="legendePRight fontRegular" id="paars">Praktijk</p>
     </div>
 </body>
+
 </html>
