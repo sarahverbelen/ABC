@@ -20,4 +20,12 @@ $(document).ready(function(){
                         $("<p>", {"class": "storyboardKaart"}).text(kaartjeGroen.nota)
                       );
     
+    //PLUSKNOP OPEN/TOE-KLAPPEN
+    $(".plusKaartjes").hide();
+    
+    $("#plus").on("click", function(){
+        $(".plusKaartjes").slideToggle();
+    });
+    
+    
 });
