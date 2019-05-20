@@ -11,9 +11,9 @@ padding, afstand tussen hoeken
 */
 
 .fa-angle-down {
-    margin-top: 1.9vh;
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
+    margin-top: 1vh;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
     float: right;
     margin-right: 7.938%;
 }
