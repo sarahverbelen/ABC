@@ -1,9 +1,10 @@
 $(document).ready(function(){
     
-    function Kaartje(kleur, methodiek, nota) {
+    function Kaartje(kleur, methodiek, nota, activiteit) {
         this.kleur = kleur; //string
         this.methodiek = methodiek; //string
         this.nota = nota; //string
+        this.activiteit = activiteit; //string
     }
     
     function Doelstelling(naam, aangevinkt) {
