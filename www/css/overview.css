@@ -6,6 +6,11 @@
     width: 100%;
 }
 
+.boven, .beneden {
+    display: block;
+    overflow: auto;
+}
+
 .column {
     width: 33.33%;
     float: left;
