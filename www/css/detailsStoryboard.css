@@ -26,22 +26,17 @@ input[type="text"]:focus {
 }
 
 /*bevistigen*/
-.confirm {
-    background-image: url(../img/icons/confirm.svg);
-    width: 17px;
-    height: 13px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: auto;
-}
-
-.bevestigKaartje {
-    height: 30px;
-    display: block;
+button{
     border: none;
-    margin-bottom: -55px;
-    margin-top: 10px;
+    width: 100%;
     background-color: #333333;
+    padding: 7px 0;
+    margin: 10px 0;
+}
+button img{
+    display: block;
+    margin: 0 auto;
+    width: 25px;
 }
  /*TOEVOEGEN*/
 .ADD{

@@ -7,6 +7,16 @@ header {
     position: relative;
     text-align: center;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
+    overflow: auto;
+}
+
+#pijlTerug{
+/*    float: left;*/
+    height: 4vh;
+    left: 2.6%;
+    margin-top: 0.5vh;
+    background-image: url("../img/icons/pijl_terug.svg");
+    background-repeat: no-repeat;
 }
 
 header h1 {
