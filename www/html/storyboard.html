@@ -5,6 +5,8 @@
     <title>Storyboard</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/Navigatie.js"></script>
+    <script src="../js/constructors.js"></script>
+    <script src="../js/storyboard.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/Navigatie.css">
@@ -13,38 +15,27 @@
 </head>
 
 <body>
-       <header>
+    <header>
+        <div class="pijlTerug"></div>
         <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
-        <!--        <nav role="navigation">-->
-        <div id="menuToggle">
-        </div>
+        <div id="menuToggle"></div>
     </header>
 
-    <nav>
-        <ul id="menu">
-            <a href="../../www/index.html">
-                <li>Home</li>
-            </a>
-            <a href="../html/storyboard.html">
-                <li>Nieuw storyboard</li>
-            </a>
-            <a href="../html/verderwerken.html">
-                <li>Storyboards</li>
-            </a>
-            <a href="../html/statistieken.html">
-                <li>Statistieken</li>
-            </a>
-            <a href="../html/kaartjesoverzicht.html">
-                <li>Overzicht kaartjes</li>
-            </a>
-        </ul>
+    <nav id="menu">
+        <div id="pijlTerugRood"></div>
+        <a href="../index.html">Home</a>
+        <a href="storyboard.html">Nieuw storyboard</a>
+        <a href="verderwerken.html">Storyboards</a>
+        <a href="statistieken.html">Statistieken</a>
+        <a href="kaartjesoverzicht.html">Overzicht kaartjes</a>
     </nav>
-   <div class="verzamelbalkBovenKaartjes">
-    <a href="kaartjesoverzicht.html" class="uitzoomen"></a>
-    <div class="lesfase">
-        <h6>Lesfase 1</h6>
-        <h3 class="fontRegular" id="doelstellingen">Doelstellingen / inhoud</h3> <div id="doelstellingDropdown"></div>
-    </div>
+    <div class="verzamelbalkBovenKaartjes">
+        <a href="overview.html" class="uitzoomen"></a>
+        <div class="lesfase">
+            <h6>Lesfase 1</h6>
+            <h3 class="fontRegular" id="doelstellingen">Doelstellingen / inhoud</h3>
+            <div id="doelstellingDropdown"></div>
+        </div>
     </div>
     <div class="doelstellingenInhoudOpen">
         <h6>doelstellingen</h6>
@@ -84,14 +75,18 @@
             <h3 class="fontRegular storyboardKaart">Gegevens verwerken</h3>
             <p class="storyboardKaart">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis diam sapien. </p>
             <form class="methodieken">
-               <h6>Contactmethoden</h6>
-               <div class="label">
-               <span class="radio"></span>
-                <input type="radio" id="gegevens" name="methodenGroen">Gegevens verwerken
+                <h6>Contactmethoden</h6>
+                <div class="label">
+                    <span class="radio"></span>
+                    <input type="radio" id="gegevens" name="methodenGroen">Gegevens verwerken
                 </div>
             </form>
-            <button class="bevestigKaartje plusGroen"><div class="confirm"></div></button>
-             <button class="verwijderKaartje plusGroen"><div class="verwijder"></div></button>
+            <button class="bevestigKaartje plusGroen">
+                <div class="confirm"></div>
+            </button>
+            <button class="verwijderKaartje plusGroen">
+                <div class="verwijder"></div>
+            </button>
         </div>
 
         <div class="kaartje aqua">
@@ -107,7 +102,7 @@
             <h2 class="storyboardKaart">Discussie</h2>
             <h3 class="fontRegular storyboardKaart">Debat</h3>
         </div>
-        
+
         <div class="kaartje" id="plus">
             <span id="plusSymbool">+</span>
             <a href="#" class="plusOranje">Kennisverwerking</a>

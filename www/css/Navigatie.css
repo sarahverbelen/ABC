@@ -41,6 +41,7 @@ header h1 {
     padding-right: 18.075vw;
     padding-top: 5vh;
     background-color: #F7F6F6;
+    z-index: 1;
 }
 
 #menu a {
