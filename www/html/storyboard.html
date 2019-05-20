@@ -39,11 +39,20 @@
             </a>
         </ul>
     </nav>
-   
+   <div class="verzamelbalkBovenKaartjes">
     <a href="kaartjesoverzicht.html" class="uitzoomen"></a>
     <div class="lesfase">
         <h6>Lesfase 1</h6>
         <h3 class="fontRegular" id="doelstellingen">Doelstellingen / inhoud</h3> <div id="doelstellingDropdown"></div>
+    </div>
+    </div>
+    <div class="doelstellingenInhoudOpen">
+        <h6>doelstellingen</h6>
+        <div class="doelstellingCheckbox">
+            <input type="checkbox" id="d1"><label for="d1">D1: Lorem ipsum dolor sit amet</label></div>
+        <div class="doelstellingCheckbox"><input type="checkbox" id="d2"><label for="d2">D1: Lorem ipsum dolor sit amet</label></div>
+        <div class="doelstellingCheckbox"><input type="checkbox" id="d3"><label for="d3">D1: Lorem ipsum dolor sit amet</label></div>
+        <div class="doelstellingCheckbox"><input type="checkbox" id="d4"><label for="d4">D1: Lorem ipsum dolor sit amet</label></div>
     </div>
     <div class="kaartjes">
         <div class="kaartje oranje">
@@ -81,7 +90,8 @@
                 <input type="radio" id="gegevens" name="methodenGroen">Gegevens verwerken
                 </div>
             </form>
-            <button class="bevestigKaartje" id="plusGroen"><div class="confirm"></div></button>
+            <button class="bevestigKaartje plusGroen"><div class="confirm"></div></button>
+             <button class="verwijderkaartje plusGroen"><div class="verwijder"></div></button>
         </div>
 
         <div class="kaartje aqua">
@@ -100,12 +110,12 @@
         
         <div class="kaartje" id="plus">
             <span id="plusSymbool">+</span>
-            <a href="#" id="plusOranje">Kennisverwerking</a>
-            <a href="#" id="plusGeel">Productie</a>
-            <a href="#" id="plusPaars">Praktijk</a>
-            <a href="#" id="plusGroen">Onderzoek</a>
-            <a href="#" id="plusAqua">Samenwerking</a>
-            <a href="#" id="plusRoze">Discussie</a>
+            <a href="#" class="plusOranje">Kennisverwerking</a>
+            <a href="#" class="plusGeel">Productie</a>
+            <a href="#" class="plusPaars">Praktijk</a>
+            <a href="#" class="plusGroen">Onderzoek</a>
+            <a href="#" class="plusAqua">Samenwerking</a>
+            <a href="#" class="plusRoze">Discussie</a>
         </div>
     </div>
 </body>

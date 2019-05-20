@@ -123,14 +123,31 @@
     width: 77.25%;
     display: inline-block;
     border: none;
-    margin-bottom: -55px;
+    float: right;
     margin-top: 50px;
 }
 
+.verwijderkaartje{
+    height: 96px;
+    width: 22.75%;
+    margin-top: 50px;
+    display: inline-block;
+    border: none;
+    border-right: 2px solid #fff;
+    
+}
 .confirm {
     background-image: url(../img/icons/confirm.svg);
     width: 48px;
     height: 39px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+}
+.verwijder{
+    background-image: url(../img/icons/garbage.svg);
+    width: 50px;;
+    height: 55px;;
     background-repeat: no-repeat;
     background-size: contain;
     margin: auto;
@@ -161,26 +178,46 @@
     margin-top: 20px;
 }
 
-#plusOranje {
+.plusOranje {
     background-color: #F2832E;
 }
 
-#plusGeel {
+.plusGeel {
     background-color: #FFCC00;
 }
 
-#plusPaars {
+.plusPaars {
     background-color: #6363A3;
 }
 
-#plusGroen {
+.plusGroen {
     background-color: #809332;
 }
 
-#plusAqua {
+.plusAqua {
     background-color: #48A5A5;
 }
 
-#plusRoze {
+.plusRoze {
     background-color: #F77E8A;
+}
+
+.doelstellingenInhoudOpen input,label{
+    display: inline-block;
+    width: auto;
+    padding: 1vh 0;
+}
+.doelstellingenInhoudOpen input{
+    margin-left: 12.875%;
+    width: 9.875%;
+}
+.doelstellingenInhoudOpen{
+    width: 100vw;
+    padding: 3vh 5.2vw 0 5.2vw;
+    margin-top: 2vh;
+    margin-left: -5.2vw;
+    background-color:  #FDFCFC;
+}
+.doelstellingenInhoudOpen h6{
+    margin-bottom: 1vh;
 }
