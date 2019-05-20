@@ -1,12 +1,12 @@
 $(document).ready(function(){
     
     console.log("ready");
-    $(".vraag").hide();
+    $(".tuto").hide();
     
-    $("div#menuToggle").click(function () {
+    $("h1 img").click(function () {
         
-        $("#menu").fadeToggle();
-        
+        $(".tuto").fadeToggle().css("display", "inline");   
         
     });
+    
 }); 
