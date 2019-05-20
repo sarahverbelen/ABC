@@ -1,5 +1,3 @@
-$(document).ready(function(){
-    
     function Kaartje(kleur, methodiek, nota, activiteit) {
         this.kleur = kleur; //string
         this.methodiek = methodiek; //string
@@ -29,5 +27,3 @@ $(document).ready(function(){
         
         //*indien niet ingevuld zijn dit gewoon lege strings
     }
-    
-});
