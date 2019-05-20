@@ -25,16 +25,25 @@ input[type="text"]:focus {
     box-shadow: inset 0 0 1px 0.5px #CC0000;
 }
 
-button{
+/*bevistigen*/
+.confirm {
+    background-image: url(../img/icons/confirm.svg);
+    width: 17px;
+    height: 13px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+}
+
+.bevestigKaartje {
+    height: 30px;
+    display: block;
     border: none;
+    margin-bottom: -55px;
+    margin-top: 10px;
     background-color: #333333;
-    color: white;
-    padding: 8px;
-    margin: 8px 0;
 }
-button img{
-    width: 5%;
-}
+ /*TOEVOEGEN*/
 .ADD{
     display: flex;
 }
