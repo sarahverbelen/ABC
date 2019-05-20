@@ -10,20 +10,28 @@ header {
     overflow: auto;
 }
 
-#pijlTerug{
+.pijlTerug{
 /*    float: left;*/
+    display: block;
+    float:left;
     height: 4vh;
-    left: 2.6%;
-    margin-top: 0.5vh;
+/*    left: 5.2%;*/
+    margin-left: 2.6%;
+    width: 5%;
+/*    margin-top: 0.5vh;*/
     background-image: url("../img/icons/pijl_terug.svg");
     background-repeat: no-repeat;
 }
 
 header h1 {
-    display: inline-block;
-    top: 5vh;
+    display: block;
+/*    top: 4vh;*/
     color: #333;
+    
+/*    margin-top: 5%;*/
     text-align: center;
+/*    margin-top: 0.1vh;*/
+/*    width: 80%;*/
 }
 
 #menu {
@@ -55,7 +63,7 @@ header h1 {
     position: absolute;
     transform: translate(-50%, -50%);
     float: right;
-    width: 4vh;
+    width: 10%;
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -63,15 +71,18 @@ header h1 {
 #menuToggle {
     top: 5vh;
     height: 3vh;
-    right: 5.2%;
+/*    float: right;*/
+    right: .1%;
+    display: block;
     margin: auto 0;
     background-image: url("../img/icons/HamburgerMenu.svg");
 }
 
 #pijlTerugRood {
     height: 4vh;
-    right: 2.6%;
+    right: .1%;
     margin-top: 0.5vh;
+    
     background-image: url("../img/icons/terugPijlRood.svg");
 
 }
