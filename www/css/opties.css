@@ -25,19 +25,17 @@ div.bolletjes {
     border-radius: 3px;
 }
 
-/*
 div.terug {
 
     width: 4vh;
     height: 4vh;
     background-image: url("../img/icons/pijl_terug.svg");
-    margin-left: 5vw;
+    margin-left: 3vw;
     margin-top: 10vw;
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 3px;
 }
-*/
 
 
 #opties {
@@ -52,7 +50,7 @@ div.terug {
 
 #opties div {
     display: inline-block;
-    padding: 2% 0 0 18%;
+    padding: 2% 7% 0 7%;
     margin-top: 3%;
 
     width: 3vw;

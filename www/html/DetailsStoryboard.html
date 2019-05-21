@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="../js/detailsJava.js"></script>
+    <script src="../js/Navigatie.js"></script>
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/detailsStoryboard.css" rel="stylesheet">
@@ -13,7 +14,20 @@
 </head>
 
 <body>
-
+<header>
+       <div class="pijlTerug"></div>
+        <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
+        <div id="menuToggle"></div>
+    </header>
+    
+    <nav id="menu">
+        <div id="pijlTerugRood"></div>
+        <a href="../index.html">Home</a>
+        <a href="storyboard.html">Nieuw storyboard</a>
+        <a href="verderwerken.html">Storyboards</a>
+        <a href="statistieken.html">Statistieken</a>
+        <a href="kaartjesoverzicht.html">De ABC Methode</a>
+    </nav>
     <!--inputs-->
 
     <form name="formulier">
@@ -24,29 +38,29 @@
            <p class="tuto">Titel van het Lesplan</p>
            
             </h1>
-            <input type="text" placeholder="semester vak 1">
+            <textarea rows='1' placeholder='semester vak 1' style="resize: none;"></textarea>
         </article>
 
         <article>
             <h1>Opleidingsonderdeel <img class="vraag" src="../img/icons/tuto.svg">
             
-            <p class="tuto">Titel van het Lesplan</p>
+            <p class="tuto">richting</p>
             </h1>
-            <input type="text" placeholder="multec">
+            <textarea rows='1' placeholder='multec' style="resize: none;"></textarea>
         </article>
 
         <article>
             <h1>Semester <img class="vraag" src="../img/icons/tuto.svg">
-            <p class="tuto">Titel van het Lesplan</p>
+            <p class="tuto">Welk semester werkt u in</p>
             </h1>
-            <input type="text" placeholder="2">
+            <textarea rows='1' placeholder='2' style="resize: none;"></textarea>
         </article>
 
         <article>
             <h1>Deeltraject <img class="vraag" src="../img/icons/tuto.svg">
-            <p class="tuto">Titel van het Lesplan</p>
+            <p class="tuto">Afstudeerrichting</p>
             </h1>
-            <input type="text" placeholder="Afstudeerrichting">
+            <textarea rows='1' placeholder='Afstudeerrichting' style="resize: none;"></textarea>
         </article>
         
         
@@ -60,7 +74,7 @@
             <div class="doelstelling">
                 <h1>Doelstellingen</h1>
                 <label class="switch">
-                    <input type="checkbox" checked>
+                    <input class="check" type="checkbox">
                     <span class="slider"></span>
                 </label>
             </div>
@@ -71,12 +85,19 @@
 
                 <div class="ADD">
                     <h1>D1:</h1>
-                    <input type="text" placeholder="Lorem Ipsum dolor sit amet">
+                    <textarea rows='1' placeholder='lorem ipsum dolor sit amet' style="resize: none;"></textarea>
+                    
                 </div>
-                <div class="ADD">
-                    <h1>D2:</h1>
-                    <input type="submit" value="ADD +">
+                
+                <div class="contentToev">
+                    
                 </div>
+                
+                <div class="ADD ad">
+                    <h1></h1>
+                    <input class="toev" type="submit" value="ADD +">
+                </div>
+                
 
             </div>
         </article>

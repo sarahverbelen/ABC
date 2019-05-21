@@ -6,22 +6,25 @@
     width: 100%;
 }
 
-.boven, .beneden {
+.boven,
+.beneden {
     display: block;
     overflow: auto;
 }
 
 .column {
-    width: 33.33%;
+    width: 30%;
     float: left;
     display: block;
+    margin-right: 2.6%;
     padding-bottom: 2vh;
     margin-bottom: 4vh;
 }
 
-
-
-
+line {
+    stroke: black;
+    stroke-width: 2;
+}
 
 /*KAARTEN*/
 .kaartje {
@@ -29,11 +32,8 @@
     width: 24%;
     border: 2px solid;
     border-top-left-radius: 15px;
-    box-sizing: border-box;
-}
-
-.kaartenLessen {
-    margin-bottom: 2vh;
+    margin-right: 3vw;
+    display: block;
 }
 
 .naamKaartje {
