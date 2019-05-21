@@ -1,83 +1,87 @@
-h1 {
+@import url("Navigatie.css");
+
+form h1 {
     padding: 3% 0;
+    font-size: 36px;
 }
 
-h1 img {
-    width: 15px;
+form h1 img {
+    width: 40px;
     margin: 0 1%;
 }
-h1 p {
+form h1 p {
     border: solid 1px #333333;
     padding: 1% 4%;
     display: inline;
     font-weight: 300;
-    font-size: 12px;
+    
 }
 
-input[type="text"] ,  textarea {
+form input[type="text"] ,  textarea {
     font-weight: 300;
     /* light */
-    font-size: 16px;
+    font-size: 32px;
     /* = 16px in design */
     opacity: 0.7;
     border: none;
-    box-shadow: inset 0 0 1px 0px black;
+    box-shadow: inset 0 0 2px 0px #333333;
     margin: 0 0 5% 0;
     padding: 2% 0 2% 12.875%;
 }
 
-input[type="text"]:focus , textarea:focus {
+form input[type="text"]:focus , textarea:focus {
     border-radius: 5px 0 0 0;
     box-shadow: inset 0 0 1px 0.5px #CC0000;
 }
 
 /*bevistigen*/
-button{
+form button{
     border: none;
     background-color: #333333;
     padding: 5px 0;
     margin: 10px 0;
 }
-button img{
+form button img{
     display: block;
-    margin: 0 auto;
-    width: 20px;
+    margin: 5px auto;
+    width: 45px;
 }
  /*TOEVOEGEN*/
-.ADD{
+form .ADD{
     display: flex;
 }
-.ADD h1{
+form .ADD h1{
     text-align: center;
     width: 22.75%;
 }
-.ADD input[type="submit"]{
+form .ADD input[type="submit"]{
     border: none;
     color: #CC0000;
+    font-size: 32px;
     background-color: white;
     box-shadow: inset 0 0 1px 0.5px #CC0000;
 }
 
 
 /*SLIDER*/
-.switch {
+form .switch {
     position: absolute;
     right: 0%;
     top: 50%;
     transform: translate(-0%, -50%);
-    width: 55px;
-    height: 20px;
+    width: 120px;
+    height: 45px;
     border-radius: 5px 0 0 0;
     background-color: grey;
 }
 
-.switch input {
+form .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.slider {
+form .slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -87,29 +91,29 @@ button img{
     transition: .4s;
 }
 
-.doelstelling {
+form .doelstelling {
     position: relative;
 }
 
-.slider:before {
+form .slider:before {
     position: absolute;
     content: "";
-    height: 17px;
-    width: 25px;
-    left: 2px;
-    bottom: 2px;
+    height: 36px;
+    width: 50px;
+    left: 5px;
+    bottom: 4px;
     background-color: white;
     border-radius: 5px 0 0 0;
     -webkit-transition: .4s;
     transition: .4s;
 }
 
-input:checked + .slider {
+form input:checked + .slider {
     background-color: #CC0000;
 }
 
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+form input:checked + .slider:before {
+    -webkit-transform: translateX(60px);
+    -ms-transform: translateX(60px);
+    transform: translateX(60px);
 }

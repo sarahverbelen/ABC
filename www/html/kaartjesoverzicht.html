@@ -8,7 +8,6 @@
     <script type="text/javascript" src="../js/Navigatie.js"></script>
     <script src="../js/overzichtkaartjes.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/Navigatie.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/Overzichtkaartjes.css">
@@ -17,20 +16,24 @@
 
 <body>
     <header>
-       <div class="pijlTerug"></div>
-        <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
-        <div id="menuToggle"></div>
-    </header>
-    
-    <nav id="menu">
-        <div id="pijlTerugRood"></div>
-        <a href="../index.html">Home</a>
-        <a href="storyboard.html">Nieuw storyboard</a>
-        <a href="verderwerken.html">Storyboards</a>
-        <a href="statistieken.html">Statistieken</a>
-        <a href="kaartjesoverzicht.html">De ABC Methode</a>
-    </nav>
-    
+    <div>
+        <img class="pijlTerug" src="../img/icons/pijl_terug.svg">
+        <h1>ABC Lesplanner</h1>
+        <img class="menuToggle open" src="../img/icons/HamburgerMenu.svg">
+    </div>
+
+</header>
+
+<nav id="menu">
+    <img class="menuToggle terug" src="../img/icons/terugPijlRood.svg">
+    <a href="../index.html">Home</a>
+    <a href="storyboard.html">Nieuw storyboard</a>
+    <a href="verderwerken.html">Storyboards</a>
+    <a href="statistieken.html">Statistieken</a>
+    <a href="kaartjesoverzicht.html">Overzicht kaartjes</a>
+</nav>
+
+    <div class="content">
     <div class="kaartje oranje">
         <i class='fa-angle-down'></i>
         <h2 class="titelkaart">Kennisverwerving</h2>
@@ -177,6 +180,7 @@
             <p>Cursusgroepen</p>
         </section>
         </div>
+    </div>
     </div>
 </body>
 

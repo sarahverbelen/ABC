@@ -3,70 +3,71 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="../js/detailsJava.js"></script>
     <script src="../js/Navigatie.js"></script>
-    <link href="../css/reset.css" rel="stylesheet">
-    <link href="../css/main.css" rel="stylesheet">
-    <link href="../css/detailsStoryboard.css" rel="stylesheet">
-    <title>ABC Lesplanner</title>
+    <script src="../js/detailsJava.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/detailsStoryboard.css">
 </head>
 
 <body>
-<header>
-       <div class="pijlTerug"></div>
-        <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
-        <div id="menuToggle"></div>
+    <header>
+       <div>
+        <img class="pijlTerug" src="../img/icons/pijl_terug.svg">
+        <h1>ABC Lesplanner</h1>
+        <img class="menuToggle open" src="../img/icons/HamburgerMenu.svg">
+</div>
+
     </header>
-    
+
     <nav id="menu">
-        <div id="pijlTerugRood"></div>
+       <img class="menuToggle terug" src="../img/icons/terugPijlRood.svg">
         <a href="../index.html">Home</a>
         <a href="storyboard.html">Nieuw storyboard</a>
         <a href="verderwerken.html">Storyboards</a>
         <a href="statistieken.html">Statistieken</a>
-        <a href="kaartjesoverzicht.html">De ABC Methode</a>
+        <a href="kaartjesoverzicht.html">Overzicht kaartjes</a>
     </nav>
     <!--inputs-->
-
     <form name="formulier">
 
         <article>
             <h1>Titel <img class="vraag" src="../img/icons/tuto.svg">
-        
-           <p class="tuto">Titel van het Lesplan</p>
-           
+
+                <p class="tuto">Titel van het Lesplan</p>
+
             </h1>
             <textarea rows='1' placeholder='semester vak 1' style="resize: none;"></textarea>
         </article>
 
         <article>
             <h1>Opleidingsonderdeel <img class="vraag" src="../img/icons/tuto.svg">
-            
-            <p class="tuto">richting</p>
+
+                <p class="tuto">richting</p>
             </h1>
             <textarea rows='1' placeholder='multec' style="resize: none;"></textarea>
         </article>
 
         <article>
             <h1>Semester <img class="vraag" src="../img/icons/tuto.svg">
-            <p class="tuto">Welk semester werkt u in</p>
+                <p class="tuto">Welk semester werkt u in</p>
             </h1>
             <textarea rows='1' placeholder='2' style="resize: none;"></textarea>
         </article>
 
         <article>
             <h1>Deeltraject <img class="vraag" src="../img/icons/tuto.svg">
-            <p class="tuto">Afstudeerrichting</p>
+                <p class="tuto">Afstudeerrichting</p>
             </h1>
             <textarea rows='1' placeholder='Afstudeerrichting' style="resize: none;"></textarea>
         </article>
-        
-        
-        
-        
-        
+
+
+
+
+
 
         <!--inputsDoelstellingen-->
 
@@ -80,30 +81,30 @@
             </div>
 
             <!--DoelstellingenToevoegen-->
-            
+
             <div class="content">
 
                 <div class="ADD">
                     <h1>D1:</h1>
                     <textarea rows='1' placeholder='lorem ipsum dolor sit amet' style="resize: none;"></textarea>
-                    
+
                 </div>
-                
+
                 <div class="contentToev">
-                    
+
                 </div>
-                
+
                 <div class="ADD ad">
                     <h1></h1>
                     <input class="toev" type="submit" value="ADD +">
                 </div>
-                
+
 
             </div>
         </article>
-        
+
         <!--Finishbutton-->
-        
+
         <button><img src="../img/icons/vink.svg"></button>
     </form>
 
