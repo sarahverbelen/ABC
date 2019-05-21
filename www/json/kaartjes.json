@@ -1,0 +1,28 @@
+{
+    "groen": {
+        "activiteit": "onderzoek",
+        "beschrijving": "Studenten doorlopen met een kritische ingesteldheid stappen van (eenvoudig) praktijkgericht onderzoek: probleemstelling formuleren, gegevens/informatie verzamelen, data verwerken, conclusies formuleren.",
+        "contactmethoden": ["Probleemstelling formuleren", "Bronnen selecteren, analyseren, verwerken", "Onderzoeksmethodieken uitvoeren", "Gegevens verwerken", "Conclusies, advies formuleren"],
+        "digitaalmethoden": ["Opdracht", "ePortfolio", "Video", "Bestanden", "(Wiki)pagina's"]
+    }, 
+    "aqua": {
+        "activiteit": "samenwerking",
+        "beschrijving": "Studenten werken samen aan een gezamenlijke opdracht met een bepaalde vorm van ‘output’ zoals een definitie, concept, ontwerp, verslag, beroepsproduct,… . Er ontstaat een gezamenlijk proces van kennisopbouw."
+    },
+    "geel": {
+        "activiteit": "productie",
+        "beschrijving": "Studenten ontwikkelen een (beroeps)product: een plan, website, analyse, theorie, model, les,…. Studenten moeten hun begrip van de leerstof duidelijk tonen en aantonen hoe ze dit kunnen toepassen in de praktijk/het werkveld."
+    },
+    "roze": {
+        "activiteit": "discussie",
+        "beschrijving": "Studenten verwoorden hun vragen, ideeën en argumenten, verantwoorden gemaakte keuzes en stellen ideeën van peers/docenten/zichzelf kritisch in vraag."
+    },
+    "oranje": {
+        "activiteit": "kennisverwerving",
+        "beschrijving": "Studenten luisteren naar een voordracht/lezing/les, lezen in boeken, cursusmateriaal of online, en/of bekijken demo’s, video’s,… ."
+    }, 
+    "paars": {
+        "activiteit": "praktijk",
+        "beschrijving": "Studenten voeren vaardigheden uit in functie van een praktijkopdracht en sturen hun handelen bij op basis van feedback (van peers, de docent, zichzelf of vanuit de taak zelf)."
+    }
+}
