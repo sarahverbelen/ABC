@@ -28,7 +28,11 @@ $(document).ready(function(){
     });
     
     //NIEUW STORYBOARD MAKEN
-    if(window.localStorage.getItem("nieuwStoryboard")){
+    var nieuwStoryboard = window.localStorage.getItem("nieuwStoryboard");
+    if(nieuwStoryboard == "true"){
+
+        window.localStorage.setItem("nieuwStoryboard", false);
+
         $(".kaartjes").remove();
         
         var lesfasen = [];
