@@ -29,7 +29,19 @@ header h1 {
     color: #333;
     margin-right: 7vw;
  margin-top: 1.05vh;
+    
 /*    width: 80%;*/
+}
+
+header h1.fontHeaderLarge{
+    margin-top: .1vh;
+}
+
+header h2.fontHeaderSmall{
+    font-size: 32px;
+    font-weight: lighter;
+    margin-right: 7vw;
+    margin-top: 1vh;
 }
 
 #menu {
