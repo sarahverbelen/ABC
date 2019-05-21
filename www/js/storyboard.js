@@ -45,7 +45,7 @@ $(document).ready(function () {
     //NIEUW STORYBOARD MAKEN
     var nieuwStoryboard = window.localStorage.getItem("nieuwStoryboard");
     if (nieuwStoryboard == "true") {
-        $(".kaartjes").remove();
+        $(".kaartjes .kaartje").remove();
         window.localStorage.setItem("nieuwStoryboard", false);
         
         var lesfasen = [];
