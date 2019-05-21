@@ -1,5 +1,19 @@
 $(document).ready(function () {
+    
+    //PLUSKNOP OPEN/TOE-KLAPPEN
+    $(".plusKaartjes").hide();
 
+    $("#plus").on("click", function () {
+        $(".plusKaartjes").slideToggle();
+    });
+    
+    //DOELSTELLINGEN OPEN/TOE-KLAPPEN  
+    $(".doelstellingenInhoudOpen").hide();
+    
+    $("#doelstellingen, #doelstellingDropdown").on("click", function(){
+       $(".doelstellingenInhoudOpen").slideToggle(); 
+    });
+    
     //DISPLAY KAARTJE - FUNCTIE
     function displayKaartje(kaartje){
         var kaartjeHTML = $("<div>", {
@@ -35,12 +49,6 @@ $(document).ready(function () {
         $(".kaartjes").append(kaartjeHTML);
     }
 
-    //PLUSKNOP OPEN/TOE-KLAPPEN
-    $(".plusKaartjes").hide();
-
-    $("#plus").on("click", function () {
-        $(".plusKaartjes").slideToggle();
-    });
 
     //NIEUW STORYBOARD MAKEN
     var nieuwStoryboard = window.localStorage.getItem("nieuwStoryboard");
