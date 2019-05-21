@@ -141,6 +141,15 @@ button img{
   user-select: none;
 }
 
+.containerMethoden{
+    color: #333;
+    font-weight: 300; /* light */
+    font-size: 32px; /* = 16px in design */
+      
+}
+.methodieken h6{
+ margin-bottom: 2vh;
+}
 /* Hide the browser's default radio button */
 .containerMethoden input {
   position: absolute;
@@ -167,8 +176,28 @@ button img{
 */
 
 /* When the radio button is checked, add a blue background */
-.containerMethoden input:checked ~ .checkmarkMethoden {
-  background-color: green;
+.oranje .containerMethoden input:checked ~ .checkmarkMethoden {
+  background-color: #F2832E;
+
+}
+.geel .containerMethoden input:checked ~ .checkmarkMethoden {
+    background-color: #FFCC00;
+
+}
+.paars .containerMethoden input:checked ~ .checkmarkMethoden {
+  background-color: #6363A3;
+
+}
+.groen .containerMethoden input:checked ~ .checkmarkMethoden {
+   background-color: #809332;
+
+}
+.aqua .containerMethoden input:checked ~ .checkmarkMethoden {
+  background-color: #48A5A5;
+
+}
+.roze .containerMethoden input:checked ~ .checkmarkMethoden {
+  background-color: #F77E8A;
 
 }
 
