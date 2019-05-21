@@ -14,17 +14,21 @@ body {
     background-image: url("../img/icons/arrowDropDown.svg");
     background-repeat: no-repeat;
     background-position: right .7em top 50%, 0 0;
-    background-size: 1em auto, 100%;
+    background-size: 0.8em auto, 100%;
     margin-top: 4vh;
+    padding-left: 12.875%;
     /* style in javascript */
 }
 
 .dropdown:focus {
     border-color: #CC0000;
     border-top-left-radius: 30px;
-    border-bottom-style: none;
 }
 
+.dropdown option{
+    text-align: left;
+    font-size: 16px;
+}
 h6 {
     text-align: center;
     display: block;
