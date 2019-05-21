@@ -1,3 +1,5 @@
+@import url("Navigatie.css");
+
 body {
     height: 100vh;
     grid-template-rows: repeat(4, 1fr);

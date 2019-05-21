@@ -8,33 +8,35 @@
     <script type="text/javascript" src="../js/Navigatie.js"></script>
     <script src="../js/constructors.js"></script>
     <script src="../js/storyboard.js"></script>
-    <script src="../js/storyboardLaden.js"></script>
     <script src="../js/Opties.js"></script>
+    <script src="../js/nieuwStoryboard.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/opties.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/Navigatie.css">
     <link rel="stylesheet" href="../css/kaartjes.css">
     <link rel="stylesheet" href="../css/Storyboard.css">
 </head>
 
 <body>
     <header>
-        <div class="pijlTerug"></div>
-        <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
-        <h2 class="fontHeaderSmall">Nieuw lesplan</h2>
-        <div id="menuToggle"></div>
-    </header>
+    <div>
+        <img class="pijlTerug" src="../img/icons/pijl_terug.svg">
+        <h1>ABC Lesplanner</h1>
+        <img class="menuToggle open" src="../img/icons/HamburgerMenu.svg">
+    </div>
 
-    <nav id="menu">
-        <div id="pijlTerugRood"></div>
-        <a href="../index.html">Home</a>
-        <a href="storyboard.html">Nieuw storyboard</a>
-        <a href="verderwerken.html">Storyboards</a>
-        <a href="statistieken.html">Statistieken</a>
-        <a href="kaartjesoverzicht.html">De ABC Methode</a>
-    </nav>
+</header>
 
+<nav id="menu">
+    <img class="menuToggle terug" src="../img/icons/terugPijlRood.svg">
+    <a href="../index.html">Home</a>
+    <a href="storyboard.html">Nieuw storyboard</a>
+    <a href="verderwerken.html">Storyboards</a>
+    <a href="statistieken.html">Statistieken</a>
+    <a href="kaartjesoverzicht.html">Overzicht kaartjes</a>
+</nav>
+
+   <div class="content">
     <div class="verzamelbalkBovenKaartjes">
         <a href="overview.html" class="uitzoomen"></a>
         <div class="lesfase">
@@ -497,6 +499,7 @@
             <a href="#" class="plusRoze">Discussie</a>
         </div>
 
+    </div>
     </div>
 
     <footer>

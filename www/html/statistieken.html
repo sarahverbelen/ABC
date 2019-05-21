@@ -8,29 +8,32 @@
     <script type="text/javascript" src="../js/Navigatie.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/Navigatie.css">
     <link rel="stylesheet" type="text/css" href="../css/statistieken.css">
-
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="../js/statistieken.js"></script>
 
 </head>
+
 <body>
     <header>
-        <div class="pijlTerug"></div>
-        <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
-        <div id="menuToggle"></div>
+        <div>
+            <img class="pijlTerug" src="../img/icons/pijl_terug.svg">
+            <h1>ABC Lesplanner</h1>
+            <img class="menuToggle open" src="../img/icons/HamburgerMenu.svg">
+        </div>
+
     </header>
 
     <nav id="menu">
-        <div id="pijlTerugRood"></div>
+        <img class="menuToggle terug" src="../img/icons/terugPijlRood.svg">
         <a href="../index.html">Home</a>
         <a href="storyboard.html">Nieuw storyboard</a>
         <a href="verderwerken.html">Storyboards</a>
         <a href="statistieken.html">Statistieken</a>
-        <a href="kaartjesoverzicht.html">De ABC Methode</a>
+        <a href="kaartjesoverzicht.html">Overzicht kaartjes</a>
     </nav>
 
+<div class="content">
     <select class="dropdown fontRegular">
         <option value="#" class="fontRegular">storyboard 1</option>
         <option value="#" class="fontRegular">storyboard 2</option>
@@ -48,6 +51,8 @@
         <p class="legendePRight fontRegular" id="roze">Discussie</p>
         <p class="legendePLeft fontRegular" id="geel">Productie</p>
         <p class="legendePRight fontRegular" id="paars">Praktijk</p>
+    </div>
+    
     </div>
 </body>
 

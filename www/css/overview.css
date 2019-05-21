@@ -1,8 +1,9 @@
+@import url("Navigatie.css");
 /* TITELS */
 
 
 .boven {
-    margin-top: 4vh;
+    margin-bottom: 4vh;
     width: 100%;
 }
 
