@@ -12,44 +12,16 @@
     <link rel="stylesheet" type="text/css" href="../css/statistieken.css">
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Kennisverwerving', 11],
-                ['Samenwerking', 10],
-                ['Productie', 2],
-                ['Onderzoek', 3],
-                ['Discussie', 7],
-                ['Praktijk', 7]
-            ]);
-
-            var options = {
-//                title: 'Gebruik leeractiviteiten',
-                pieHole: 0.5,
-                 colors: ['#F2832E', '#48A5A5', '#FFCC00', '#809332', '#F77E8A','#6363A3'],
-                legend: 'none'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-            chart.draw(data, options);
-        }
-    </script>
+    <script type="text/javascript" src="../js/statistieken.js"></script>
 
 </head>
-
 <body>
     <header>
-       <div class="pijlTerug"></div>
+        <div class="pijlTerug"></div>
         <h1 class="fontHeaderLarge">ABC Lesplanner</h1>
         <div id="menuToggle"></div>
     </header>
-    
+
     <nav id="menu">
         <div id="pijlTerugRood"></div>
         <a href="../index.html">Home</a>
@@ -66,9 +38,9 @@
         <option value="#" class="fontRegular">storyboard 4</option>
     </select>
     <h6>Gebruik leeractiviteiten</h6>
-    
-    <div id="donutchart" style="width: 0vw; height: 50%;"></div>
-    
+
+    <div id="donutchart"></div>
+
     <div id="legende">
         <p class="legendePLeft fontRegular" id="oranje">kennisverwerving</p>
         <p class="legendePRight fontRegular" id="groen">Onderzoek</p>
