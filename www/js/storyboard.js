@@ -45,10 +45,14 @@ $(document).ready(function () {
     //NIEUW STORYBOARD MAKEN
     var nieuwStoryboard = window.localStorage.getItem("nieuwStoryboard");
     if (nieuwStoryboard == "true") {
-        $(".kaartjes").remove();
+        $(".kaartjes .kaartje").remove();
         window.localStorage.setItem("nieuwStoryboard", false);
         
-        var lesfasen = [];
+        var kaartjes = [];
+        
+        var lesfase1 = new Lesfase("lesfase 1", "", "", kaartjes)
+        
+        var lesfasen = [lesfase1];
 
         var storyboard = new Storyboard("nieuw Storyboard", lesfasen, "", "", "", "")
 
@@ -78,8 +82,11 @@ $(document).ready(function () {
             }
 
             var kaartje = new Kaartje(kleur, "", "");
-            console.log(kaartje);
+            
+            kaartjes.push(kaartje);
             displayKaartje(kaartje);
+            
+            console.log(storyboard);
         });
 
     }
