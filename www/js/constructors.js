@@ -3,6 +3,7 @@
         this.methodiek = methodiek; //string
         this.nota = nota; //string
         this.activiteit = activiteit; //string
+        
     }
     
     function Doelstelling(naam, aangevinkt) {
