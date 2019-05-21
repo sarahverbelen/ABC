@@ -5,32 +5,32 @@
         "contactmethoden": ["Probleemstelling formuleren", "Bronnen selecteren; analyseren; verwerken", "Onderzoeksmethodieken uitvoeren", "Gegevens verwerken", "Conclusies, advies formuleren"],
         "digitaalmethoden": ["Opdracht", "ePortfolio", "Video", "Bestanden", "(Wiki)pagina’s"]
     },
-    "samenwerking": {
-        "kleur": "aqua",
+    "aqua": {
+        "activiteit": "samenwerking",
         "beschrijving": "Studenten werken samen aan een gezamenlijke opdracht met een bepaalde vorm van ‘output’ zoals een definitie, concept, ontwerp, verslag, beroepsproduct,… . Er ontstaat een gezamenlijk proces van kennisopbouw.",
         "contactmethoden": ["Project", "Opdracht", "Casus", "Brainstorm"],
         "digitaalmethoden": ["Cursusgroepen", "Discussieforum", "Groepsopdracht", "(Wiki)pagina’s", "Samenwerkingsbestanden", "Online vergadering", "COIL - project"]
     },
-    "productie": {
-        "kleur": "geel",
+    "geel": {
+        "activiteit": "productie",
         "beschrijving": "Studenten ontwikkelen een (beroeps)product: een plan, website, analyse, theorie, model, les,…. Studenten moeten hun begrip van de leerstof duidelijk tonen en aantonen hoe ze dit kunnen toepassen in de praktijk/het werkveld.",
         "contactmethoden": ["Presentatie/pitch", "(digitaal) Model;product;ontwerp", "Paper;verslag;rapport", "Logboek", "Portfolio", "Audiovisueel product", "Website"],
         "digitaalmethoden": ["Opdracht", "(Wiki) Pagina", "ePortfolio", "Blog", "Video"]
     },
-    "discussie": {
-        "kleur": "roze",
+    "roze": {
+        "activiteit": "discussie",
         "beschrijving": "Studenten verwoorden hun vragen, ideeën en argumenten, verantwoorden gemaakte keuzes en stellen ideeën van peers/docenten/zichzelf kritisch in vraag.",
         "contactmethoden": ["Discussie", "Debat", "Casus", "Vergadering", "Onderwijsleer-gesprek", "Intervisie/supervisie", "Zelfreflectie(verslag)", "Coaching gesprek", "Verdediging(bv.jury)"],
         "digitaalmethoden": ["Discussieforum", "Digitale opdracht", "Chat", "Online vergadering", "Peer assessment", "Cursusgroepen"]
     },
-    "kennisverwerving": {
-        "kleur": "oranje",
+    "oranje": {
+        "activiteit": "kennisverwerving",
         "beschrijving": "Studenten luisteren naar een voordracht/lezing/les, lezen in boeken, cursusmateriaal of online, en/of bekijken demo’s, video’s,… .",
         "contactmethoden": ["Hoorcollege/lezing", "Handboek;syllabus", "Video", "Peer teaching", "Externe activiteit(studiereis; bezoek werkveld;...)"],
         "digitaalmethoden": ["Kennisclip", "Webinar", "Mooc", "Video", "Module", "Bestanden", "Webpagina", "Online toets"]
     },
-    "praktijk": {
-        "kleur": "paars",
+    "paars": {
+        "activiteit": "praktijk",
         "beschrijving": "Studenten voeren vaardigheden uit in functie van een praktijkopdracht en sturen hun handelen bij op basis van feedback (van peers, de docent, zichzelf of vanuit de taak zelf).",
         "contactmethoden": ["Oefening;opdracht, Practicum/Atelier", "Observatie- feedback", "Simulatie", "Project", "Externe activiteit(werkveldbezoek)", "Werkplekleren"],
         "digitaalmethoden": ["Vaardigheidsclip", "Video", "Opdracht", "Digitale toets", "Game", "Virtuele simulatie"]
