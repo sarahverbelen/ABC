@@ -27,5 +27,15 @@ $(document).ready(function(){
         $(".plusKaartjes").slideToggle();
     });
     
+    //NIEUW STORYBOARD MAKEN
+    if(window.localStorage.getItem("nieuwStoryboard")){
+        $(".kaartjes").remove();
+        
+        var lesfasen = [];
+        
+        var storyboard = new Storyboard("nieuw Storyboard", lesfasen, "", "", "", "")
+        
+    }
+    
     
 });
