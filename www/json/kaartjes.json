@@ -2,7 +2,8 @@
     "groen": {
         "activiteit": "onderzoek",
         "beschrijving": "Studenten doorlopen met een kritische ingesteldheid stappen van (eenvoudig) praktijkgericht onderzoek: probleemstelling formuleren, gegevens/informatie verzamelen, data verwerken, conclusies formuleren.",
-        "contactmethoden": []
+        "contactmethoden": ["Probleemstelling formuleren", "Bronnen selecteren, analyseren, verwerken", "Onderzoeksmethodieken uitvoeren", "Gegevens verwerken", "Conclusies, advies formuleren"],
+        "digitaalmethoden": ["Opdracht", "ePortfolio", "Video", "Bestanden", "(Wiki)pagina's"]
     }, 
     "aqua": {
         "activiteit": "samenwerking",
