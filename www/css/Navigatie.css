@@ -46,12 +46,13 @@ nav {
     background-color: #F7F6F6;
     text-align: right;
     font-family: 'lato';
-    padding: 10% 9.875% 0 40%;
+    padding: 10% 9.875% 0 20%;
 }
 
 nav a {
-    font-size: 36px;
-    width: 300px;
+    font-size: 42px;
+    font-weight: 300;
+    width: 425px;
     padding: 50px 0;
     text-decoration: none;
     color: #333;

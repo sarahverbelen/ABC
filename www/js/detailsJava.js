@@ -1,7 +1,7 @@
 $(document).ready(function () { 
     console.log("ready");
     $(".tuto").hide();
-    $(".content").hide();
+    $(".contentDoel").hide();
     
     var number = 1;
     var ad = 2;
@@ -15,9 +15,9 @@ $(document).ready(function () {
     //switchcheckbox//
     $('.check').click(function () {
         if ($(this).is(':checked')) {
-            $(".content").slideDown();
+            $(".contentDoel").slideDown();
         } else {
-            $(".content").slideUp();
+            $(".contentDoel").slideUp();
         }
     });
 
