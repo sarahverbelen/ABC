@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    var storyboards = [];
+    
     //PLUSKNOP OPEN/TOE-KLAPPEN
     $(".plusKaartjes").hide();
 
@@ -64,53 +66,59 @@ $(document).ready(function () {
 
         var storyboard = new Storyboard("nieuw Storyboard", lesfasen, "", "", "", "")
 
-    
-
-    $(".plusKaartjes a").on("click", function (e) {
-        e.preventDefault();
         
-        var kleur, activiteit;
-        kleur = $(this).attr("class");
 
-        switch (kleur) {
-            case "plusOranje":
-                kleur = "oranje";
-                break;
-            case "plusGeel":
-                kleur = "geel";
-                break;
-            case "plusPaars":
-                kleur = "paars";
-                break;
-            case "plusGroen":
-                kleur = "groen";
-                break;
-            case "plusAqua":
-                kleur = "aqua";
-                break;
-            case "plusRoze":
-                kleur = "roze";
-                break;
-        }
+        $(".plusKaartjes a").on("click", function (e) {
+            e.preventDefault();
 
-        $.ajax({
-            "url": "../json/kaartjes.json"
-        }).done(function (data) {
-            console.log(data);
-            activiteit = data[kleur].activiteit;
+            var kleur, activiteit;
+            kleur = $(this).attr("class");
 
-            var kaartje = new Kaartje(kleur, "", "", activiteit);
+            switch (kleur) {
+                case "plusOranje":
+                    kleur = "oranje";
+                    break;
+                case "plusGeel":
+                    kleur = "geel";
+                    break;
+                case "plusPaars":
+                    kleur = "paars";
+                    break;
+                case "plusGroen":
+                    kleur = "groen";
+                    break;
+                case "plusAqua":
+                    kleur = "aqua";
+                    break;
+                case "plusRoze":
+                    kleur = "roze";
+                    break;
+            }
 
-            kaartjes.push(kaartje);
-            displayKaartje(kaartje);
+            $.ajax({
+                "url": "../json/kaartjes.json"
+            }).done(function (data) {
+                console.log(data);
+                activiteit = data[kleur].activiteit;
 
-            console.log(storyboard);
-        }).error(function(een, twee, drie){
-            console.log(een);
-            console.log(twee);
-            console.log(drie);
+                var kaartje = new Kaartje(kleur, "", "", activiteit);
+
+                kaartjes.push(kaartje);
+                displayKaartje(kaartje);
+                storyboards.push(storyboard);
+                
+                var jsonStoryboards = JSON.stringify(storyboards);
+                window.localStorage.setItem("storyboards", jsonStoryboards);
+                console.log(storyboard);
+            }).error(function (een, twee, drie) {
+                console.log(een);
+                console.log(twee);
+                console.log(drie);
+            });
+
         });
 
-    });
-};
+
+
+    };
 });
