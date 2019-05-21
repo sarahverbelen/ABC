@@ -19,7 +19,7 @@ $(document).ready(function () {
         .append(
             $("<h2>", {
                 "class": "storyboardKaart"
-            }).text(kaartje.activiteit)
+            }).text(kaartje.activiteit.charAt(0).toUpperCase() + kaartje.activiteit.slice(1))
         )
         .append(
             $("<h3>", {
@@ -59,6 +59,7 @@ $(document).ready(function () {
         $(".plusKaartjes a").on("click", function (e) {
             e.preventDefault();
             var kleur = $(this).attr("class");
+            var activiteit;
 
             switch (kleur) {
                 case "plusOranje":
@@ -81,12 +82,19 @@ $(document).ready(function () {
                     break;
             }
 
-            var kaartje = new Kaartje(kleur, "", "");
+            $.ajax({
+                "url": "../json/kaartjes.json"
+            }).done(function(data){
+                activiteit = data[kleur].activiteit; 
+                
+                var kaartje = new Kaartje(kleur, "", "", activiteit);
             
             kaartjes.push(kaartje);
             displayKaartje(kaartje);
             
             console.log(storyboard);
+            });
+            
         });
 
     }
