@@ -27,7 +27,9 @@
     display: inline-block;
 }
 
-.container {
+
+/*BEGIN VIERKANTIGE BUTTONS */
+.containerDoelstellingen {
     display: block;
     position: relative;
     margin-left: 7.875%;
@@ -45,7 +47,7 @@
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.containerDoelstellingen input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -54,7 +56,7 @@
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.checkmarkDoelstellingen {
     border-top-left-radius: 10px;
     position: absolute;
     top: 0;
@@ -66,36 +68,39 @@
 }
 
 /* On mouse-over, add a grey background color 
-.container:hover input ~ .checkmark {
+.containerDoelstellingen:hover input ~ .checkmarkDoelstellingen {
   background-color: #ccc;
 }
 */
 
 /* When the checkbox is checked, add a blue background
-.container input:checked ~ .checkmark {
+.containerDoelstellingen input:checked ~ .checkmarkDoelstellingen {
     background-color: #2196F3;
 }
 */
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkmarkDoelstellingen:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.containerDoelstellingen input:checked ~ .checkmarkDoelstellingen:after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.containerDoelstellingen .checkmarkDoelstellingen:after {
     border: 20px solid #CC0000;
     border-top-left-radius: 5px;
     margin-top: 5px;
     margin-left: 5px;
 }
+/*EINDE VIERKANTIGE BUTTONS */
+
+
 
 textarea {
     width: 100%;
@@ -121,6 +126,61 @@ button img{
     margin: 0 auto;
     width: 20px;
 }
+
+
+/*BEGIN RONDE BUTTONS */
+.containerMethoden {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containerMethoden input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmarkMethoden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  border: 0.5px solid #333;
+}
+
+/* On mouse-over, add a grey background color 
+.containerMethoden:hover input ~ .checkmarkMethoden {
+  background-color: #ccc;
+}
+*/
+
+/* When the radio button is checked, add a blue background */
+.containerMethoden input:checked ~ .checkmarkMethoden {
+  background-color: green;
+
+}
+
+
+
+/* Show the indicator (dot/circle) when checked */
+.containerMethoden input:checked ~ .checkmarkMethoden:after {
+  display: block;
+}
+
+/*EINDE RONDE BUTTONS */
+
 
 #doelstellingDropdown {
     background-image: url(../img/icons/arrowDropDown.svg);
