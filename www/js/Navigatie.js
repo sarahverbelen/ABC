@@ -13,4 +13,13 @@ $(document).ready(function(){
         
         $("#menu").hide();
     });
+    
+    //pijlterug// Stackoverflow.com
+    
+    
+    $('.pijlTerug').click(function(){
+        parent.history.back();
+        return false;
+    });
+
 }); 
