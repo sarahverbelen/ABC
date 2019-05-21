@@ -37,7 +37,7 @@ header h1.fontHeaderLarge{
     margin-top: .1vh;
 }
 
-header h2{
+header h2.fontHeaderSmall{
     font-size: 32px;
     font-weight: lighter;
     margin-right: 7vw;
