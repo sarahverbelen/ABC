@@ -2,7 +2,7 @@
         this.kleur = kleur; //string
         this.methodiek = methodiek; //string
         this.nota = nota; //string
-        this.activiteit = activiteit; //string
+        this.activiteit = "kennisverwerving";
     }
     
     function Doelstelling(naam, aangevinkt) {
