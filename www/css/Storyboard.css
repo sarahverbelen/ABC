@@ -7,13 +7,14 @@
     height: 7vw;
     display: inline-block;
     background-repeat: no-repeat;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .lesfase {
     text-align: center;
     position: absolute;
-    left: 33.625vw;
+    left: 50vw;
+    transform: translate(-50%, -24%);
     margin-top: -65px;
     width: 45vw;
     color: #333;
