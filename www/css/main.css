@@ -42,16 +42,16 @@ body{
 
 .fontKnop{
     font-weight: 400; /* regular */
-    font-size: 36px; /* = 18px in design */
+    font-size: 40px; /* = 18px in design */
 }
 
 .fontRegular{
     font-weight: 300; /* light */
-    font-size: 32px; /* = 16px in design */
+    font-size: 36px; /* = 16px in design */
 }
 
 h6{
     font-weight: 700;
-    font-size: 32px;
+    font-size: 34px;
     color: #333;
 }
