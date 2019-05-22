@@ -21,6 +21,7 @@ $(document).ready(function () {
         e.preventDefault();
         var ditKaartje = $(dit).parent(".kaartje");
         ditKaartje.children("form").slideToggle();
+        ditKaartje.children("button").slideToggle();
         $(dit).toggleClass("editKaartje");
         $(dit).toggleClass("sluitKaartje");
     }
@@ -109,12 +110,35 @@ $(document).ready(function () {
                     )
                     .append(digitaalHTML)
                 )
+                .append(
+                    $("<button>", {
+                        "class": "bevestigKaartje plus" + kaartje.kleur.charAt(0).toUpperCase() + kaartje.kleur.slice(1),
+                        "style": "display: none"
+                    })
+                    .append(
+                        $("<div>", {
+                            "class": "confirm"
+                        })
+                    )
+                )
+                .append(
+                    $("<button>", {
+                        "class": "verwijderKaartje plus" + kaartje.kleur.charAt(0).toUpperCase() + kaartje.kleur.slice(1),
+                        "style": "display: none"
+                    })
+                    .append(
+                        $("<div>", {
+                            "class": "verwijder"
+                        })
+                    )
+                )
+
             $(".kaartjes").append(kaartjeHTML);
 
             $(".editKaartje").on("click", function (e) {
-        editKaartje(this, e);
-    });
-            
+                editKaartje(this, e);
+            });
+
         });
     }
 
