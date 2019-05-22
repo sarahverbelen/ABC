@@ -6,15 +6,15 @@ header {
     margin-left: -5.2%;
     z-index: 1;
     box-shadow: 0px 1px 10px grey;
-    height: 10vh;
+    padding: 3vh 0;
 }
 
 header > div {
     position: relative;
-    padding: 3.5vh;
-   
 }
 header h2{
+    position: absolute;
+    width: 100%;
     text-align: center;
     font-size: 36px;
     font-weight: 300;
