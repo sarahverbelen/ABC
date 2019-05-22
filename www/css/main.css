@@ -11,10 +11,6 @@ body{
         grid-column-gap: 2.6%; */
     }
 
-.content{
-    padding-top: 175px;
-}
-
 /* gebruik:
      grid-column: col 6/ span 5;
 
