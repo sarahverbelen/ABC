@@ -1,40 +1,7 @@
 $(document).ready(function () {
 
-    //DISPLAY KAARTJE - FUNCTIE
-    function displayKaartje(kaartje){
-        var kaartjeHTML = $("<div>", {
-            "class": "kaartje " + kaartje.kleur
-        })
-        .append(
-            $("<div>", {
-                "class": "triangle" + kaartje.kleur + " triangle"
-            })
-        )
-        .append(
-            $("<a>", {
-                "class": "editKaartje",
-                "href": "#"
-            }).text("edit kaartje")
-        )
-        .append(
-            $("<h2>", {
-                "class": "storyboardKaart"
-            }).text(kaartje.activiteit)
-        )
-        .append(
-            $("<h3>", {
-                "class": "fontRegular storyboardKaart"
-            }).text(kaartje.methodiek)
-        )
-        .append(
-            $("<p>", {
-                "class": "storyboardKaart"
-            }).text(kaartje.nota)
-        );
-        
-        $(".kaartjes").append(kaartjeHTML);
-    }
-
+    var storyboards = [];
+    
     //PLUSKNOP OPEN/TOE-KLAPPEN
     $(".plusKaartjes").hide();
 
@@ -42,23 +9,70 @@ $(document).ready(function () {
         $(".plusKaartjes").slideToggle();
     });
 
+    //DOELSTELLINGEN OPEN/TOE-KLAPPEN  
+    $(".doelstellingenInhoudOpen").hide();
+
+    $("#doelstellingen, #doelstellingDropdown").on("click", function () {
+        $(".doelstellingenInhoudOpen").slideToggle();
+    });
+
+    //DISPLAY KAARTJE - FUNCTIE
+    function displayKaartje(kaartje) {
+        var kaartjeHTML = $("<div>", {
+                "class": "kaartje " + kaartje.kleur
+            })
+            .append(
+                $("<div>", {
+                    "class": "triangle" + kaartje.kleur + " triangle"
+                })
+            )
+            .append(
+                $("<a>", {
+                    "class": "editKaartje",
+                    "href": "#"
+                }).text("edit kaartje")
+            )
+            .append(
+                $("<h2>", {
+                    "class": "storyboardKaart"
+                }).text(kaartje.activiteit.charAt(0).toUpperCase() + kaartje.activiteit.slice(1))
+            )
+            .append(
+                $("<h3>", {
+                    "class": "fontRegular storyboardKaart"
+                }).text(kaartje.methodiek)
+            )
+            .append(
+                $("<p>", {
+                    "class": "storyboardKaart"
+                }).text(kaartje.nota)
+            );
+
+        $(".kaartjes").append(kaartjeHTML);
+    }
+
+
     //NIEUW STORYBOARD MAKEN
     var nieuwStoryboard = window.localStorage.getItem("nieuwStoryboard");
     if (nieuwStoryboard == "true") {
         $(".kaartjes .kaartje").remove();
         window.localStorage.setItem("nieuwStoryboard", false);
-        
+
         var kaartjes = [];
-        
+
         var lesfase1 = new Lesfase("lesfase 1", "", "", kaartjes)
-        
+
         var lesfasen = [lesfase1];
 
         var storyboard = new Storyboard("nieuw Storyboard", lesfasen, "", "", "", "")
 
+        
+
         $(".plusKaartjes a").on("click", function (e) {
             e.preventDefault();
-            var kleur = $(this).attr("class");
+
+            var kleur, activiteit;
+            kleur = $(this).attr("class");
 
             switch (kleur) {
                 case "plusOranje":
@@ -81,15 +95,30 @@ $(document).ready(function () {
                     break;
             }
 
-            var kaartje = new Kaartje(kleur, "", "");
-            
-            kaartjes.push(kaartje);
-            displayKaartje(kaartje);
-            
-            console.log(storyboard);
+            $.ajax({
+                "url": "../json/kaartjes.json"
+            }).done(function (data) {
+                console.log(data);
+                activiteit = data[kleur].activiteit;
+
+                var kaartje = new Kaartje(kleur, "", "", activiteit);
+
+                kaartjes.push(kaartje);
+                displayKaartje(kaartje);
+                storyboards.push(storyboard);
+                
+                var jsonStoryboards = JSON.stringify(storyboards);
+                window.localStorage.setItem("storyboards", jsonStoryboards);
+                console.log(storyboard);
+            }).error(function (een, twee, drie) {
+                console.log(een);
+                console.log(twee);
+                console.log(drie);
+            });
+
         });
 
-    }
 
 
+    };
 });
