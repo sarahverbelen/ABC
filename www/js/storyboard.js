@@ -5,11 +5,9 @@ $(document).ready(function () {
     //PLUSKNOP OPEN/TOE-KLAPPEN
     $(".plusKaartjes").hide();
 
-    $("#plus").on("click", function () {
+    $("#plusSymbool").on("click", function () {
         $(".plusKaartjes").slideToggle();
     });
-
-    //DOELSTELLINGEN OPEN/TOE-KLAPPEN  
    
     //BEWERKKNOP KAARTJES
     function editKaartje(dit, e) {
@@ -139,7 +137,7 @@ $(document).ready(function () {
 
     //NIEUW STORYBOARD MAKEN
     var nieuwStoryboard = window.localStorage.getItem("nieuwStoryboard");
-    if (nieuwStoryboard == "true") {
+
         $(".kaartjes .kaartje").remove();
         window.localStorage.setItem("nieuwStoryboard", false);
 
@@ -152,9 +150,9 @@ $(document).ready(function () {
         var storyboard = new Storyboard("nieuw Storyboard", lesfasen, "", "", "", "")
 
 
-
         $(".plusKaartjes a").on("click", function (e) {
             e.preventDefault();
+            console.log("klik");
 
             var kleur, activiteit;
             kleur = $(this).attr("class");
@@ -204,8 +202,4 @@ $(document).ready(function () {
             });
 
         });
-
-
-
-    };
 });
