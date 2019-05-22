@@ -149,8 +149,11 @@ button img{
     font-size: 32px; /* = 16px in design */
       
 }
+.digMeth{
+    margin-top: 2vh;
+}
 .methodieken h6{
- margin-bottom: 2vh;
+ margin-bottom: 1.5vh;
 }
 /* Hide the browser's default radio button */
 .containerMethoden input {
@@ -164,8 +167,8 @@ button img{
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 50px;
+  width: 50px;
   background-color: white;
   border-radius: 50%;
   border: 0.5px solid #333;
@@ -180,7 +183,6 @@ button img{
 /* When the radio button is checked, add a blue background */
 .oranje .containerMethoden input:checked ~ .checkmarkMethoden {
   background-color: #F2832E;
-
 }
 .geel .containerMethoden input:checked ~ .checkmarkMethoden {
     background-color: #FFCC00;
@@ -240,6 +242,10 @@ button img{
     margin-left: 11vw;
 }
 
+label.containerMethoden{
+    padding-left: 10vw;
+    padding-top: 0.5vh;
+}
 .sluitKaartje {
     background-image: url(../img/icons/pijlRechts.svg);
     background-repeat: no-repeat;
