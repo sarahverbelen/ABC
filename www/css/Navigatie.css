@@ -2,8 +2,10 @@ header {
     width: 100%;
     background-color: #F7F6F6;
     position: fixed;
+    top: 0;
     margin-left: -5.2%;
     z-index: 1;
+    height: 8vh;
 }
 
 header div {
@@ -29,7 +31,7 @@ header div {
 .terug{top: 3.5%;}
 
 header h1 {
-    padding: 4% 0;
+    padding: 2vh 0;
     font-family: "lato";
     font-weight: 700;
     font-size: 50px;
