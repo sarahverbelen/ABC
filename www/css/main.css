@@ -11,7 +11,7 @@ body{
         grid-column-gap: 2.6%; */
     }
 
-.content,form{
+.content{
     padding-top: 175px;
 }
 
