@@ -1,14 +1,63 @@
 $(document).ready(function () {
-
     var storyboards = [];
+    //NIEUW STORYBOARD MAKEN: alleen deze sectie bij een nieuw storyboard!!!!
+    var lesfasen = [];
+    var doelstellingen = [];
+    var nieuwStoryboard = new Storyboard("nieuwStoryboard", lesfasen, "", "", "", doelstellingen);
+    var kaartjes = [];
+    var eersteLesfase = new Lesfase("Lesfase 1", "", "", kaartjes);
+    lesfasen.push(eersteLesfase);
+    storyboards.push(nieuwStoryboard);
+    console.log(storyboards);
+    var plaatsNieuwStoryboard = storyboards.length - 1;
+    localStorage.setItem('HuidigStoryboard', plaatsNieuwStoryboard)
 
+    // PLAATS HUIDIG STORYBOARD OPHALEN
+    var plaatsStoryboard = localStorage.getItem('HuidigStoryboard');
+    // DOELSTELLINGEN/INHOUD
+    $(".doelstellingenInhoudOpen").hide();
+    $("main").on("click", '.doelstellingen, .doelstellingDropdown', function () {
+        $('.doelstellingenInhoudOpen').slideToggle();
+    });
+    // SWIPE
+    var huidigeLesfase = 0; // teller huidige lesfase
+
+    function createLesfase() {
+        var NaamLesfase = "Lesfase " + (huidigeLesfase + 1);
+        $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6>' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6>Doelstellingen</h6><label class="containerDoelstellingen">D1: Lorem ipsum sit amett<input type="checkbox" checked="checked"><span class="checkmarkDoelstellingen"></span></label><h6>Inhoud</h6><form><textarea></textarea></form><button><img src="../img/icons/vink.svg"></button></div></div>');
+        var extraLesfase = new Lesfase(NaamLesfase, "", "", kaartjes);
+        storyboards[plaatsStoryboard].lesfasen.push(extraLesfase);
+        console.log("aantal Lesfasen: " + storyboards[plaatsStoryboard].lesfasen.length);
+    }
+
+
+    $('body').on('swipeleft', function () {
+        $('.heleLesfase#' + huidigeLesfase).hide();
+        huidigeLesfase += 1;
+        console.log("huidigeLesfase: " + huidigeLesfase);
+        //if statement checkt als huidigeLesfase al bestaat:
+        if ($('main').find('#' + huidigeLesfase).size() == 0) {
+            createLesfase();
+        } else {
+            $('.heleLesfase#' + huidigeLesfase).show();
+        }
+    });
+    $('body').on('swiperight', $('.heleLesfase'), function () {
+        if (huidigeLesfase > 0) {
+            $('.heleLesfase#' + huidigeLesfase).hide();
+            huidigeLesfase -= 1;
+            $('.heleLesfase#' + huidigeLesfase).show();
+            console.log("huidigeLesfase: " + huidigeLesfase);
+        }
+    });
+    
     //PLUSKNOP OPEN/TOE-KLAPPEN
     $(".plusKaartjes").hide();
 
     $("#plusSymbool").on("click", function () {
         $(".plusKaartjes").slideToggle();
     });
-   
+
     //BEWERKKNOP KAARTJES
     function editKaartje(dit, e) {
         e.preventDefault();
@@ -49,7 +98,7 @@ $(document).ready(function () {
 
 
     //DISPLAY KAARTJE - FUNCTIE
-    function displayKaartje(kaartje) {
+    function displayKaartje(kaartje, dit) {
 
         $.ajax({
             "url": "../json/kaartjes.json"
@@ -125,9 +174,8 @@ $(document).ready(function () {
                         })
                     )
                 )
-
-            $(".kaartjes").append(kaartjeHTML);
-
+            $('.heleLesfase#' + huidigeLesfase).append(kaartjeHTML);
+            
             $(".editKaartje").on("click", function (e) {
                 editKaartje(this, e);
             });
@@ -135,71 +183,58 @@ $(document).ready(function () {
         });
     }
 
-    //NIEUW STORYBOARD MAKEN
-    var nieuwStoryboard = window.localStorage.getItem("nieuwStoryboard");
-
-        $(".kaartjes .kaartje").remove();
-        window.localStorage.setItem("nieuwStoryboard", false);
-
-        var kaartjes = [];
-
-        var lesfase1 = new Lesfase("lesfase 1", "", "", kaartjes)
-
-        var lesfasen = [lesfase1];
-
-        var storyboard = new Storyboard("nieuw Storyboard", lesfasen, "", "", "", "")
 
 
-        $(".plusKaartjes a").on("click", function (e) {
-            e.preventDefault();
-            console.log("klik");
-
-            var kleur, activiteit;
-            kleur = $(this).attr("class");
-
-            switch (kleur) {
-                case "plusOranje":
-                    kleur = "oranje";
-                    break;
-                case "plusGeel":
-                    kleur = "geel";
-                    break;
-                case "plusPaars":
-                    kleur = "paars";
-                    break;
-                case "plusGroen":
-                    kleur = "groen";
-                    break;
-                case "plusAqua":
-                    kleur = "aqua";
-                    break;
-                case "plusRoze":
-                    kleur = "roze";
-                    break;
-            }
-
-            $.ajax({
-                "url": "../json/kaartjes.json"
-            }).done(function (data) {
-                console.log(data);
-                activiteit = data[kleur].activiteit;
-
-                var kaartje = new Kaartje(kleur, "", "", activiteit);
-
-                kaartjes.push(kaartje);
-                displayKaartje(kaartje);
-                storyboards.push(storyboard);
-
-                var jsonStoryboards = JSON.stringify(storyboards);
-                window.localStorage.setItem("storyboards", jsonStoryboards);
-                console.log(storyboard);
+    //$(".kaartjes .kaartje").remove();
 
 
-            }).error(function (een, twee, drie) {
-                console.log(een);
-                console.log(twee);
-                console.log(drie);
-            });
 
+    $(".plusKaartjes a").on("click", function (e) {
+        e.preventDefault();
+        console.log("klik");
+
+        var kleur, activiteit;
+        kleur = $(this).attr("class");
+
+        switch (kleur) {
+            case "plusOranje":
+                kleur = "oranje";
+                break;
+            case "plusGeel":
+                kleur = "geel";
+                break;
+            case "plusPaars":
+                kleur = "paars";
+                break;
+            case "plusGroen":
+                kleur = "groen";
+                break;
+            case "plusAqua":
+                kleur = "aqua";
+                break;
+            case "plusRoze":
+                kleur = "roze";
+                break;
+        }
+
+        $.ajax({
+            "url": "../json/kaartjes.json"
+        }).done(function (data) {
+            console.log(data);
+            activiteit = data[kleur].activiteit;
+
+            var kaartje = new Kaartje(kleur, "", "", activiteit);
+
+            storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.push(kaartje);
+            displayKaartje(kaartje);
+            console.log(storyboards[plaatsStoryboard].storyboard);
+
+
+        }).error(function (een, twee, drie) {
+            console.log(een);
+            console.log(twee);
+            console.log(drie);
         });
+
+    });
 });

@@ -6,15 +6,15 @@
         
     }
     
-    function Doelstelling(naam, aangevinkt) {
-        this.naam = naam; //string
+    function Doelstelling(plaatsInArray, aangevinkt) { //lesfase.doelstellingen wnr gekozen word voor checkboxen
+        this.plaatsInArray = plaatsInArray; //nummer
         this.aangevinkt = aangevinkt; //boolean
     }
     
     function Lesfase (naam, doelstellingen, inhoud, kaartjes) {
         this.naam = naam; //string
-        this.doelstellingen = doelstellingen; //array van Doelstelling-objecten OF string
         this.inhoud = inhoud; //string
+        this.doelstellingen = doelstellingen; //array van Doelstelling-objecten OF string
         this.kaartjes = kaartjes; //array van Kaartje-objecten
     }
     
