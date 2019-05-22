@@ -6,11 +6,13 @@ header {
     margin-left: -5.2%;
     z-index: 1;
     box-shadow: 0px 1px 10px grey;
-    padding: 3vh 0;
+    height: 10vh;
 }
 
 header > div {
     position: relative;
+    padding: 3.5vh;
+   
 }
 header h2{
     text-align: center;
