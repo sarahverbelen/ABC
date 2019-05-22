@@ -3,9 +3,7 @@ $(document).ready(function () {
     $(".doelstellingenInhoudOpen").hide();
 
     $("main").on("click",'.doelstellingen, .doelstellingDropdown' ,function () {
-        var thisDropdown = $(this).find($('.doelstellingenInhoudOpen')).first();
-        console.log(thisDropdown)
-        thisDropdown.slideToggle();
+        $('.doelstellingenInhoudOpen').slideToggle();
     });
 
     var huidigeLesfase = 0; // teller huidige lesfase

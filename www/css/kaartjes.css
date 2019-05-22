@@ -9,7 +9,9 @@
     box-sizing: border-box;
     overflow: auto;
 }
-
+.kaartje:first-of-type{
+    margin-top: 8vh;
+}
 .kaartje h2 {
     font-size: 44px;
     font-weight: 400;
