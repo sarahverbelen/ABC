@@ -43,7 +43,9 @@ h6 {
     width: 100%;
     margin-bottom: 6vh;
 }
-
+main{
+    margin-top: 8vh;
+}
 .legendePRight,
 .legendePLeft {
     display: inline-block;

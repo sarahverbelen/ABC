@@ -16,7 +16,9 @@ form h1 p {
     font-weight: 300;
     
 }
-
+main{
+    margin-top: 8vh;
+}
 form input[type="text"] ,  textarea {
     font-weight: 300;
     /* light */
