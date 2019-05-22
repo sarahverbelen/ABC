@@ -10,12 +10,7 @@ $(document).ready(function () {
     });
 
     //DOELSTELLINGEN OPEN/TOE-KLAPPEN  
-    $(".doelstellingenInhoudOpen").hide();
-
-    $("#doelstellingen, #doelstellingDropdown").on("click", function () {
-        $(".doelstellingenInhoudOpen").slideToggle();
-    });
-
+   
     //BEWERKKNOP KAARTJES
     function editKaartje(dit, e) {
         e.preventDefault();
