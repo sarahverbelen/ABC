@@ -6,5 +6,6 @@ $(document).ready(function(){
         localStorage.setItem("HuidigStoryboard", "-1");
         
         window.location = $(this).attr("href");
+        
     });
 });

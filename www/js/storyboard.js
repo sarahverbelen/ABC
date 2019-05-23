@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    
+    function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
      // DOELSTELLINGEN/INHOUD
         $(".doelstellingenInhoudOpen").hide();
@@ -15,12 +23,19 @@ $(document).ready(function () {
             'uuid': localStorage.getItem('uuid')
         }
     }).done(function (data) {
+        console.log(isEmpty(data));
         
-        console.log(JSON.parse(data["storyboards"]));
+        if(!isEmpty(data)){
+            console.log(JSON.parse(data["storyboards"]));
         var storyboards = JSON.parse(data["storyboards"]);
+        } else {
+           var storyboards = [];
+        }
+        
 
         var plaatsStoryboard = localStorage.getItem('HuidigStoryboard');
-
+        console.log(storyboards == "");
+        
         if (plaatsStoryboard == "-1" || storyboards == "") { //NIEUW STORYBOARD MAKEN: alleen deze sectie bij een nieuw storyboard! (of als er nog geen storyboards gemaakt zijn)
             var lesfasen = [];
             var doelstellingen = [];
