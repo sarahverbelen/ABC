@@ -9,7 +9,9 @@ main {
     margin-bottom: 4vh;
     width: 100%;
 }
-
+div.boven{
+    margin-top: 14vh;
+}
 .boven,
 .beneden {
     display: block;
