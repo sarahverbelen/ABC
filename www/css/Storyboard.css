@@ -364,6 +364,7 @@ label {
 
 .doelstellingenInhoudOpen {
     width: 100vw;
+    display: none;
     padding: 3vh 5.2vw 0 5.2vw;
     margin-top: 2vh;
     margin-left: -5.2vw;
