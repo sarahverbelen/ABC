@@ -188,7 +188,6 @@ $(document).ready(function () {
     $(".plusKaartjes a").on("click", function (e) {
         e.preventDefault();
         console.log("klik");
-
         var kleur, activiteit;
         kleur = $(this).attr("class");
 
@@ -223,6 +222,7 @@ $(document).ready(function () {
             storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.push(kaartje);
             displayKaartje(kaartje);
             console.log(storyboards[plaatsStoryboard]);
+            $(".plusKaartjes").slideToggle();
 
 
         }).error(function (een, twee, drie) {
