@@ -50,7 +50,7 @@ $(document).ready(function () {
             console.log("huidigeLesfase: " + huidigeLesfase);
         }
     });
-    
+
     //PLUSKNOP OPEN/TOE-KLAPPEN
     $(".plusKaartjes").hide();
 
@@ -175,7 +175,7 @@ $(document).ready(function () {
                     )
                 )
             $('.heleLesfase#' + huidigeLesfase).append(kaartjeHTML);
-            
+
             $(".editKaartje").on("click", function (e) {
                 editKaartje(this, e);
             });
