@@ -233,9 +233,8 @@ $(document).ready(function () {
 
     });
     
-    setTimeout(function(){
-        
-        $.ajax({
+    function save(){
+             $.ajax({
             "url": "http://10.3.50.56:3015/insertData",
             "method": "POST",
             "data": {
@@ -245,7 +244,13 @@ $(document).ready(function () {
         }).done(function(){
             console.log("saved");
         });
-    }, 3000);
+    }
     
+    setTimeout(save(), 3000); // autosave
+    
+    $('.save').on('click', function(){ // manual save
+        save();
+        alert('opgeslagen!')
+    });
     
 });
