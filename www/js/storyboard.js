@@ -69,21 +69,21 @@ $(document).ready(function () {
 
 
         $('body').on('swipeleft', function () {
-            $('.heleLesfase#' + huidigeLesfase).animate({ "left": "-=80%" } ); 
+            $('.heleLesfase#' + huidigeLesfase).animate({ "left": "-=100%" } ); 
             huidigeLesfase += 1;
             console.log("huidigeLesfase: " + huidigeLesfase);
             //if statement checkt als huidigeLesfase al bestaat:
             if ($('main').find('#' + huidigeLesfase).size() == 0) {
                 createLesfase();
             } else {
-                $('.heleLesfase#' + huidigeLesfase).animate({ "left": "-=80%" } ); 
+                $('.heleLesfase#' + huidigeLesfase).animate({ "left": "-=100%" } ); 
             }
         });
         $('body').on('swiperight', $('.heleLesfase'), function () {
             if (huidigeLesfase > 0) {
-                $('.heleLesfase#' + huidigeLesfase).animate({ "left": "+=80%" } ); 
+                $('.heleLesfase#' + huidigeLesfase).animate({ "left": "+=100%" } ); 
                 huidigeLesfase -= 1;
-                $('.heleLesfase#' + huidigeLesfase).animate({ "left": "+=80%" } ); 
+                $('.heleLesfase#' + huidigeLesfase).animate({ "left": "+=100%" } ); 
                 console.log("huidigeLesfase: " + huidigeLesfase);
             }
         });
