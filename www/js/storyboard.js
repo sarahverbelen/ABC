@@ -15,7 +15,6 @@ $(document).ready(function () {
     // PLAATS HUIDIG STORYBOARD OPHALEN
     var plaatsStoryboard = localStorage.getItem('HuidigStoryboard');
     // DOELSTELLINGEN/INHOUD
-    $(".doelstellingenInhoudOpen").hide();
     $("main").on("click", '.doelstellingen, .doelstellingDropdown', function () {
         $('.doelstellingenInhoudOpen').slideToggle();
     });

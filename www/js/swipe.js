@@ -1,5 +1,6 @@
 $(document).ready(function () {
      // doelstelling/ inhoud
+    
     $(".doelstellingenInhoudOpen").hide();
 
     $("main").on("click",'.doelstellingen, .doelstellingDropdown' ,function () {
@@ -24,6 +25,8 @@ $(document).ready(function () {
             $('.heleLesfase#' + huidigeLesfase).show();
         }
     });
+    
+    
     $('body').on('swiperight', $('.heleLesfase'), function () {
         if (huidigeLesfase > 0) {
             $('.heleLesfase#' + huidigeLesfase).hide();
@@ -32,4 +35,7 @@ $(document).ready(function () {
             console.log(huidigeLesfase);
         }
     });
+    
+
+    
 });
