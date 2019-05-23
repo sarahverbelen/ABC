@@ -29,7 +29,9 @@
 .doelstellingen {
     display: inline-block;
 }
-
+div#plus.kaartje{
+    padding-bottom: 3vh;
+}
 
 /*BEGIN VIERKANTIGE BUTTONS */
 .containerDoelstellingen {
