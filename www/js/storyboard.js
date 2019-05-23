@@ -1,5 +1,7 @@
 $(document).ready(function () {
     
+    var kaartjeNummer = 0;
+    
     function isEmpty(obj) {
     for(var key in obj) {
         if(obj.hasOwnProperty(key))
@@ -103,9 +105,9 @@ $(document).ready(function () {
             $(dit).toggleClass("sluitKaartje");
         }
 
-        $(".editKaartje").on("click", function (e) {
-            editKaartje(this, e);
-        });
+//        $(".editKaartje").on("click", function (e) {
+//            editKaartje(this, e);
+//        });
 
         //DISPLAY METHODE RADIOBUTTON - FUNCTIE
         function displayMethode(methodenLijst) {
@@ -141,6 +143,9 @@ $(document).ready(function () {
                 var contact = data[kaartje.kleur].contactmethoden;
                 var digitaal = data[kaartje.kleur].digitaalmethoden;
 
+                kaartjeNummer++;
+            var id = huidigeLesfase + kaartjeNummer;
+                
                 var contactHTML = displayMethode(contact);
                 var digitaalHTML = displayMethode(digitaal);
 
@@ -155,7 +160,8 @@ $(document).ready(function () {
                     .append(
                         $("<a>", {
                             "class": "editKaartje",
-                            "href": "#"
+                            "href": "#",
+                            "ID": id
                         }).text("edit kaartje")
                     )
                     .append(
@@ -211,7 +217,7 @@ $(document).ready(function () {
                     )
                 $('.heleLesfase#' + huidigeLesfase).append(kaartjeHTML);
 
-                $(".editKaartje").on("click", function (e) {
+                $(".editKaartje[ID=" + id + " ]").on("click", function (e) {
                     editKaartje(this, e);
                 });
 
