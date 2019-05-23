@@ -1,39 +1,62 @@
 $(document).ready(function () {
 
-    var storyboardsJson = window.localStorage.getItem("storyboards");
-    var storyboards = JSON.parse(storyboardsJson);
-    
-    $(".StoryboardInfo").remove();
+    $.ajax({
+        'url': 'http://10.3.50.56:3015/getData',
+        'method': 'POST',
+        'data': {
+            'uuid': localStorage.getItem('uuid')
+        }
+    }).done(function (data) {
 
-    function displayStoryboard(storyboard){
-        var storyboardHTML = $("<div>", {"class": "StoryboardInfo"})
-        .append(
-            $("<a>", {"href": "storyboard.html"})
-            .append(
-                $("<h6>").text(storyboard.naam)
-            )
-            .append(
-                $("<p>", {"class": "fontRegular extraInfo"}).text("Deeltraject: " + storyboard.deeltraject)
-            )
-            .append(
-                $("<p>", {"class": "fontRegular extraInfo"}).text("Semester: " + storyboard.semester)
-            )
-        );
-        
-        $(".content").append(storyboardHTML);
-    }
-    
-    
-    for(var i = 0; i < storyboards.length; i++){
-        displayStoryboard(storyboards[i]);
-    }
-    
-    
-    $(".StoryboardInfo a").on("click", function (e) {
-        e.preventDefault();
-        console.log(storyboards);
+        console.log(JSON.parse(data["storyboards"]));
+        var storyboards = JSON.parse(data["storyboards"]);
 
+        displayStoryboardInfo(storyboards);
     });
 
 
+    function displayStoryboardInfo(storyboards) {
+
+        for (var i = 0; i < storyboards.length; i++) {
+
+            console.log(storyboards[i].naam);
+
+            var storyboardHTML = $("<div>", {
+                    "class": "StoryboardInfo",
+                    "id": i
+                })
+                .append(
+                    $("<a>", {
+                        "href": "storyboard.html"
+                    })
+                    .append(
+                        $("<h6>").text(storyboards[i].naam)
+                    )
+                    .append(
+                        $("<p>", {
+                            "class": "fontRegular extraInfo"
+                        }).text("Deeltraject: " + storyboards[i].deeltraject)
+                    )
+                    .append(
+                        $("<p>", {
+                            "class": "fontRegular extraInfo"
+                        }).text("Semester: " + storyboards[i].semester)
+                    )
+                );
+
+            $(".content").append(storyboardHTML);
+
+        }
+
+    }
+    
+    $("body").on("click", ".StoryboardInfo", function(e){
+        e.preventDefault();
+        
+        localStorage.setItem("HuidigStoryboard", $(this).attr("id"));
+        
+        window.location = "storyboard.html";
+        
+    });
+    
 });
