@@ -10,7 +10,7 @@
     overflow: auto;
 }
 .kaartje:first-of-type{
-    margin-top: 8vh;
+    margin-top: vh;
 }
 .kaartje h2 {
     font-size: 44px;
