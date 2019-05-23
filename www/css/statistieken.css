@@ -1,10 +1,5 @@
 @import url("Navigatie.css");
 
-body {
-    height: 100vh;
-    grid-template-rows: repeat(4, 1fr);
-}
-
 .dropdown {
     text-align: center;
     height: 6vh;
@@ -44,7 +39,7 @@ h6 {
     margin-bottom: 6vh;
 }
 main{
-    margin-top: 8vh;
+    margin-top: 10vh;
 }
 .legendePRight,
 .legendePLeft {

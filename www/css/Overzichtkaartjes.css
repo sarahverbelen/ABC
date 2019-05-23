@@ -10,10 +10,10 @@ borderwidth geeft de dikte van pijl
 padding, afstand tussen hoeken
 */
 main{
-    margin-top: 1vh;
+    margin-top: 11vh;
 }
 .fa-angle-down {
-    margin-top: 1vh;
+    margin-top: vh;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     float: right;
@@ -23,17 +23,25 @@ main{
 transform en webkit verplaatsen de richting van pijl
 pijl naar beneden: transform: rotate(45deg);
   -webkit-transform: rotate(45deg);*/
-
-
+h2.titelkaart{
+    padding-bottom: 1vh;
+}
+.digit{
+    margin-top: 1vh;
+}
+div.kaartje{
+    padding-bottom: 2vh;
+}
 .titelkaart {
     margin-left: 12.875%;
-       line-height: 1.9;
+       line-height: 1.2;
 }
 
 .colorblack {
     margin-left: 22.75%;
        line-height: 1.9;
 }
+
 
 .methodes {
     margin-left: 35.625%;
