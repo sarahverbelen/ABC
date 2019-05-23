@@ -1,22 +1,22 @@
 $(document).ready(function () {
-    
-    var kaartjeNummer = 0;
-    
-    function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
 
-     // DOELSTELLINGEN/INHOUD
-        $(".doelstellingenInhoudOpen").hide();
-        $("main").on("click", '.doelstellingen, .doelstellingDropdown', function () {
-            $('.doelstellingenInhoudOpen').slideToggle();
-        });
-    
-    
+    var kaartjeNummer = 0;
+
+    function isEmpty(obj) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
+    // DOELSTELLINGEN/INHOUD
+    $(".doelstellingenInhoudOpen").hide();
+    $("main").on("click", '.doelstellingen, .doelstellingDropdown', function () {
+        $('.doelstellingenInhoudOpen').slideToggle();
+    });
+
+
     //STORYBOARDS OPHALEN
     $.ajax({
         'url': 'http://10.3.50.56:3015/getData',
@@ -26,18 +26,18 @@ $(document).ready(function () {
         }
     }).done(function (data) {
         console.log(isEmpty(data));
-        
-        if(!isEmpty(data)){
+
+        if (!isEmpty(data)) {
             console.log(JSON.parse(data["storyboards"]));
-        var storyboards = JSON.parse(data["storyboards"]);
+            var storyboards = JSON.parse(data["storyboards"]);
         } else {
-           var storyboards = [];
+            var storyboards = [];
         }
-        
+
 
         var plaatsStoryboard = localStorage.getItem('HuidigStoryboard');
         console.log(storyboards == "");
-        
+
         if (plaatsStoryboard == "-1" || storyboards == "") { //NIEUW STORYBOARD MAKEN: alleen deze sectie bij een nieuw storyboard! (of als er nog geen storyboards gemaakt zijn)
             var lesfasen = [];
             var doelstellingen = [];
@@ -50,18 +50,36 @@ $(document).ready(function () {
             plaatsStoryboard = storyboards.length - 1;
             localStorage.setItem('HuidigStoryboard', plaatsStoryboard);
         } else {
+            for (var i = 1; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
+                console.log(storyboards[plaatsStoryboard].lesfasen[i]);
 
+                //MAAK LESFASE
+                $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6>' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6>Doelstellingen</h6><label class="containerDoelstellingen">D1: Lorem ipsum sit amett<input type="checkbox" checked="checked"><span class="checkmarkDoelstellingen"></span></label><h6>Inhoud</h6><form><textarea></textarea></form><button><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
+
+            }
+
+            for (var i = 0; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
+                //MAAK KAARTJES PER LESFASE
+                for (var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].kaartjes.length; j++) {
+                    console.log(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j]);
+                    displayKaartje(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j], i);
+                }
+            }
+
+
+
+            $(".heleLesfase#0").show();
         }
 
-       
+
         // SWIPE
         var huidigeLesfase = 0; // teller huidige lesfase
 
         function createLesfase() {
             var kaartjes = [];
-            
+
             var NaamLesfase = "Lesfase " + (huidigeLesfase + 1);
-            $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6>' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6>Doelstellingen</h6><label class="containerDoelstellingen">D1: Lorem ipsum sit amett<input type="checkbox" checked="checked"><span class="checkmarkDoelstellingen"></span></label><h6>Inhoud</h6><form><textarea></textarea></form><button><img src="../img/icons/vink.svg"></button></div></div>');
+            $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6>' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6>Doelstellingen</h6><label class="containerDoelstellingen">D1: Lorem ipsum sit amett<input type="checkbox" checked="checked"><span class="checkmarkDoelstellingen"></span></label><h6>Inhoud</h6><form><textarea></textarea></form><button><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
             var extraLesfase = new Lesfase(NaamLesfase, "", "", kaartjes);
             storyboards[plaatsStoryboard].lesfasen.push(extraLesfase);
             console.log("aantal Lesfasen: " + storyboards[plaatsStoryboard].lesfasen.length);
@@ -69,21 +87,21 @@ $(document).ready(function () {
 
 
         $('body').on('swipeleft', function () {
-            $('.heleLesfase#' + huidigeLesfase).hide(); 
+            $('.heleLesfase#' + huidigeLesfase).hide();
             huidigeLesfase += 1;
             console.log("huidigeLesfase: " + huidigeLesfase);
             //if statement checkt als huidigeLesfase al bestaat:
-            if ($('main').find('#' + huidigeLesfase).size() == 0) {
+            if ($('main').find('.heleLesfase#' + huidigeLesfase).size() == 0) {
                 createLesfase();
             } else {
-                $('.heleLesfase#' + huidigeLesfase).show(); 
+                $('.heleLesfase#' + huidigeLesfase).show();
             }
         });
         $('body').on('swiperight', $('.heleLesfase'), function () {
             if (huidigeLesfase > 0) {
-                $('.heleLesfase#' + huidigeLesfase).hide(); 
+                $('.heleLesfase#' + huidigeLesfase).hide();
                 huidigeLesfase -= 1;
-                $('.heleLesfase#' + huidigeLesfase).show(); 
+                $('.heleLesfase#' + huidigeLesfase).show();
                 console.log("huidigeLesfase: " + huidigeLesfase);
             }
         });
@@ -105,9 +123,25 @@ $(document).ready(function () {
             $(dit).toggleClass("sluitKaartje");
         }
 
-//        $(".editKaartje").on("click", function (e) {
-//            editKaartje(this, e);
-//        });
+        $("body").on("click", ".bevestigKaartje", function (e) {
+            
+            var ditKaartje = kaartjeNummer - huidigeLesfase - 1;
+            console.log(ditKaartje)
+            
+            //notitie
+            var dezeNota = $(this).siblings("form").children(".kaartjeNota").val();
+            storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes[ditKaartje].nota = dezeNota;
+
+            $(this).siblings("p.storyboardKaart").text(dezeNota);
+            
+            
+            //kaartje weer toeklappen
+            editKaartje(this, e);
+
+            save();
+        });
+
+
 
         //DISPLAY METHODE RADIOBUTTON - FUNCTIE
         function displayMethode(methodenLijst) {
@@ -135,7 +169,7 @@ $(document).ready(function () {
 
 
         //DISPLAY KAARTJE - FUNCTIE
-        function displayKaartje(kaartje, dit) {
+        function displayKaartje(kaartje, huidigelesfase) {
 
             $.ajax({
                 "url": "../json/kaartjes.json"
@@ -144,8 +178,8 @@ $(document).ready(function () {
                 var digitaal = data[kaartje.kleur].digitaalmethoden;
 
                 kaartjeNummer++;
-            var id = huidigeLesfase + kaartjeNummer;
-                
+                var id = huidigelesfase + kaartjeNummer;
+
                 var contactHTML = displayMethode(contact);
                 var digitaalHTML = displayMethode(digitaal);
 
@@ -192,6 +226,14 @@ $(document).ready(function () {
                             $("<h6>").text("Digitale methoden")
                         )
                         .append(digitaalHTML)
+                        .append(
+                            $("<h6>").text("Notities")
+                        )
+                        .append(
+                            $("<textarea>", {
+                                "class": "kaartjeNota"
+                            }).val(kaartje.nota)
+                        )
                     )
                     .append(
                         $("<button>", {
@@ -215,7 +257,7 @@ $(document).ready(function () {
                             })
                         )
                     )
-                $('.heleLesfase#' + huidigeLesfase).append(kaartjeHTML);
+                $('.heleLesfase#' + huidigelesfase + " .kaartjes").append(kaartjeHTML);
 
                 $(".editKaartje[ID=" + id + " ]").on("click", function (e) {
                     editKaartje(this, e);
@@ -260,9 +302,9 @@ $(document).ready(function () {
                 activiteit = data[kleur].activiteit;
 
                 var kaartje = new Kaartje(kleur, "", "", activiteit);
-               console.log(plaatsStoryboard); 
+                console.log(plaatsStoryboard);
                 storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.push(kaartje);
-                displayKaartje(kaartje);
+                displayKaartje(kaartje, huidigeLesfase);
                 console.log(storyboards[plaatsStoryboard]);
                 $(".plusKaartjes").slideToggle();
 
