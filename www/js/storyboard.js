@@ -50,7 +50,7 @@ $(document).ready(function () {
             console.log("huidigeLesfase: " + huidigeLesfase);
         }
     });
-    
+
     //PLUSKNOP OPEN/TOE-KLAPPEN
     $(".plusKaartjes").hide();
 
@@ -175,17 +175,13 @@ $(document).ready(function () {
                     )
                 )
             $('.heleLesfase#' + huidigeLesfase).append(kaartjeHTML);
-            
+
             $(".editKaartje").on("click", function (e) {
                 editKaartje(this, e);
             });
 
         });
     }
-
-
-
-    //$(".kaartjes .kaartje").remove();
 
 
 
@@ -224,10 +220,9 @@ $(document).ready(function () {
             activiteit = data[kleur].activiteit;
 
             var kaartje = new Kaartje(kleur, "", "", activiteit);
-
             storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.push(kaartje);
             displayKaartje(kaartje);
-            console.log(storyboards[plaatsStoryboard].storyboard);
+            console.log(storyboards[plaatsStoryboard]);
 
 
         }).error(function (een, twee, drie) {
@@ -237,4 +232,20 @@ $(document).ready(function () {
         });
 
     });
+    
+    setTimeout(function(){
+        
+        $.ajax({
+            "url": "http://10.3.50.56:3015/insertData",
+            "method": "POST",
+            "data": {
+                "uuid": localStorage.getItem("uuid"),
+                "storyboards": storyboards
+            }
+        }).done(function(){
+            console.log("saved");
+        });
+    }, 3000);
+    
+    
 });
