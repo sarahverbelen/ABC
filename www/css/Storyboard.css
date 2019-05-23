@@ -13,7 +13,7 @@
 .lesfase {
     text-align: center;
     position: absolute;
-    left: 50%;
+    left: 50vw;
     transform: translate(-50%, -24%);
     margin-top: -65px;
     width: 45vw;
@@ -21,10 +21,7 @@
     line-height: 1.2;
 }
 
-.heleLesfase{
-    position: absolute;
-    width: 100%;
-}
+
 .lesfase h2 {
     font-size: 36px;
     font-weight: 700;
@@ -385,7 +382,4 @@ label {
 
 main{
     margin-top: 10vh;
-    height: 10vh;
-    overflow: hidden;
-    position: relative;
 }
