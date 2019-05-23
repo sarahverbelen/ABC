@@ -64,7 +64,7 @@ $(document).ready(function () {
                     console.log(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j]);
                     displayKaartje(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j], i);
                 }
-            }
+            };
 
 
 
