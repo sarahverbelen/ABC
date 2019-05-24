@@ -456,3 +456,52 @@ label {
 main {
     margin-top: 10vh;
 }
+
+/* DOTS */
+
+.dot{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    display: inline-block;
+    margin: 0.5vw;
+    float: right;
+}
+#dots{
+    position: fixed;
+    bottom: 2vh;
+    right: 5.2vw;
+    width: 100%;
+}
+
+.filled{
+    background-color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
