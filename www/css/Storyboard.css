@@ -1,6 +1,6 @@
 @import url("Navigatie.css");
 
-#titelLink:visited {
+#titelLink:any-link {
     color: #333;
 }
 
