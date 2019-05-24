@@ -62,7 +62,7 @@ $(document).ready(function () {
                 //MAAK KAARTJES PER LESFASE
                 for (var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].kaartjes.length; j++) {
                     console.log(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j]);
-                    displayKaartje(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j], i);
+                    displayKaartje(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j], i, j);
                 }
             }
 
@@ -125,7 +125,7 @@ $(document).ready(function () {
 
         $("body").on("click", ".bevestigKaartje", function (e) {
             
-            var ditKaartje = kaartjeNummer - huidigeLesfase - 1;
+            var ditKaartje = $(this).siblings(".sluitKaartje").attr("data-nummer");
             console.log(ditKaartje)
             
             //notitie
@@ -169,16 +169,15 @@ $(document).ready(function () {
 
 
         //DISPLAY KAARTJE - FUNCTIE
-        function displayKaartje(kaartje, huidigelesfase) {
-
+        function displayKaartje(kaartje, huidigelesfase, kaartjeNummer) {
             $.ajax({
                 "url": "../json/kaartjes.json"
             }).done(function (data) {
                 var contact = data[kaartje.kleur].contactmethoden;
-                var digitaal = data[kaartje.kleur].digitaalmethoden;
-
-                kaartjeNummer++;
-                var id = huidigelesfase + kaartjeNummer;
+                var digitaal = data[kaartje.kleur].digitaalmethoden;  
+                       
+                var id = huidigelesfase + kaartjeNummer + Math.round(Math.random());
+                var nummer = kaartjeNummer;
 
                 var contactHTML = displayMethode(contact);
                 var digitaalHTML = displayMethode(digitaal);
@@ -195,7 +194,8 @@ $(document).ready(function () {
                         $("<a>", {
                             "class": "editKaartje",
                             "href": "#",
-                            "ID": id
+                            "ID": id,
+                            "data-nummer": nummer
                         }).text("edit kaartje")
                     )
                     .append(
@@ -304,7 +304,10 @@ $(document).ready(function () {
                 var kaartje = new Kaartje(kleur, "", "", activiteit);
                 console.log(plaatsStoryboard);
                 storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.push(kaartje);
-                displayKaartje(kaartje, huidigeLesfase);
+                
+                var nummerKaartje = storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.length - 1;
+                
+                displayKaartje(kaartje, huidigeLesfase, nummerKaartje);
                 console.log(storyboards[plaatsStoryboard]);
                 $(".plusKaartjes").slideToggle();
 
