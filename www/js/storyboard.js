@@ -124,28 +124,76 @@ $(document).ready(function () {
         }
 
         $("body").on("click", ".bevestigKaartje", function (e) {
-            
+            var dit = this;
+            var event = e;
+
             var ditKaartje = $(this).siblings("a").attr("data-nummer");
             console.log(ditKaartje)
-            
+
+            var kleur = $(this).parents(".kaartje").attr("class").split(" ")[1];
+
             //notitie
             var dezeNota = $(this).siblings("form").children(".kaartjeNota").val();
             storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes[ditKaartje].nota = dezeNota;
 
             $(this).siblings("p.storyboardKaart").text(dezeNota);
-            
-            
-            //kaartje weer toeklappen
-            editKaartje(this, e);
+
+            //radiobuttons aflezen
+            var geselecteerdeMethodiek = -1;
+            var soortMethodiek;
+            //contactmethoden
+            $(this).siblings(".methodieken").children(".contact").children(".containerMethoden").each(function (i) {
+                var selected = $(this).children("input").is(":checked");
+                if (selected) {
+                    geselecteerdeMethodiek = i;
+                    soortMethodiek = "contact";
+                }
+            });
+
+            //digitale methoden
+            $(this).siblings(".methodieken").children(".digitaal").children(".containerMethoden").each(function (i) {
+                var selected = $(this).children("input").is(":checked");
+                if (selected) {
+                    geselecteerdeMethodiek = i;
+                    soortMethodiek = "digitaal";
+                }
+            });
+
+            if (geselecteerdeMethodiek != -1) {
+                $.ajax({
+                    "url": "../json/kaartjes.json"
+                }).done(function (data) {
+                    console.log(data);
+                    console.log(data[kleur][soortMethodiek + "methoden"][geselecteerdeMethodiek]);
+                    var methodiek = data[kleur][soortMethodiek + "methoden"][geselecteerdeMethodiek];
+                    $(dit).siblings("h3").text(methodiek);
+
+                    storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes[ditKaartje].methodiek = methodiek;
+
+                    //kaartje weer toeklappen
+
+                    save();
+
+                }).error(function (een, twee, drie) {
+                    console.log(een);
+                    console.log(twee);
+                    console.log(drie);
+                });
+            }
 
             save();
+
+            editKaartje(dit, event);
+
         });
 
 
 
         //DISPLAY METHODE RADIOBUTTON - FUNCTIE
-        function displayMethode(methodenLijst) {
-            var methodenHTML = $("<div>");
+        function displayMethode(methodenLijst, naam) {
+            var methodenHTML = $("<div>", {
+                "class": naam
+            });
             for (var i = 0; i < methodenLijst.length; i++) {
                 var methode = $("<label>", {
                         "class": "containerMethoden"
@@ -174,13 +222,13 @@ $(document).ready(function () {
                 "url": "../json/kaartjes.json"
             }).done(function (data) {
                 var contact = data[kaartje.kleur].contactmethoden;
-                var digitaal = data[kaartje.kleur].digitaalmethoden;  
-                       
+                var digitaal = data[kaartje.kleur].digitaalmethoden;
+
                 var id = huidigelesfase + kaartjeNummer + Math.round(Math.random());
                 var nummer = kaartjeNummer;
 
-                var contactHTML = displayMethode(contact);
-                var digitaalHTML = displayMethode(digitaal);
+                var contactHTML = displayMethode(contact, "contact");
+                var digitaalHTML = displayMethode(digitaal, "digitaal");
 
                 var kaartjeHTML = $("<div>", {
                         "class": "kaartje " + kaartje.kleur
@@ -304,9 +352,9 @@ $(document).ready(function () {
                 var kaartje = new Kaartje(kleur, "", "", activiteit);
                 console.log(plaatsStoryboard);
                 storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.push(kaartje);
-                
+
                 var nummerKaartje = storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.length - 1;
-                
+
                 displayKaartje(kaartje, huidigeLesfase, nummerKaartje);
                 console.log(storyboards[plaatsStoryboard]);
                 $(".plusKaartjes").slideToggle();
