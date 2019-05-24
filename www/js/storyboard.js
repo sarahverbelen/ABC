@@ -142,9 +142,11 @@ $(document).ready(function () {
             //if statement checkt als huidigeLesfase al bestaat:
             if ($('main').find('.heleLesfase#' + huidigeLesfase).size() == 0) {
                 createLesfase();
+                createExtraDot()
             } else {
                 $('.heleLesfase#' + huidigeLesfase).show();
             }
+            dotAanpassen()
         });
         
         //rechts swipen
@@ -153,9 +155,24 @@ $(document).ready(function () {
                 $('.heleLesfase#' + huidigeLesfase).hide();
                 huidigeLesfase -= 1;
                 $('.heleLesfase#' + huidigeLesfase).show();
+                dotAanpassen()
             }
         });
+        // DOTS
+        function makeDotsForExistingLesfasen(){
+            for(i=0; i < storyboards[plaatsStoryboard].lesfasen.length; i++ ){
+            $('#dots').prepend('<span class = "dot" id="lesfase' + i +'"></span>');}
+            dotAanpassen()
+        }
+        makeDotsForExistingLesfasen();
+        function createExtraDot(){
+            $('#dots').prepend('<span class = "dot" id="lesfase' + huidigeLesfase +'"></span>');
+        }
         
+        function dotAanpassen(){
+             $('#dots .dot').removeClass('filled')
+            $('#dots .dot#'+'lesfase'+huidigeLesfase).addClass('filled')
+        };
         //lesfase aanpassen
         $("body").on("click", ".buttonInhoud", function(){
             
