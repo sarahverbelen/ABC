@@ -42,8 +42,11 @@ div.boven{
     border-top-left-radius: 15px;
     margin-right: 3vw;
     display: block;
+    float: left;
 }
-
+#legende{
+    padding: 5% 0;
+}
 .naamKaartje {
     padding-top: 1.5vw;
     padding-left: 1vw;

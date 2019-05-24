@@ -13,7 +13,7 @@ $(document).ready(function(){
        $('#menu').animate({ "left": "-=80%" } ); 
     });
     
-    $('.terug').click(function(){
+    $('.back').click(function(){
         $('.overlay').fadeOut();
        $('#menu').animate({ "left": "+=80%" } ); 
     });
