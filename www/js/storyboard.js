@@ -119,13 +119,13 @@ $(document).ready(function () {
             var ditKaartje = $(dit).parent(".kaartje");
             ditKaartje.children("form").slideToggle();
             ditKaartje.children("button").slideToggle();
-            $(dit).toggleClass("editKaartje");
-            $(dit).toggleClass("sluitKaartje");
+            $(dit).siblings("a").toggleClass("editKaartje");
+            $(dit).siblings("a").toggleClass("sluitKaartje");
         }
 
         $("body").on("click", ".bevestigKaartje", function (e) {
             
-            var ditKaartje = $(this).siblings(".sluitKaartje").attr("data-nummer");
+            var ditKaartje = $(this).siblings("a").attr("data-nummer");
             console.log(ditKaartje)
             
             //notitie
