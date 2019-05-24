@@ -11,6 +11,9 @@ $(document).ready(function () {
         console.log(JSON.parse(data["storyboards"]));
         var storyboards = JSON.parse(data["storyboards"]);
         var huidigStoryboard = localStorage.getItem("HuidigStoryboard");
+        
+        //titel in header aanpassen
+        $("header div h2").text(storyboards[huidigStoryboard].naam);
 
         //uitgelezen data invoeren
         $("#naamStoryboard").val(storyboards[huidigStoryboard].naam);
@@ -39,7 +42,7 @@ $(document).ready(function () {
             
              var deeltraject = $("#deeltraject").val();
             storyboards[huidigStoryboard].deeltraject = deeltraject;
-
+            $("header div h2").text(storyboards[huidigStoryboard].naam);
 
             save();
             console.log(storyboards);
