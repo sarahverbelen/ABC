@@ -23,15 +23,13 @@
     background-image: url(../img/icons/EditLesfase.svg);
     color: #333;
     background-repeat: no-repeat;
-    display: inline-block;
-    width: 100%;
-    
+    width: 8%;
     height: 2vh;
 }
 .lesfase {
     text-align: center;
     position: absolute;
-    left: 40vw;
+    left: 50vw;
     transform: translate(-50%, -24%);
     margin-top: -65px;
     width: 45vw;
@@ -48,10 +46,14 @@ line {
 
 svg {
     float: right;
+    margin: 0 5%;
+    margin-top: 12px;
 }
 
 .editLesfase {
-    display: block;
+    display: flex;
+    width: 100%;
+    margin: 0 34%;
 }
 
 .lesfase h2 {
