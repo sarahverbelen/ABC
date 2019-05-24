@@ -35,7 +35,7 @@ $(document).ready(function () {
                     .append(
                         $("<p>", {
                             "class": "fontRegular extraInfo"
-                        }).text("Deeltraject: " + storyboards[i].deeltraject)
+                        }).text("Opleidingsonderdeel: " + storyboards[i].opleidingsonderdeel)
                     )
                     .append(
                         $("<p>", {

@@ -1,7 +1,9 @@
 $(document).ready(function(){
     
-    $("#nieuwStoryboard").on("click", function(e){
+    $(".maakStoryboard").on("click", function(e){
         e.preventDefault();
+        
+        console.log("zegiheofihzfhi");
         
         localStorage.setItem("HuidigStoryboard", "-1");
         

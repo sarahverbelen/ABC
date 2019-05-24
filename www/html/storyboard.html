@@ -22,12 +22,13 @@
     <header>
         <div>
             <img class="pijlTerug" src="../img/icons/pijl_terug.svg">
-            <h1>Storyboard</h1><h2>nieuwe titel</h2>
+            <h1>Storyboard</h1>
+            <h2>nieuwe titel</h2>
             <img class="menuToggle open" src="../img/icons/HamburgerMenu.svg">
         </div>
-
     </header>
-
+    
+    <div class="overlay"></div>
     <nav id="menu">
         <img class="menuToggle terug" src="../img/icons/terugPijlRood.svg">
         <a href="../index.html">Home</a>
@@ -43,13 +44,13 @@
             <div class="verzamelbalkBovenKaartjes">
                 <a href="overview.html" class="uitzoomen"></a>
                 <div class="lesfase">
-                    <h6>Lesfase 1</h6>
+                    <h6 class="marginh6">Lesfase 1</h6>
                     <h3 class="fontRegular doelstellingen">Doelstellingen / Inhoud</h3>
-                    <div class ="doelstellingDropdown"></div>
+                    <div class="doelstellingDropdown"></div>
                 </div>
             </div>
             <div class="doelstellingenInhoudOpen">
-                <h6>Doelstellingen</h6>
+                <h6 class="marginh6">Doelstellingen</h6>
                 <label class="containerDoelstellingen">D1: Lorem ipsum sit amett
                     <input type="checkbox" checked="checked">
                     <span class="checkmarkDoelstellingen"></span>
@@ -68,10 +69,10 @@
                 </label>
                 <h6>Inhoud</h6>
                 <form>
-                    <textarea></textarea>
+                    <textarea class="textareaInhoud"></textarea>
                 </form>
 
-                <button><img src="../img/icons/vink.svg"></button>
+                <button class="buttonInhoud"><img src="../img/icons/vink.svg"></button>
             </div>
             <div class="kaartjes">
             </div>
@@ -87,20 +88,20 @@
             <a href="#" class="plusAqua">Samenwerking</a>
             <a href="#" class="plusRoze">Discussie</a>
         </div>
+    </div>
+    <footer>
+        <div id="opties">
+            <div class="save"></div>
+            <a href="DetailsStoryboard.html"><div class="edit"></div></a>
+            <div class="stats"></div>
+            <div class="arrow"></div>
         </div>
-        <footer>
-            <div id="opties">
-                <div class="save"></div>
-                <div class="edit"></div>
-                <div class="stats"></div>
-                <div class="arrow"></div>
-            </div>
-            <div id="triangle-bottomleft">
-                <div class="bolletjes"></div>
-                <div class="terug"></div>
-            </div>
-            
-        </footer>
+        <div id="triangle-bottomleft">
+            <div class="bolletjes"></div>
+            <div class="terug"></div>
+        </div>
+
+    </footer>
 </body>
 
 </html>
