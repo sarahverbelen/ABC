@@ -10,20 +10,7 @@
 body{   
         margin-left: 5.2%;
         margin-right: 5.2%;
-        /* display: grid;
-        grid-template-columns: repeat(8, [col] 1fr);
-        grid-column-gap: 2.6%; */
     }
-
-/* gebruik:
-     grid-column: col 6/ span 5;
-
-    kolommen, je schrijft achter col op welke kolom je blok wil starten en achter span, schrijf je hoeveel kolommen breed het moet zijn
-
-    grid-row: 1 /span 5;
-    Zelfde systeem als kolommen maar dan voor rijzen
-    
-    PS: Dit werkt enkel op blokjes die directe kinderen zijn van de body. */
 
 /* font */
 
