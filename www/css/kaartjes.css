@@ -4,7 +4,6 @@
     border-top-left-radius: 30px;
     margin-bottom: 70px;
     padding-top: 5.2vw;
-    padding-bottom: 1.2vw;
     box-sizing: border-box;
     overflow: auto;
 }
@@ -19,7 +18,7 @@
 
 
 .storyboardKaart {
-    margin-left: 12.875%;
+    margin-left: 12%;
 }
 
 p.storyboardKaart {
