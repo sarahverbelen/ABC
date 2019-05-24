@@ -142,6 +142,7 @@ $(document).ready(function () {
             //if statement checkt als huidigeLesfase al bestaat:
             if ($('main').find('.heleLesfase#' + huidigeLesfase).size() == 0) {
                 createLesfase();
+                $(".heleLesfase#" + huidigeLesfase).show();
                 createExtraDot()
             } else {
                 $('.heleLesfase#' + huidigeLesfase).show();
