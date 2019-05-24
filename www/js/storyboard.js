@@ -53,9 +53,11 @@ $(document).ready(function () {
             for (var i = 1; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
                 console.log(storyboards[plaatsStoryboard].lesfasen[i]);
 
-                //MAAK LESFASE
+                //MAAK LESFASEN
                 $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6>' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6>Doelstellingen</h6><label class="containerDoelstellingen">D1: Lorem ipsum sit amett<input type="checkbox" checked="checked"><span class="checkmarkDoelstellingen"></span></label><h6>Inhoud</h6><form><textarea></textarea></form><button><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
-
+                
+                //pas titel in hoofdbalk aan
+                $("header div h2").text(storyboards[plaatsStoryboard].naam);
             }
 
             for (var i = 0; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
