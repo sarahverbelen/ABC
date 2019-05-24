@@ -14,7 +14,7 @@ $(document).ready(function () {
         // invullen opties dropdown
         for (i = 0; i < storyboards.length; i++) {
 
-            $('.dropdown').append('<option value = "' + i + '">' + storyboards[i].naam + '</option>');
+            $('.dropdown').append('<option id = "' + i + '">' + storyboards[i].naam + '</option>');
 
         }
 
@@ -23,17 +23,16 @@ $(document).ready(function () {
 
         function selectStoryboard() {
             thisStoryb = localStorage.getItem('HuidigStoryboard');
-            if (thisStoryb == '') {
-                $('.dropdown option').removeAttr('selected');
-                $('.dropdown').find('option[value="-1"]').attr('selected', 'selected')
+            if (thisStoryb == '-1') {
+                //$('.dropdown').find('option[id = "-1"]').attr('selected', 'selected')
                 countAllCards();
             } else {
-                $('.dropdown option').removeAttr('selected');
-                $('.dropdown').find('option[value="' + thisStoryb + '"]').attr('selected', 'selected');
+                //$('.dropdown').find('option[id ="' + thisStoryb + '"]').attr('selected', 'selected');
                 console.log(thisStoryb);
                 countCards();
             }
         };
+        
         selectStoryboard();
         var totPraktijk = 0;
         var totOnderzoek = 0;
@@ -67,9 +66,12 @@ $(document).ready(function () {
                 });
             });
         };
+        
         function countAllCards(){
-            storyboards.foreach(function(elm){
-                elm.lesfasen.forEach(function (element) {
+            console.log(storyboards);
+            for(i=0; i< storyboards.length ; i++){
+                console.log(storyboards[i].lesfasen)
+                storyboards[i].lesfasen.forEach(function (element) {
                 element.kaartjes.forEach(function (e) {
                     if (e.kleur == 'aqua') {
                         totSamenwerking += 1;
@@ -91,9 +93,11 @@ $(document).ready(function () {
                     }
                 });
             });
-            });
+            };
         };
-         countCards();
+        if(thisStoryb != -1){
+            countCards();}
+         
         
         $('select').change(function () {
             totPraktijk = 0;
@@ -102,7 +106,7 @@ $(document).ready(function () {
             totProductie = 0;
             totKennisverwerking = 0;
             totSamenwerking = 0;
-            var selected = $('.dropdown option:selected').val();
+            var selected = $('.dropdown option:selected').attr("id");
             console.log(selected);
             if(selected !== -1){
             localStorage.setItem('HuidigStoryboard', selected);}
