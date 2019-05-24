@@ -28,15 +28,15 @@ $(document).ready(function () {
             $(".contentDoel").slideDown();
 
             $(".ADD textarea").val(storyboards[huidigStoryboard].doelstellingen[0]);
-            
+
             for (var i = 1; i < storyboards[huidigStoryboard].doelstellingen.length; i++) {
                 number = number + 1;
                 ad = ad + 1;
                 $(".ad h1").text("D" + ad);
-                $(".contentToev").append('<div class="ADD"><h1>D' + number + ':</h1><textarea rows="1" placeholder="lorem ipsum dolor sit amet" style="resize: none;">' +  storyboards[huidigStoryboard].doelstellingen[i] + '</textarea></div>');
+                $(".contentToev").append('<div class="ADD"><h1>D' + number + ':</h1><textarea rows="1" placeholder="lorem ipsum dolor sit amet" style="resize: none;">' + storyboards[huidigStoryboard].doelstellingen[i] + '</textarea></div>');
 
             }
-             
+
         };
 
 
@@ -67,11 +67,20 @@ $(document).ready(function () {
 
                 $(".ADD").each(function (index) {
                     var text = $(this).children("textarea").val();
-
                     storyboards[huidigStoryboard].doelstellingen.push(text);
-                })
+                    
+                });
 
                 storyboards[huidigStoryboard].doelstellingen.pop();
+
+                for (var i = 0; i < storyboards[huidigStoryboard].lesfasen.length; i++) {
+                    storyboards[huidigStoryboard].lesfasen[i].doelstellingen = [];
+                    for (var j = 0; j < storyboards[huidigStoryboard].doelstellingen.length; j++) {
+                        var doelstelling = new Doelstelling(j, false);
+
+                        storyboards[huidigStoryboard].lesfasen[i].doelstellingen.push(doelstelling);
+                    }
+                }
 
             } else {
                 storyboards[huidigStoryboard].doelstellingen = "";
@@ -79,7 +88,6 @@ $(document).ready(function () {
 
 
             save();
-            console.log(storyboards);
 
             window.location = ("storyboard.html");
         });
