@@ -1,5 +1,9 @@
 @import url("Navigatie.css");
 
+#titelLink:visited {
+    color: #333;
+}
+
 .uitzoomen {
     color: rgba(0, 0, 0, 0);
     background-image: url(../img/icons/verrekijker.svg);
