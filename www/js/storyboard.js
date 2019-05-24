@@ -192,11 +192,18 @@ $(document).ready(function () {
 
 
         //DISPLAY METHODE RADIOBUTTON - FUNCTIE
-        function displayMethode(methodenLijst, naam) {
+        function displayMethode(methodenLijst, naam, kaartje) {
+            
             var methodenHTML = $("<div>", {
                 "class": naam
             });
             for (var i = 0; i < methodenLijst.length; i++) {
+                var selected = false;
+                
+                if(methodenLijst[i] == kaartje.methodiek){
+                    selected = true;
+                }
+                
                 var methode = $("<label>", {
                         "class": "containerMethoden"
                     }).text(methodenLijst[i])
@@ -204,6 +211,7 @@ $(document).ready(function () {
                         $("<input>", {
                             "type": "radio",
                             "name": "radio",
+                            "checked": selected
                         })
                     )
                     .append(
@@ -229,8 +237,8 @@ $(document).ready(function () {
                 var id = huidigelesfase + kaartjeNummer + Math.round(Math.random());
                 var nummer = kaartjeNummer;
 
-                var contactHTML = displayMethode(contact, "contact");
-                var digitaalHTML = displayMethode(digitaal, "digitaal");
+                var contactHTML = displayMethode(contact, "contact", kaartje);
+                var digitaalHTML = displayMethode(digitaal, "digitaal", kaartje);
 
                 var kaartjeHTML = $("<div>", {
                         "class": "kaartje " + kaartje.kleur
