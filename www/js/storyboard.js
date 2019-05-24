@@ -62,11 +62,13 @@ $(document).ready(function () {
                 
                 //doelstellingen per lesfasen
                  for(var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].doelstellingen.length; j++){
-                     var checked = "";
+                     var checked;
                      if(storyboards[plaatsStoryboard].lesfasen[i].doelstellingen[j].aangevinkt){
                          checked = "checked";
+                     } else {
+                         checked = ""
                      }
-                     doelstellingen = doelstellingen + '<label class="containerDoelstellingen">'+ storyboards[plaatsStoryboard].doelstellingen[j] +'<input type="checkbox" ' + checked + '><span class="checkmarkDoelstellingen"></span></label>';
+                     doelstellingen = doelstellingen + '<label class="containerDoelstellingen">'+ storyboards[plaatsStoryboard].doelstellingen[j] +'<input type="checkbox" ' + checked + ' id=" ' + i + "_" + j + '"><span class="checkmarkDoelstellingen"></span></label>';
                      
                  }    
                 
@@ -110,10 +112,12 @@ $(document).ready(function () {
                 //doelstellingen per lesfasen
                  for(var j = 0; j < storyboards[plaatsStoryboard].doelstellingen.length; j++){
                      var checked = "";
-                     if(storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[j].aangevinkt){
+                     
+                     
+                    if(storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[j].aangevinkt){
                          checked = "checked";
                      }
-                     doelstellingen = doelstellingen + '<label class="containerDoelstellingen">'+ storyboards[plaatsStoryboard].doelstellingen[j] +'<input type="checkbox" ' + checked + '><span class="checkmarkDoelstellingen"></span></label>';
+                     doelstellingen = doelstellingen + '<label class="containerDoelstellingen">'+ storyboards[plaatsStoryboard].doelstellingen[j] +'<input type="checkbox" ' + checked + ' id=" ' + huidigeLesfase + "_" + j + '"><span class="checkmarkDoelstellingen"></span></label>';
                      
                  }  
 
@@ -146,10 +150,18 @@ $(document).ready(function () {
         //lesfase aanpassen
         $("body").on("click", ".buttonInhoud", function(){
             
+            //inhoud
            var inhoud = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud").val();
             storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].inhoud = inhoud;
             
-            
+            $(this).siblings(".containerDoelstellingen").each(function(index){
+                var checked = $(this).children("input").is(":checked");
+                var lesfaseDoelstelling = $(this).children("input").attr("id").split("_");
+                
+                storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[lesfaseDoelstelling[1]].aangevinkt = checked;
+                
+            })
+
             
              $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").slideUp();
             
