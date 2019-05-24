@@ -96,10 +96,22 @@ $(document).ready(function () {
             });
             };
         };
+        
+        function updateTitel(){
+        console.log(thisStoryb)
+        if(thisStoryb != -1){
+        console.log('if');
+        $("#titelGrafiek").text(storyboards[thisStoryb].naam);}
+        else{
+        console.log('else');
+        $("#titelGrafiek").text('Alle storyboards');
+        }
+        }
+        
         if(thisStoryb != -1){
             countCards();
         }
-         
+        updateTitel();
         
         $('select').change(function () {
             totPraktijk = 0;
@@ -113,6 +125,7 @@ $(document).ready(function () {
             if(selected !== -1){
             localStorage.setItem('HuidigStoryboard', selected);}
             selectStoryboard();
+            updateTitel();
             drawChart();
         });
 

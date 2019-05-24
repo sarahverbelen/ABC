@@ -64,7 +64,7 @@ $(document).ready(function () {
             widths: ['*','*','*'],
             heights: '*',
             body: [],
-            pageBreakBefore: true
+            pageBreakAfter: true
         }
         var page = {
             table: tableObj,

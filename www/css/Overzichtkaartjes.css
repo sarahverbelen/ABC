@@ -50,3 +50,13 @@ div.kaartje{
 .alleKaartjes{
     padding-top: 50px;
 }
+
+.uitleg{
+    color: #333;
+    margin-left: 12.875%;
+    margin-right: 7.938%;
+    margin-bottom: 1vh;
+}
+#bovenUitleg{
+    padding-top: 2.5vh;
+}

@@ -14,8 +14,17 @@
     margin-top: 80px;
 }
 
-.verzamelbalkBovenKaartjes{
+
+.verzamelbalkBovenKaartjes {
     margin-bottom: 5vh;
+}
+
+.editLesfaseButton{
+    background-image: url(../img/icons/EditLesfase.svg);
+    color: #333;
+    background-repeat: no-repeat;
+    width: 8%;
+    height: 2vh;
 }
 .lesfase {
     text-align: center;
@@ -26,8 +35,26 @@
     width: 45vw;
     color: #333;
     line-height: 1.2;
+    display: block;
 }
 
+line {
+    stroke: #333;
+    
+    stroke-width: 1px;
+}
+
+svg {
+    float: right;
+    margin: 0 5%;
+    margin-top: 12px;
+}
+
+.editLesfase {
+    display: flex;
+    width: 100%;
+    margin: 0 34%;
+}
 
 .lesfase h2 {
     font-size: 36px;
@@ -37,7 +64,8 @@
 .doelstellingen {
     display: inline-block;
 }
-div#plus.kaartje{
+
+div#plus.kaartje {
     padding-bottom: 3vh;
 }
 
@@ -97,17 +125,21 @@ div#plus.kaartje{
     position: absolute;
     display: none;
 }
+
 .kaartje h2 {
     margin-bottom: 3vh;
 }
-div.doelstellingDropdown{
+
+div.doelstellingDropdown {
     margin-bottom: 0.2vh;
 }
-button.buttonInhoud{
+
+button.buttonInhoud {
     margin-left: -6vw;
     width: 115%;
     margin-bottom: 3vh;
 }
+
 /* Show the checkmark when checked */
 .containerDoelstellingen input:checked ~ .checkmarkDoelstellingen:after {
     display: block;
@@ -120,12 +152,14 @@ button.buttonInhoud{
     margin-top: 5px;
     margin-left: 5px;
 }
+
 /*EINDE VIERKANTIGE BUTTONS */
 
 
-.buttonInhoud{
-      margin-top: 3vh;
+.buttonInhoud {
+    margin-top: 3vh;
 }
+
 .textareaInhoud {
     width: 100%;
     height: 350px;
@@ -137,10 +171,12 @@ button.buttonInhoud{
     font-size: 25px;
     resize: none;
 }
-h6:not(.marginh6){
+
+h6:not(.marginh6) {
     margin-top: 2vh;
 }
-textarea.kaartjeNota{
+
+textarea.kaartjeNota {
     height: 250px;
     width: 95%;
     border: 0.5px solid #333;
@@ -150,16 +186,18 @@ textarea.kaartjeNota{
     border-top-left-radius: 10px;
     background-color: white;
     padding: 12px 20px;
-      margin-bottom: 3vh;
+    margin-bottom: 3vh;
 }
+
 /*bevistigen*/
-button{
+button {
     border: none;
     background-color: #333333;
     padding: 20px 0;
-  
+
 }
-button img{
+
+button img {
     display: block;
     margin: 0 auto;
     width: 45px;
@@ -168,46 +206,51 @@ button img{
 
 /*BEGIN RONDE BUTTONS */
 .containerMethoden {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.containerMethoden{
+.containerMethoden {
     color: #333;
-    font-weight: 300; /* light */
-    font-size: 32px; /* = 16px in design */
-      
+    font-weight: 300;
+    /* light */
+    font-size: 32px;
+    /* = 16px in design */
+
 }
-.digMeth{
+
+.digMeth {
     margin-top: 2vh;
 }
-.methodieken h6{
- margin-bottom: 1.5vh;
+
+.methodieken h6 {
+    margin-bottom: 1.5vh;
 }
+
 /* Hide the browser's default radio button */
 .containerMethoden input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
 /* Create a custom radio button */
 .checkmarkMethoden {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  background-color: white;
-  border-radius: 50%;
-  border: 0.5px solid #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: 0.5px solid #333;
 }
 
 /* On mouse-over, add a grey background color 
@@ -218,26 +261,31 @@ button img{
 
 /* When the radio button is checked, add a blue background */
 .oranje .containerMethoden input:checked ~ .checkmarkMethoden {
-  background-color: #F2832E;
+    background-color: #F2832E;
 }
+
 .geel .containerMethoden input:checked ~ .checkmarkMethoden {
     background-color: #FFCC00;
 
 }
+
 .paars .containerMethoden input:checked ~ .checkmarkMethoden {
-  background-color: #6363A3;
+    background-color: #6363A3;
 
 }
+
 .groen .containerMethoden input:checked ~ .checkmarkMethoden {
-   background-color: #809332;
+    background-color: #809332;
 
 }
+
 .aqua .containerMethoden input:checked ~ .checkmarkMethoden {
-  background-color: #48A5A5;
+    background-color: #48A5A5;
 
 }
+
 .roze .containerMethoden input:checked ~ .checkmarkMethoden {
-  background-color: #F77E8A;
+    background-color: #F77E8A;
 
 }
 
@@ -245,7 +293,7 @@ button img{
 
 /* Show the indicator (dot/circle) when checked */
 .containerMethoden input:checked ~ .checkmarkMethoden:after {
-  display: block;
+    display: block;
 }
 
 /*EINDE RONDE BUTTONS */
@@ -278,10 +326,11 @@ button img{
     margin-left: 11vw;
 }
 
-label.containerMethoden{
+label.containerMethoden {
     padding-left: 10vw;
     padding-top: 0.5vh;
 }
+
 .sluitKaartje {
     background-image: url(../img/icons/pijlRechts.svg);
     background-repeat: no-repeat;
@@ -404,6 +453,6 @@ label {
     margin-bottom: 1vh;
 }
 
-main{
+main {
     margin-top: 10vh;
 }
