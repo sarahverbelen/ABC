@@ -93,6 +93,12 @@ div#plus.kaartje{
     position: absolute;
     display: none;
 }
+.kaartje h2 {
+    margin-bottom: 3vh;
+}
+div.doelstellingDropdown{
+    margin-bottom: 0.2vh;
+}
 button.buttonInhoud{
     margin-left: -6vw;
     width: 115%;
