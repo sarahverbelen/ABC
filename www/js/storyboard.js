@@ -58,6 +58,8 @@ $(document).ready(function () {
             
             //lesfasen maken
             for (var i = 0; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
+                
+                if(storyboards[plaatsStoryboard].doelstellingen != ""){
                 var doelstellingen = "";
                 
                 //doelstellingen per lesfasen
@@ -74,7 +76,10 @@ $(document).ready(function () {
                 
                 //MAAK LESFASEN
                 $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6>' + doelstellingen + '<h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>'); 
-                
+                } else {
+                    $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><textarea class="textareaInhoud">' + storyboards[plaatsStoryboard].lesfasen[i].doelstellingen + '</textarea><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>'); 
+                }
+                    
                 //MAAK KAARTJES PER LESFASE
                 for (var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].kaartjes.length; j++) {
                     displayKaartje(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j], i, j);
@@ -121,7 +126,11 @@ $(document).ready(function () {
                      
                  }  
 
+            if(storyboards[plaatsStoryboard].doelstellingen != ""){
             $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6>' + doelstellingen + '<h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
+            } else {
+                 $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><textarea class="textareaInhoud"></textarea><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>'); 
+            }
 
         }
 
@@ -151,9 +160,12 @@ $(document).ready(function () {
         $("body").on("click", ".buttonInhoud", function(){
             
             //inhoud
-           var inhoud = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud").val();
+           var inhoud = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud:last-of-type").val();
             storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].inhoud = inhoud;
             
+            
+            //doelstellingen
+            if(storyboards[plaatsStoryboard].doelstellingen != ""){
             $(this).siblings(".containerDoelstellingen").each(function(index){
                 var checked = $(this).children("input").is(":checked");
                 var lesfaseDoelstelling = $(this).children("input").attr("id").split("_");
@@ -161,6 +173,11 @@ $(document).ready(function () {
                 storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[lesfaseDoelstelling[1]].aangevinkt = checked;
                 
             })
+            } else {
+                
+                var doelstellingen = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud:first-of-type").val();
+                storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen = doelstellingen;
+            }
 
             
              $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").slideUp();

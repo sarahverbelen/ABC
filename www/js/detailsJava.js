@@ -84,6 +84,10 @@ $(document).ready(function () {
 
             } else {
                 storyboards[huidigStoryboard].doelstellingen = "";
+                
+                for(var i = 0; i < storyboards[huidigStoryboard].lesfasen.length; i++){
+                    storyboards[huidigStoryboard].lesfasen[i].doelstellingen = "";
+                }
             }
 
 
