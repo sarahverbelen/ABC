@@ -25,7 +25,7 @@ $(document).ready(function () {
             'uuid': localStorage.getItem('uuid')
         }
     }).done(function (data) {
-        console.log(isEmpty(data));
+        //console.log(isEmpty(data));
 
         if (!isEmpty(data)) {
             console.log(JSON.parse(data["storyboards"]));
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
 
         var plaatsStoryboard = localStorage.getItem('HuidigStoryboard');
-        console.log(storyboards == "");
+        //console.log(storyboards == "");
 
         if (plaatsStoryboard == "-1" || storyboards == "") { //NIEUW STORYBOARD MAKEN: alleen deze sectie bij een nieuw storyboard! (of als er nog geen storyboards gemaakt zijn)
             var lesfasen = [];
@@ -51,11 +51,12 @@ $(document).ready(function () {
             localStorage.setItem('HuidigStoryboard', plaatsStoryboard);
         } else {
             for (var i = 1; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
-                console.log(storyboards[plaatsStoryboard].lesfasen[i]);
+                //console.log(storyboards[plaatsStoryboard].lesfasen[i]);
 
                 //MAAK LESFASEN
                 $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><label class="containerDoelstellingen">D1: Lorem ipsum sit amett<input type="checkbox" checked="checked"><span class="checkmarkDoelstellingen"></span></label><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
                 
+               
                 //pas titel in hoofdbalk aan
                 $("header div h2").text(storyboards[plaatsStoryboard].naam);
             }
@@ -63,9 +64,12 @@ $(document).ready(function () {
             for (var i = 0; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
                 //MAAK KAARTJES PER LESFASE
                 for (var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].kaartjes.length; j++) {
-                    console.log(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j]);
+                    //console.log(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j]);
                     displayKaartje(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j], i, j);
                 }
+                
+                //pas inhoud van lesfase aan
+                $("#" + i).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud").val( storyboards[plaatsStoryboard].lesfasen[i].inhoud);
             };
 
 
@@ -77,6 +81,7 @@ $(document).ready(function () {
         // SWIPE
         var huidigeLesfase = 0; // teller huidige lesfase
 
+        //lesfase toevoegen
         function createLesfase() {
             var kaartjes = [];
 
@@ -84,14 +89,14 @@ $(document).ready(function () {
             $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><label class="containerDoelstellingen">D1: Lorem ipsum sit amett<input type="checkbox" checked="checked"><span class="checkmarkDoelstellingen"></span></label><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
             var extraLesfase = new Lesfase(NaamLesfase, "", "", kaartjes);
             storyboards[plaatsStoryboard].lesfasen.push(extraLesfase);
-            console.log("aantal Lesfasen: " + storyboards[plaatsStoryboard].lesfasen.length);
+            //console.log("aantal Lesfasen: " + storyboards[plaatsStoryboard].lesfasen.length);
         }
 
-
+        //links swipen
         $('body').on('swipeleft', function () {
             $('.heleLesfase#' + huidigeLesfase).hide();
             huidigeLesfase += 1;
-            console.log("huidigeLesfase: " + huidigeLesfase);
+            //console.log("huidigeLesfase: " + huidigeLesfase);
             //if statement checkt als huidigeLesfase al bestaat:
             if ($('main').find('.heleLesfase#' + huidigeLesfase).size() == 0) {
                 createLesfase();
@@ -99,13 +104,25 @@ $(document).ready(function () {
                 $('.heleLesfase#' + huidigeLesfase).show();
             }
         });
+        
+        //rechts swipen
         $('body').on('swiperight', $('.heleLesfase'), function () {
             if (huidigeLesfase > 0) {
                 $('.heleLesfase#' + huidigeLesfase).hide();
                 huidigeLesfase -= 1;
                 $('.heleLesfase#' + huidigeLesfase).show();
-                console.log("huidigeLesfase: " + huidigeLesfase);
+                //console.log("huidigeLesfase: " + huidigeLesfase);
             }
+        });
+        
+        //lesfase aanpassen
+        $("body").on("click", ".buttonInhoud", function(){
+            
+           var inhoud = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud").val();
+            storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].inhoud = inhoud;
+            
+            save();
+            
         });
 
         //PLUSKNOP OPEN/TOE-KLAPPEN
@@ -130,7 +147,7 @@ $(document).ready(function () {
             var event = e;
 
             var ditKaartje = $(this).siblings("a").attr("data-nummer");
-            console.log(ditKaartje)
+            //console.log(ditKaartje)
 
             var kleur = $(this).parents(".kaartje").attr("class").split(" ")[1];
 
@@ -165,8 +182,8 @@ $(document).ready(function () {
                 $.ajax({
                     "url": "../json/kaartjes.json"
                 }).done(function (data) {
-                    console.log(data);
-                    console.log(data[kleur][soortMethodiek + "methoden"][geselecteerdeMethodiek]);
+                    //console.log(data);
+                    //console.log(data[kleur][soortMethodiek + "methoden"][geselecteerdeMethodiek]);
                     var methodiek = data[kleur][soortMethodiek + "methoden"][geselecteerdeMethodiek];
                     $(dit).siblings("h3").text(methodiek);
 
@@ -325,10 +342,10 @@ $(document).ready(function () {
         }
 
 
-
+        //KAARTJE TOEVOEGEN
         $(".plusKaartjes a").on("click", function (e) {
             e.preventDefault();
-            console.log("klik");
+            //console.log("klik");
             var kleur, activiteit;
             kleur = $(this).attr("class");
 
@@ -360,13 +377,13 @@ $(document).ready(function () {
                 activiteit = data[kleur].activiteit;
 
                 var kaartje = new Kaartje(kleur, "", "", activiteit);
-                console.log(plaatsStoryboard);
+                //console.log(plaatsStoryboard);
                 storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.push(kaartje);
 
                 var nummerKaartje = storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.length - 1;
 
                 displayKaartje(kaartje, huidigeLesfase, nummerKaartje);
-                console.log(storyboards[plaatsStoryboard]);
+                //console.log(storyboards[plaatsStoryboard]);
                 $(".plusKaartjes").slideToggle();
                 save();
 
@@ -378,6 +395,8 @@ $(document).ready(function () {
 
         });
 
+        
+        //SAVE
         function save() {
             var saveObj = {
                 uuid: localStorage.getItem("uuid"),
@@ -393,8 +412,7 @@ $(document).ready(function () {
                 console.log("saved");
             });
         }
-
-        setTimeout(save(), 3000); // autosave
+        
 
         $('.save').on('click', function () { // manual save
             save();
