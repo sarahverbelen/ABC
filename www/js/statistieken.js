@@ -34,6 +34,7 @@ $(document).ready(function () {
         };
         
         selectStoryboard();
+        
         var totPraktijk = 0;
         var totOnderzoek = 0;
         var totDiscussie = 0;
@@ -96,7 +97,8 @@ $(document).ready(function () {
             };
         };
         if(thisStoryb != -1){
-            countCards();}
+            countCards();
+        }
          
         
         $('select').change(function () {
