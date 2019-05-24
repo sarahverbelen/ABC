@@ -47,6 +47,7 @@ $(document).ready(function () {
             save();
             console.log(storyboards);
 
+            window.location = ("storyboard.html");
         });
 
 
