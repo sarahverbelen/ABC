@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    console.log(localStorage.getItem('HuidigStoryboard'));
+    
     var kaartjeNummer = 0;
 
     function isEmpty(obj) {
