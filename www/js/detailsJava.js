@@ -11,7 +11,7 @@ $(document).ready(function () {
         console.log(JSON.parse(data["storyboards"]));
         var storyboards = JSON.parse(data["storyboards"]);
         var huidigStoryboard = localStorage.getItem("HuidigStoryboard");
-        
+
         //titel in header aanpassen
         $("header div h2").text(storyboards[huidigStoryboard].naam);
 
@@ -22,6 +22,22 @@ $(document).ready(function () {
         $("#semester").val(storyboards[huidigStoryboard].semester);
 
         $("#deeltraject").val(storyboards[huidigStoryboard].deeltraject);
+
+        if (Array.isArray(storyboards[huidigStoryboard].doelstellingen)) {
+            $(".check").prop("checked", true);
+            $(".contentDoel").slideDown();
+
+            $(".ADD textarea").val(storyboards[huidigStoryboard].doelstellingen[0]);
+            
+            for (var i = 1; i < storyboards[huidigStoryboard].doelstellingen.length; i++) {
+                number = number + 1;
+                ad = ad + 1;
+                $(".ad h1").text("D" + ad);
+                $(".contentToev").append('<div class="ADD"><h1>D' + number + ':</h1><textarea rows="1" placeholder="lorem ipsum dolor sit amet" style="resize: none;">' +  storyboards[huidigStoryboard].doelstellingen[i] + '</textarea></div>');
+
+            }
+             
+        };
 
 
         //alle data uitlezen en opslaan
@@ -36,13 +52,31 @@ $(document).ready(function () {
 
             var opleidingsonderdeel = $("#opleidingsonderdeel").val();
             storyboards[huidigStoryboard].opleidingsonderdeel = opleidingsonderdeel;
-            
-             var semester = $("#semester").val();
+
+            var semester = $("#semester").val();
             storyboards[huidigStoryboard].semester = semester;
-            
-             var deeltraject = $("#deeltraject").val();
+
+            var deeltraject = $("#deeltraject").val();
             storyboards[huidigStoryboard].deeltraject = deeltraject;
             $("header div h2").text(storyboards[huidigStoryboard].naam);
+
+            //doelstellingen
+
+            if ($(".check").is(":checked")) {
+                storyboards[huidigStoryboard].doelstellingen = [];
+
+                $(".ADD").each(function (index) {
+                    var text = $(this).children("textarea").val();
+
+                    storyboards[huidigStoryboard].doelstellingen.push(text);
+                })
+
+                storyboards[huidigStoryboard].doelstellingen.pop();
+
+            } else {
+                storyboards[huidigStoryboard].doelstellingen = "";
+            }
+
 
             save();
             console.log(storyboards);
