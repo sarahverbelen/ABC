@@ -358,7 +358,7 @@ $(document).ready(function () {
                 displayKaartje(kaartje, huidigeLesfase, nummerKaartje);
                 console.log(storyboards[plaatsStoryboard]);
                 $(".plusKaartjes").slideToggle();
-
+                save();
 
             }).error(function (een, twee, drie) {
                 console.log(een);
