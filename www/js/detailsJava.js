@@ -128,8 +128,14 @@ $(document).ready(function () {
 
     //vraagteken//
     $("h1 img").click(function () {
-        $(this).parent().find(".tuto").fadeToggle().css("display", "inline");
+        $(this).parent().find(".tuto").fadeIn().css("display", "inline");
+        
     });
+    $("textarea").click(function () {
+        $(".tuto").fadeOut();
+        
+    });
+     
 
     //switchcheckbox//
     $('.check').click(function () {
