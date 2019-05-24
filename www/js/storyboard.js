@@ -125,6 +125,18 @@ $(document).ready(function () {
             
         });
 
+        //KAARTJE VERWIJDEREN   
+        $("body").on("click", ".verwijderKaartje", function(){
+            
+            var ditKaartje = $(this).siblings("a").attr("data-nummer");
+            
+            $(this).parent(".kaartje").remove();
+            storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.splice(ditKaartje, 1)
+            
+            save();
+            
+        })
+        
         //PLUSKNOP OPEN/TOE-KLAPPEN
         $(".plusKaartjes").hide();
 
