@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    console.log(localStorage.getItem('HuidigStoryboard'));
-    
     var kaartjeNummer = 0;
 
     function isEmpty(obj) {
@@ -11,11 +9,29 @@ $(document).ready(function () {
         }
         return true;
     }
+    
+    //bewerkknop lesfase naam
+    $("body").on("click", ".editLesfaseButton", function(){
+        var dezeLesfase = $(this).parents(".editLesfase").parents(".lesfase").parents(".verzamelbalkBovenKaartjes").parents(".heleLesfase").attr("id");
+        
+        console.log(dezeLesfase);
+        
+        $(this).siblings(".marginh6").toggle();
+        $("#naam" + dezeLesfase).toggle();
+        
+        var lesfaseNaam = $("#naam" + dezeLesfase).val();
+        $(this).siblings(".marginh6").text(lesfaseNaam);
+        
+    })
 
-    // DOELSTELLINGEN/INHOUD
+    // DOELSTELLINGEN/INHOUD open/toeklappen
     $(".doelstellingenInhoudOpen").hide();
+    $(".editLesfase svg").hide();
+    $(".editLesfaseButton").hide();
     $("main").on("click", '.doelstellingen, .doelstellingDropdown', function () {
         $('.doelstellingenInhoudOpen').slideToggle();
+        $(".editLesfase svg").fadeToggle();
+        $(".editLesfaseButton").fadeToggle();
     });
 
 
@@ -50,43 +66,48 @@ $(document).ready(function () {
             plaatsStoryboard = storyboards.length - 1;
             localStorage.setItem('HuidigStoryboard', plaatsStoryboard);
         } else {
-        //OUD STORYBOARD INLADEN
+            //OUD STORYBOARD INLADEN
             //pas titel in hoofdbalk aan
-                $("header div a h2").text(storyboards[plaatsStoryboard].naam);
-            
+            $("header div a h2").text(storyboards[plaatsStoryboard].naam);
+
             $(".heleLesfase").remove();
-            
+
             //lesfasen maken
             for (var i = 0; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
-                
-                if(storyboards[plaatsStoryboard].doelstellingen != ""){
-                var doelstellingen = "";
-                
-                //doelstellingen per lesfasen
-                 for(var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].doelstellingen.length; j++){
-                     var checked;
-                     if(storyboards[plaatsStoryboard].lesfasen[i].doelstellingen[j].aangevinkt){
-                         checked = "checked";
-                     } else {
-                         checked = ""
-                     }
-                     doelstellingen = doelstellingen + '<label class="containerDoelstellingen">'+ storyboards[plaatsStoryboard].doelstellingen[j] +'<input type="checkbox" ' + checked + ' id=" ' + i + "_" + j + '"><span class="checkmarkDoelstellingen"></span></label>';
-                     
-                 }    
-                
-                //MAAK LESFASEN
-                $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6>' + doelstellingen + '<h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>'); 
+
+                if (storyboards[plaatsStoryboard].doelstellingen != "") {
+                    var doelstellingen = "";
+
+                    //doelstellingen per lesfasen
+                    for (var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].doelstellingen.length; j++) {
+                        var checked;
+                        if (storyboards[plaatsStoryboard].lesfasen[i].doelstellingen[j].aangevinkt) {
+                            checked = "checked";
+                        } else {
+                            checked = ""
+                        }
+                        doelstellingen = doelstellingen + '<label class="containerDoelstellingen">' + storyboards[plaatsStoryboard].doelstellingen[j] + '<input type="checkbox" ' + checked + ' id=" ' + i + "_" + j + '"><span class="checkmarkDoelstellingen"></span></label>';
+
+                    }
+
+                    //MAAK LESFASEN
+                    $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><div class="editLesfase"><input type="text" id="naam' + i + '" value="' + storyboards[plaatsStoryboard].lesfasen[i].naam + '"></input><h6 class="marginh6">' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><svg height="10" width="150"><line x1="0" y1="10" x2="150" y2="10"></line></svg><a class="editLesfaseButton"></a></div><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6>' + doelstellingen + '<h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
                 } else {
-                    $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><textarea class="textareaInhoud">' + storyboards[plaatsStoryboard].lesfasen[i].doelstellingen + '</textarea><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>'); 
+                    $('main').prepend('<div class="heleLesfase" id="' + i + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><div class="editLesfase"><input type="text" id="naam' + i + '" value="' + storyboards[plaatsStoryboard].lesfasen[i].naam + '"></input><h6 class="marginh6">' + storyboards[plaatsStoryboard].lesfasen[i].naam /* hier komt var naar Lesfase titel */ + '</h6><svg height="10" width="150"><line x1="0" y1="10" x2="150" y2="10"></line></svg><a class="editLesfaseButton"></a></div><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><textarea class="textareaInhoud">' + storyboards[plaatsStoryboard].lesfasen[i].doelstellingen + '</textarea><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
                 }
-                    
+
+                //verberg bewerkknop
+                $(".editLesfase svg").hide();
+                $(".editLesfaseButton").hide();
+                $(".editLesfase input").hide();
+
                 //MAAK KAARTJES PER LESFASE
                 for (var j = 0; j < storyboards[plaatsStoryboard].lesfasen[i].kaartjes.length; j++) {
                     displayKaartje(storyboards[plaatsStoryboard].lesfasen[i].kaartjes[j], i, j);
                 }
-                
+
                 //pas inhoud van lesfase aan
-                $("#" + i).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud").val( storyboards[plaatsStoryboard].lesfasen[i].inhoud);
+                $("#" + i).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud").val(storyboards[plaatsStoryboard].lesfasen[i].inhoud);
             };
 
             $(".heleLesfase#0").show();
@@ -98,39 +119,43 @@ $(document).ready(function () {
         //lesfase toevoegen
         function createLesfase() {
             var kaartjes = [];
-            
+
             var doelstellingenArray = [];
-            
+
             var NaamLesfase = "Lesfase " + (huidigeLesfase + 1);
-            
-            for(var i = 0; i < storyboards[plaatsStoryboard].doelstellingen.length; i++){
+
+            for (var i = 0; i < storyboards[plaatsStoryboard].doelstellingen.length; i++) {
                 var doelstellingObject = new Doelstelling(i, false);
                 doelstellingenArray.push(doelstellingObject);
             }
-            
+
             var extraLesfase = new Lesfase(NaamLesfase, doelstellingenArray, "", kaartjes);
             storyboards[plaatsStoryboard].lesfasen.push(extraLesfase);
             console.log(storyboards[plaatsStoryboard]);
-            
-            var doelstellingen = "";
-                
-                //doelstellingen per lesfasen
-                 for(var j = 0; j < storyboards[plaatsStoryboard].doelstellingen.length; j++){
-                     var checked = "";
-                     
-                     
-                    if(storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[j].aangevinkt){
-                         checked = "checked";
-                     }
-                     doelstellingen = doelstellingen + '<label class="containerDoelstellingen">'+ storyboards[plaatsStoryboard].doelstellingen[j] +'<input type="checkbox" ' + checked + ' id=" ' + huidigeLesfase + "_" + j + '"><span class="checkmarkDoelstellingen"></span></label>';
-                     
-                 }  
 
-            if(storyboards[plaatsStoryboard].doelstellingen != ""){
-            $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6>' + doelstellingen + '<h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
-            } else {
-                 $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><h6 class="marginh6">' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><textarea class="textareaInhoud"></textarea><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>'); 
+            var doelstellingen = "";
+
+            //doelstellingen per lesfasen
+            for (var j = 0; j < storyboards[plaatsStoryboard].doelstellingen.length; j++) {
+                var checked = "";
+
+
+                if (storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[j].aangevinkt) {
+                    checked = "checked";
+                }
+                doelstellingen = doelstellingen + '<label class="containerDoelstellingen">' + storyboards[plaatsStoryboard].doelstellingen[j] + '<input type="checkbox" ' + checked + ' id=" ' + huidigeLesfase + "_" + j + '"><span class="checkmarkDoelstellingen"></span></label>';
+
             }
+
+            if (storyboards[plaatsStoryboard].doelstellingen != "") {
+                $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><div class="editLesfase"><input type="text" id="naam' + huidigeLesfase + '" style="display: none" value="' + NaamLesfase + '"></input><h6 class="marginh6">' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><svg height="10" width="150"><line x1="0" y1="10" x2="150" y2="10"></line></svg><a class="editLesfaseButton"></a></div><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6>' + doelstellingen + '<h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
+            } else {
+                $('main').prepend('<div class="heleLesfase" id="' + huidigeLesfase + '" style="display: none"><div class="verzamelbalkBovenKaartjes"><a href="overview.html" class="uitzoomen"></a><div class="lesfase"><div class="editLesfase"><input type="text" id="naam' + huidigeLesfase + '" style="display: none" value="' + NaamLesfase + '"></input><h6 class="marginh6">' + NaamLesfase /* hier komt var naar Lesfase titel */ + '</h6><svg height="10" width="150"><line x1="0" y1="10" x2="150" y2="10"></line></svg><a class="editLesfaseButton"></a></div><h3 class="fontRegular doelstellingen">Doelstellingen / inhoud</h3><div class="doelstellingDropdown"></div></div></div><div class="doelstellingenInhoudOpen"><h6 class="marginh6">Doelstellingen</h6><textarea class="textareaInhoud"></textarea><h6>Inhoud</h6><form><textarea class="textareaInhoud"></textarea></form><button class="buttonInhoud"><img src="../img/icons/vink.svg"></button></div><div class="kaartjes"></div></div>');
+            }
+            
+            //bewerkknop verbergen
+            $(".editLesfase svg").hide();
+                $(".editLesfaseButton").hide();
 
         }
 
@@ -138,18 +163,18 @@ $(document).ready(function () {
         $('body').on('swipeleft', function () {
             $('.heleLesfase#' + huidigeLesfase).hide();
             huidigeLesfase += 1;
-            
+
             //if statement checkt als huidigeLesfase al bestaat:
             if ($('main').find('.heleLesfase#' + huidigeLesfase).size() == 0) {
                 createLesfase();
                 $(".heleLesfase#" + huidigeLesfase).show();
-                createExtraDot()
+                createExtraDot();
             } else {
                 $('.heleLesfase#' + huidigeLesfase).show();
             }
             dotAanpassen()
         });
-        
+
         //rechts swipen
         $('body').on('swiperight', $('.heleLesfase'), function () {
             if (huidigeLesfase > 0) {
@@ -160,62 +185,76 @@ $(document).ready(function () {
             }
         });
         // DOTS
-        function makeDotsForExistingLesfasen(){
-            for(i=0; i < storyboards[plaatsStoryboard].lesfasen.length; i++ ){
-            $('#dots').prepend('<span class = "dot" id="lesfase' + i +'"></span>');}
+        function makeDotsForExistingLesfasen() {
+            for (i = 0; i < storyboards[plaatsStoryboard].lesfasen.length; i++) {
+                $('#dots').prepend('<span class = "dot" id="lesfase' + i + '"></span>');
+            }
             dotAanpassen()
         }
         makeDotsForExistingLesfasen();
-        function createExtraDot(){
-            $('#dots').prepend('<span class = "dot" id="lesfase' + huidigeLesfase +'"></span>');
+
+        function createExtraDot() {
+            $('#dots').prepend('<span class = "dot" id="lesfase' + huidigeLesfase + '"></span>');
         }
-        
-        function dotAanpassen(){
-             $('#dots .dot').removeClass('filled')
-            $('#dots .dot#'+'lesfase'+huidigeLesfase).addClass('filled')
+
+        function dotAanpassen() {
+            $('#dots .dot').removeClass('filled')
+            $('#dots .dot#' + 'lesfase' + huidigeLesfase).addClass('filled')
         };
         //lesfase aanpassen
-        $("body").on("click", ".buttonInhoud", function(){
+        $("body").on("click", ".buttonInhoud", function () {
             
+            //naam
+             var lesfaseNaam = $("#naam" + huidigeLesfase).val();
+            
+            storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].naam = lesfaseNaam;
+
             //inhoud
-           var inhoud = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud:last-of-type").val();
+            var inhoud = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud:last-of-type").val();
             storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].inhoud = inhoud;
-            
-            
+
+
             //doelstellingen
-            if(storyboards[plaatsStoryboard].doelstellingen != ""){
-            $(this).siblings(".containerDoelstellingen").each(function(index){
-                var checked = $(this).children("input").is(":checked");
-                var lesfaseDoelstelling = $(this).children("input").attr("id").split("_");
-                
-                storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[lesfaseDoelstelling[1]].aangevinkt = checked;
-                
-            })
+            if (storyboards[plaatsStoryboard].doelstellingen != "") {
+                $(this).siblings(".containerDoelstellingen").each(function (index) {
+                    var checked = $(this).children("input").is(":checked");
+                    var lesfaseDoelstelling = $(this).children("input").attr("id").split("_");
+
+                    storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen[lesfaseDoelstelling[1]].aangevinkt = checked;
+
+                })
             } else {
-                
+
                 var doelstellingen = $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").children("form").children(".textareaInhoud:first-of-type").val();
                 storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].doelstellingen = doelstellingen;
             }
 
+
+            //toeklappen
+            $('.doelstellingenInhoudOpen').slideToggle();
+            $(".editLesfase svg").fadeToggle();
+            $(".editLesfaseButton").fadeToggle();
+            $("#naam" + huidigeLesfase).siblings(".marginh6").show();
+            $("#naam" + huidigeLesfase).siblings(".marginh6").text(lesfaseNaam);
+        $("#naam" + huidigeLesfase).hide();
             
-             $("#" + huidigeLesfase).children(".doelstellingenInhoudOpen").slideUp();
-            
+
             save();
-            
+
         });
 
         //KAARTJE VERWIJDEREN   
-        $("body").on("click", ".verwijderKaartje", function(){
-            
+        $("body").on("click", ".verwijderKaartje", function () {
+
             var ditKaartje = $(this).siblings("a").attr("data-nummer");
-            
+
             $(this).parent(".kaartje").remove();
             storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes.splice(ditKaartje, 1)
-            
+
             save();
-            
+
         })
-        
+
         //PLUSKNOP OPEN/TOE-KLAPPEN
         $(".plusKaartjes").hide();
 
@@ -274,10 +313,10 @@ $(document).ready(function () {
                 $.ajax({
                     "url": "../json/kaartjes.json"
                 }).done(function (data) {
-                    
+
                     var methodiek = data[kleur][soortMethodiek + "methoden"][geselecteerdeMethodiek];
                     $(dit).siblings("h3").text(methodiek);
- storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes[ditKaartje].methodiek = methodiek;
+                    storyboards[plaatsStoryboard].lesfasen[huidigeLesfase].kaartjes[ditKaartje].methodiek = methodiek;
 
                     //kaartje weer toeklappen
 
@@ -300,17 +339,17 @@ $(document).ready(function () {
 
         //DISPLAY METHODE RADIOBUTTON - FUNCTIE
         function displayMethode(methodenLijst, naam, kaartje) {
-            
+
             var methodenHTML = $("<div>", {
                 "class": naam
             });
             for (var i = 0; i < methodenLijst.length; i++) {
                 var selected = false;
-                
-                if(methodenLijst[i] == kaartje.methodiek){
+
+                if (methodenLijst[i] == kaartje.methodiek) {
                     selected = true;
                 }
-                
+
                 var methode = $("<label>", {
                         "class": "containerMethoden"
                     }).text(methodenLijst[i])
@@ -341,7 +380,7 @@ $(document).ready(function () {
                 var contact = data[kaartje.kleur].contactmethoden;
                 var digitaal = data[kaartje.kleur].digitaalmethoden;
 
-                var id = huidigelesfase + kaartjeNummer + Math.round(Math.random());
+                var id = huidigelesfase + "_" + kaartjeNummer;
                 var nummer = kaartjeNummer;
 
                 var contactHTML = displayMethode(contact, "contact", kaartje);
@@ -484,7 +523,7 @@ $(document).ready(function () {
 
         });
 
-        
+
         //SAVE
         function save() {
             var saveObj = {
@@ -501,7 +540,7 @@ $(document).ready(function () {
                 console.log("saved");
             });
         }
-        
+
 
         $('.save').on('click', function () { // manual save
             save();

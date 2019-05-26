@@ -58,7 +58,7 @@ $(document).ready(function () {
                     if (e.kleur == 'groen') {
                         totOnderzoek += 1;
                     }
-                    if (e.kleur == 'roos') {
+                    if (e.kleur == 'roze') {
                         totDiscussie += 1;
                     }
                     if (e.kleur == 'paars') {
@@ -86,7 +86,7 @@ $(document).ready(function () {
                     if (e.kleur == 'groen') {
                         totOnderzoek += 1;
                     }
-                    if (e.kleur == 'roos') {
+                    if (e.kleur == 'roze') {
                         totDiscussie += 1;
                     }
                     if (e.kleur == 'paars') {

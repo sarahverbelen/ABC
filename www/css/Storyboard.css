@@ -38,6 +38,10 @@
     display: block;
 }
 
+.editLesfase input {
+    font-size: 34px;
+}
+
 line {
     stroke: #333;
     
