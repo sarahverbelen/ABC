@@ -2,7 +2,9 @@
 
 body{
     height: 100vh;
-    background-color: dimgrey;
+    background-image: url('../img/blond-cellphone-coffee-1076814.jpg');
+    background-position: center;
+    background-size: cover;
     overflow: auto;
 }
 /*.rodeKnop, .homeKnop*/
