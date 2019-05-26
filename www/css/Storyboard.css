@@ -13,12 +13,17 @@
     background-repeat: no-repeat;
     margin-top: 80px;
 }
-
+h2.storyboardKaart{
+    margin-bottom: 0.5vh;
+}
 
 .verzamelbalkBovenKaartjes {
     margin-bottom: 5vh;
 }
 
+p.storyboardKaart{
+    margin-top: 1.5vh;
+}
 .editLesfaseButton{
     background-image: url(../img/icons/EditLesfase.svg);
     color: #333;
@@ -130,9 +135,7 @@ div#plus.kaartje {
     display: none;
 }
 
-.kaartje h2 {
-    margin-bottom: 3vh;
-}
+
 
 div.doelstellingDropdown {
     margin-bottom: 0.2vh;
