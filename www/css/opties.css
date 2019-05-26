@@ -1,4 +1,4 @@
-footer{
+footer {
     margin-left: -5.2vw;
 }
 
@@ -39,9 +39,8 @@ div.terug {
 
 
 #opties {
-
-    bottom: 0;
     left: -100%;
+    bottom: 0;
     position: fixed;
     background-color: #F7F6F6;
     width: 100%;
@@ -49,9 +48,15 @@ div.terug {
 
 }
 
+.edit,
+.arrow,
+.stats {
+    margin-left: 13vw;
+}
+
 #opties div {
     display: inline-block;
-    padding: 2% 7% 0 7%;
+    padding: 2% 0% 0 7%;
     margin-top: 3%;
 
     width: 3vw;
