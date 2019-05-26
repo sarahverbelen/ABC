@@ -268,8 +268,6 @@ $(document).ready(function () {
             var ditKaartje = $(dit).parent(".kaartje");
             ditKaartje.children("form").slideToggle();
             ditKaartje.children("button").slideToggle();
-            $(dit).siblings("a").toggleClass("editKaartje");
-            $(dit).siblings("a").toggleClass("sluitKaartje");
         }
 
         //kaartjes bewerken
