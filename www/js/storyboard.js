@@ -544,6 +544,18 @@ $(document).ready(function () {
             save();
             alert('opgeslagen!')
         });
+        
+        // Download PDF
+        
+        $(".arrow").on("click", function () {
+            var docDefinition = {
+                pageSize: 'A4',
+                pageOrientation: 'landscape',
+                pageMargins: [40, 20, 20, 40],
+                content: ['Hier komt een duidelijk overzicht van het geëxporteerde storyboard']
+            };
+             pdfMake.createPdf(docDefinition).download('Storyboard');
+      });
 
     });
 
